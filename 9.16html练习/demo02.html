@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9.16demo02</title>
+</head>
+<body>
+<script type="text/javascript" for="window" event="onload">
+// 	function myFriend(theName,gender,theAge,birthOn,theJob){
+// 		this.name=theName;
+// 		this.isMale=(gender.toLowerCase=="male");
+// 		this.age-theAge;
+// 		this.birthday=new Date(birthOn);
+// 		this.job=theJob;
+// 	}
+// var stephen=new myFriend("stephen","male","18","Dec 22,1999","student")
+// document.write(stephen)
+ 
+ 
+
+function f1(){
+	var n="test";
+	function f2(){
+		alert(n)
+	}
+	return f2
+}
+var result=f1()
+result();
+
+/*
+var cnt=(function(i){
+	 
+	return function(){
+		alert(i);
+		i++;
+		}
+ 	})(5);
+ cnt();
+  cnt();*/
+ //可以把闭包函数简单的理解为定义在一个函数内部的函数。在本质上，闭包是链接函数内部和外部的一座桥梁。
+/* with(Math){
+	 x=cos(3*PI)+sin(LN10);
+	 y=14*E
+	 }
+ 
+ alert(y)*/
+</script>
+	
+</body>
+</html>
