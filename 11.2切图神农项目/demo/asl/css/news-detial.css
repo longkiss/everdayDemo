@@ -1,0 +1,39 @@
+.banner{
+	position: relative;
+	content: "";
+}
+.banner a.news-img{
+	position: relative;
+	display: block;
+}
+
+.banner a.news-img img{
+	height:100%;
+	width: 100%
+ }
+.banner a.news-img span{
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	line-height: 30px;
+	font-size: 1.4rem;
+	display:block;
+	position: absolute;
+	bottom:0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+
+}
+.news-detial{
+	padding:10px 10px 0;
+	line-height: 20px;
+	font-size: 1.2rem;
+}
+.news-detial p{
+	padding: 0;
+	margin:0  0  10px 0;
+	text-align: left;
+	text-indent: 2em;
+
+}

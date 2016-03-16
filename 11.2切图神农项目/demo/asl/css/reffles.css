@@ -1,0 +1,82 @@
+.banner{
+	position: relative;
+}
+.banner a{
+	position: relative;
+	display: block;
+}
+.banner a img{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.raffles{
+	padding:0 10px;
+	position: relative;
+}
+.raffles .state{
+	height: 22px;
+	width: 100%;
+  	line-height: 22px;
+}
+.raffles .states{
+	background:url(../images/state.jpg) no-repeat center left;
+	background-size:11px 11px;
+}
+.raffles .state a{
+	display: block;
+	margin-left: 15px;
+	color: #ee7700;
+	font-size: 1.2rem;
+}
+.raffles .state-content{
+	padding-left: 15px;
+	font-size: 1.1rem;
+	line-height: 20px;
+	border-bottom: 1px solid #bfbfbf;
+	padding-bottom: 10px;
+
+}
+.raffles .awar{
+ 	background:url(../images/awar.jpg) no-repeat center left;
+	background-size:11px 11px;
+ 
+}
+.raffles .state-content .content-img{
+	position: relative;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+ }
+ .raffles .state-content .content-img a{
+ 	display: block;
+ 	box-flex:1;
+ 	-moz-box-flex:1;
+ 	-webkit-box-flex:1;
+ 	position: relative;
+ 	text-align: center
+ }
+.raffles .state-content .content-img a img{
+  	position: relative;
+  	height: 100%;
+  	width: 100%;
+  }
+.raffles .state-content .content-img a span{
+	display: block;
+	text-align:center;
+	font-size: 1.2rem;
+	color: black;
+}
+.raffles .list{
+ 	background:url(../images/awar.jpg) no-repeat center left;
+	background-size:11px 11px;
+ 
+}
+.raffles .state-content table,.raffles .state-content table tr{
+	width: 100%;
+}
+.raffles .state-content table tr td{
+	width: 33.33333333%;
+	text-align:left;
+}
+

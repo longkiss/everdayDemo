@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding:0;
+		margin:0;
+	}
+	.box{
+		position: relative;
+	}
+	div.boxs{
+		height: 100%;
+		width: 100px;
+		background: rgba(0,0,0,0.8);
+		float: left;
+		/*position: absolute;*/
+		position: fixed;
+		margin-left: -100px;
+		/*transition:2s all;*/
+	}
+	button{
+		float: left;
+		position: absolute;
+		 
+	}
+	</style>
+</head>
+<body>
+<div class="box">
+<div class="boxs">
+	
+</div>
+<button>点击</button>	
+</div>
+
+	
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	$('button').click(function(){	 
+		$('.boxs').animate({
+			width:'200px'
+		})
+		if($('.boxs').width()==200){
+			$('.boxs').animate({
+			 width:'100px'
+		})
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,56 @@
+.banner{
+	position: relative;
+}
+.banner a{
+	display: block;
+}
+.banner a img{
+	height: 100%;
+	width: 100%;
+}
+.show{
+	display:block;
+	clear:both;
+	padding:15px 0 0 0;
+}
+.show .show-box{
+	content:"";
+	position: relative;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+	padding: 0 10px;
+	margin-bottom: 15px;
+
+
+}
+.show .show-box a{
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	display:block;
+	padding-right:6px;
+	text-align: center;
+  }
+.show .show-box a:last-child{
+	padding:0;
+}
+.show .show-box a div{
+	position: relative;
+	padding:37.5% 37.5%;
+}
+.show .show-box a div img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+.show .show-box a span{
+	font-size: 1.2rem;
+	color: black;
+	line-height: 25px;
+}
+.show .show-box a:hover span{
+	 color: red;
+}

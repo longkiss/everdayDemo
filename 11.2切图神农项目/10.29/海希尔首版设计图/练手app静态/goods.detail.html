@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>尚佳商城</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<link type="text/css" rel="stylesheet" href="css/all.css" />
+	</head>
+	<body>
+		<!--头部-->
+		<div class="head color1">
+			<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+			<span>产品详情</span>
+			<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+		</div>
+		<div class="main" style="background-color: #ffffff;">
+			<!--大图开始-->
+			<div class="main-banner" >
+				<div class="gallery" id="gallery" style="overflow: hidden;">
+					<div class="swipe-box">
+					<a href=""><img src="images/banner1.jpg" width="100%;" /></a>
+					</div>
+					<div class="swipe-box">
+					<a href=""><img src="images/banner2.jpg" width="100%;" /></a>
+					</div>
+					<div class="swipe-box">
+					<a href=""><img src="images/banner1.jpg" width="100%;" /></a>
+					</div>
+					<div class="swipe-box">
+					<a href=""><img src="images/banner2.jpg" width="100%;" /></a>
+					</div>
+				</div>
+				<div class="dotlist">
+					<div id="swipe-dot"></div>
+				</div>
+			</div>
+			<!--大图结束-->
+			<div class="contentboxdetail">
+				<ul style="margin-top: 20px;">
+					<li class="doods-detail-title">
+						尚佳商城项目
+					</li>
+					<li class="doods-detail-jiage">
+						价格：<span class="gprice" id="gPrice" style="color: red;">￥：125.00</span>
+						<small style="text-decoration: line-through;color: #ccc" class="gprice1" id="gPrice1">原价：￥：169.00</small>
+					</li>
+					<li class="guiges colorinner" id="goodsClass">
+						颜色：<span specid="26885" class="current">杏色</span>
+					</li>
+					<li class="guiges sizeinner" id="goodsSize" >
+						尺码：<span data-specid="26885" class="current">160</span><span data-specid="26886" class="tyna-goods">165</span>
+					</li>
+					<li class="nunbtn">
+						数量：
+						<span class="num1">-</span>
+						<input type="text"  id="num" value="1" required="required"  style="width: 35px;text-align: center"/>
+						<span class="num2">+</span>
+						&nbsp;库存：<small style="color: #ccc" class="sysl "></small>
+					</li>
+					<li class="doods-detail-jianjie">
+						简介：<span class="bozgoodsmemo"></span>
+					</li>
+					<li class="goumaibtn">
+						<a class="tyna-lijigoumai" href="order.submit.html">立即购买</a>
+					</li>
+					<li class="goumaibtn toobuy"><a href="javascript:void(0)" class="slaes">我也卖</a></li>
+					<li class="goumaibtn doods-detail-shoucang">
+						<a>收藏</a>
+						<a class="sharebtn"  id="sharebtn">分享</a>
+						<a class="tyna-gouwuche">购物车</a>
+					</li>
+				</ul>
+				<ul class="bar">
+					<li class="bar-li">
+						<div class="bar-li-1">
+							<img src="images/phone.png" class="bar-li-img1" />咨询商家<img src="images/bar_li_bg.png" class="bar-li-img2"/>
+						</div>
+						<div class="bar-li-2 none">
+							电话咨询：<span>15710750973</span>
+						</div>
+					</li>
+					<li class="bar-li">
+						<div class="bar-li-1">
+							<img src="images/bubble.png" class="bar-li-img1" />评论信息<img src="images/bar_li_bg.png" class="bar-li-img2"/>
+						</div>
+						<div class="bar-li-2 none">
+							<div class="bar-li-22">
+								<div>买家：<span class="tyna-red">Tyna</span><span class="bar-li-haoping tyna-red">好评！</span></div>
+								<div>发货速度好快，服务态度也很好</div>
+								<div class="bar-li-date">2015-3-23<a class="time">11:09</a></div>
+							</div>
+							<div class="bar-li-22">
+								<div>买家：<span class="tyna-red">Tyna</span><span class="bar-li-haoping tyna-red">好评！</span></div>
+								<div>发货速度好快，服务态度也很好</div>
+								<div class="bar-li-date">2015-3-23<a class="time">11:09</a></div>
+							</div>
+							<div class="bar-li-22">
+								<div>买家：<span class="tyna-red">Tyna</span><span class="bar-li-haoping tyna-red">好评！</span></div>
+								<div>发货速度好快，服务态度也很好</div>
+								<div class="bar-li-date">2015-3-23<a class="time">11:09</a></div>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+				<p style="padding: 8px;width: 100%;line-height: 22px;">商品详情</p>
+				<div class="contentdetail" ></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="http://openapi.baidu.com/widget/social/1.0/share.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(function() {
+			if (navigator.platform.indexOf('Win32') != -1) {
+				$(".index-classify li").css('width', '24.375%');
+			};
+			$(".foot-daosanjiao").css("left", ($(".foot-nav div").width() - 30) / 2);
+			$(".swipe-box").css("width", $(window).width() + 15);
+			$(".swipe-box img").css("width", $(window).width() + 15);
+			if (document.getElementById("gallery")) {
+				var gallery = new ScrollPic();
+				gallery.scrollContId = "gallery";
+				
+				//内容容器ID
+				gallery.dotListId = "swipe-dot";
+				//点列表ID
+				gallery.dotOnClassName = "selected";
+				gallery.arrLeftId = "sw-left";
+				//左箭头ID
+				gallery.arrRightId = "sw-right";
+				//右箭头ID
+				gallery.frameWidth = $(window).width() + 15;
+				gallery.pageWidth = $(window).width() + 15;
+				gallery.upright = false;
+				gallery.speed = 10;
+				gallery.space = 30;
+				gallery.initialize();
+				//初始化
+			}
+		});
+		$(".bar-li-1").click(function(){
+			$(this).siblings('.bar-li-2').removeClass("none").parent('.bar-li').siblings('.bar-li').find('.bar-li-2').addClass('none');
+                  if(!$(this).hasClass('active')){
+                  	$(this).addClass('active');
+                  	$(this).addClass('active').parent().siblings().children('.bar-li-1').removeClass('active')
+                  	$(this).children('.bar-li-img2').attr('src','images/bar_li_bg_active.png');
+					$(this).parent('.bar-li').siblings('.bar-li').find('.bar-li-img2').attr('src','images/bar_li_bg.png');
+				}else{
+					$(this).removeClass("active");
+					$(this).siblings('.bar-li-2').addClass("none");
+					$(this).removeClass('active');
+					$(this).children('.bar-li-img2').attr('src','images/bar_li_bg.png');
+					$(this).parent('.bar-li').siblings('.bar-li').find('.bar-li-img2').attr('src','images/bar_li_bg.png');
+				     }
+                  
+				})
+			}); 
+	
+</script>

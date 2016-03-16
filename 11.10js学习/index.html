@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table id="outside">
+    <tr><td id="t1">one</td></tr>
+    <tr><td id="t2">two</td></tr>
+</table>
+<script>
+// 	function modifyText() {
+//   var t2 = document.getElementById("t2");
+//   if (t2.firstChild.nodeValue == "three") {
+//     t2.firstChild.nodeValue = "two";
+//   } else {
+//     t2.firstChild.nodeValue = "three";
+//   }
+// }
+
+// // add event listener to table
+// var el = document.getElementById("outside");
+// el.addEventListener("click", modifyText, false);
+
+
+ 
+// Function to change the content of t2
+function modifyText(new_text) {
+  var t2 = document.getElementById("t2");
+  t2.firstChild.nodeValue = new_text;    
+}
+ 
+// Function to add event listener to table
+var el = document.getElementById("outside");
+el.addEventListener("click", function(){
+	modifyText("你好");
+}, false);
+ 
+ 
+</script>
+	
+</body>
+</html>

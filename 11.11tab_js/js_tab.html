@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+     /* CSS样式制作 */  
+ul li{list-style-type:none;}
+#ul1 li{display:block;float:left;text-decoration:none; width:80px;text-align:center;color:#666; background: #eee;}
+#ul1 li.on{background: red;transition:1s all ease;}
+#ul1{height:30px;line-height:30px;display:block;} 
+#ul2{ height: 100px; width: 240px; }
+#ul2 li{display: none}
+#ul2 li.show{
+    display: block;
+}
+.hide{display: none;}
+    </style>
+
+
+ 
+</head>
+<body>
+<!-- HTML页面布局 -->
+<ul id="ul1">
+    <li class="on" data-btn="0">房产</li>
+    <li data-btn="1">二手房</li>
+    <li data-btn="2">家居</li>
+</ul>
+<ul id="ul2">
+    <li class="show">275万购昌平邻铁三居 总价20万买一居
+    200万内购五环三居 140万安家东三环
+    北京首现零首付楼盘 53万购东5环50平
+    京楼盘直降5000 中信府 公园楼王现房        
+    </li>
+    <li class="">40平出租屋大改造 美少女的混搭小窝
+     经典清新简欧爱家 90平老房焕发新生
+     新中式的酷色温情 66平撞色活泼家居
+     瓷砖就像选好老婆 卫生间烟道的设      
+    </li>
+    <li class="">通州豪华3居260万 二环稀缺2居250w甩
+     西3环通透2居290万 130万2居限量抢购
+     黄城根小学学区仅260万 121平70万抛!
+     独家别墅280万 苏州桥2居优惠价248万      
+    </li>
+</ul>
+ <!-- // <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script> -->
+    <script type="text/javascript">
+        // $(document).ready(function(){
+        //     $("#ul1 li").click(function(){
+        //         $(this).addClass('on').siblings('li').removeClass('on');
+        //         var mun=$(this).index();
+        //         $('#ul2 li').eq(mun).addClass('show').siblings('#ul2 li').removeClass('show');
+
+        //     })
+        // })
+//        window.onload=function(){
+//            var oli1=document.getElementById('ul1').getElementsByTagName('li'),
+//                oli2=document.getElementById('ul2').getElementsByTagName('li');
+//                for(var i=0;i<oli1.length;i++){
+//                    oli1[i].index=i;//附加属性
+//                    oli1[i].onclick=function(){
+//                         // var mun=parseInt(this.dataset.btn);
+//                         // console.log(mun)
+//                        for(x=0;x<oli1.length;x++){
+//                            oli1[x].className="";
+//                            oli2[x].className='hide';
+//                        }
+//                        this.className='on';
+//                        // oli2[mun].className='show'
+//                        oli2[this.index].className='show';
+//
+//                    }
+//                }
+//
+//        }
+
+
+
+//---------------------------js--tab选项卡（原生）-----------------------------------//
+
+    // JS实现选项卡切换
+    window.onload=function(){
+        var ul1=document.getElementById('ul1'),
+            li1=ul1.getElementsByTagName('li'),
+            ul2=document.getElementById('ul2'),
+            li2=ul2.getElementsByTagName('li');
+             for(i=0;i<li1.length;i++){
+                li1[i].index = i;//对应的是this.index,把下标传给li2
+                li1[i].onclick=function(){
+                    for(var n= 0;n<li1.length;n++){
+                         li1[n].className = "";
+                         li2[n].className = "hide";
+                        }
+                     this.className="on";
+                     li2[this.index].className = "show";
+                }
+             }
+        }
+
+//---------------------------js--tab选项卡（原生）-----------------------------------//
+    //   window.onload=function(){
+    //     var oul1=document.getElementById('ul1'),
+    //         oli1=oul1.getElementsByTagName('li'),
+    //         oul2=document.getElementById('ul2'),
+    //         oli2=oul2.getElementsByTagName('li');
+    //      for(i=0;i<oli1.length;i++){
+    //          oli1[i].index=i;
+    //          oli1[i].onclick=function(){
+    //              for(x=0;x<oli1.length;x++){
+    //                  oli1[x].className="";
+    //                  oli2[x].className="hide"
+    //              }
+    //              this.className='on';
+    //              oli2[this.index].className='';
+    //          }
+        
+    //      }
+        
+    // }
+//--------------------------------------------------------------//
+      
+
+
+
+     </script>
+</body>
+</html>

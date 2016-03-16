@@ -1,0 +1,100 @@
+
+@charset "utf-8";
+/* CSS Document */
+
+/*头部*/
+header{ overflow:hidden;}
+header .logo{ display:block; float:left;}
+header .hd_bg{display:block; float:left; padding:0 114px 0 126px;}
+header .hotline{display:block; float:left; padding:30px 0 0;}
+
+/*菜单*/
+.menu{ background:#2fae3d; height:58px;}
+.menu ul{ position:relative;}
+.menu li{ float:left; overflow:hidden;}
+.menu li a{ display:block; line-height:28px;  padding:25px 30px 5px 30px;; color:#fff; border-right:1px solid #1d9229; border-left:#60d36e 1px solid; font-size:16px;}
+.menu li a.ico1{ background:url(../images/icon1.png) no-repeat center 6px; border-left:none;}
+.menu li a.ico2{ background:url(../images/icon2.png) no-repeat center 6px;}
+.menu li a.ico3{ background:url(../images/icon3.png) no-repeat center 6px;}
+.menu li a.ico4{ background:url(../images/icon4.png) no-repeat center 6px;}
+.menu li a.ico5{ background:url(../images/icon5.png) no-repeat center 6px;border-right:none;}
+.menu li a.ico1:hover{background:url(../images/icon1.png) #259a2f no-repeat center 6px;}
+.menu li a.ico2:hover{background:url(../images/icon2.png) #259a2f no-repeat center 6px;}
+.menu li a.ico3:hover{background:url(../images/icon3.png) #259a2f no-repeat center 6px;}
+.menu li a.ico4:hover{background:url(../images/icon4.png) #259a2f no-repeat center 6px;}
+.menu li a.ico5:hover{background:url(../images/icon5.png) #259a2f no-repeat center 6px;}
+
+
+
+/*banner*/
+.banner{ padding-top:13px; width:1000px; margin:0 auto;}
+@media only screen and (min-width: 320px) and (max-width:768px) { 
+.banner{ padding-top:13px; width:100%; }
+}
+
+/*筛选栏*/
+.select{ width:1000px; margin:0 auto; padding:20px 0px 0px; overflow:hidden;}
+.select .select_l { width:50px; float:left;}
+.select .select_l p{ width:50px; height:23px; text-align:center;  background:#2fae3d; color:#fff; }
+.select .select_l p{*margin-bottom:20px;}
+.select .select_r{width:950px; float:left;}
+.select .select_r p{ margin-bottom:20px;}
+.select .select_r p a{ font-size:14px; margin-left:25px; }
+.select .select_r p a:hover{color:#2fae3d}
+
+/*筛选栏（手机）*/
+@media only screen and (min-width: 320px) and (max-width:768px) { 
+.select{ width:98%; padding-top:2%; overflow:hidden;}
+.select .select_l { width:40px; float:left;}
+.select .select_l p{ width:40px; height:20px; line-height:20px; text-align:center;  background:#2fae3d; color:#fff; font-size:12px; }
+.select .select_r{width:80%; float:left;}
+.select .select_r p a{ font-size:12px; margin-left:3%; }
+}
+
+/*面包屑*/
+.breadcrumb{ padding:15px 0; font-size:14px;}
+.breadcrumb span a{color:#509d1d;}
+@media only screen and (min-width: 320px) and (max-width:768px) { 
+.breadcrumb{ padding:15px 0; font-size:12px;}
+}
+
+/*登录注册*/
+.menu li.zc{ float:right}
+.menu li.dl{ float:right}
+.menu li a.ico6{ background:url(../images/icon7.png) #4c5a65 no-repeat center 6px;border-left:1px solid #6a7883;}
+.menu li a.ico7{ background:url(../images/icon6.png) #4c5a65 no-repeat center 6px;border-right:1px solid #374550; border-left:none;}
+.menu li a.ico6:hover{background:url(../images/icon7.png) #666 no-repeat center 6px;}
+.menu li a.ico7:hover{background:url(../images/icon6.png) #666 no-repeat center 6px;}
+
+
+
+/*栏目标题*/
+.titles{ background: url(../images/title_bg.jpg) no-repeat left top #f3f3f3; height:32px; line-height:32px; padding-left:20px; color:#fff; font-size:18px; font-weight:normal;}
+@media only screen and (min-width: 320px) and (max-width:768px) { 
+.titles{ background: url(../images/title_bg.jpg) no-repeat left top #f3f3f3; background-size: contain; height:25px; line-height:25px; padding-left:20px; color:#fff; font-size:14px; font-weight:normal;}
+}
+
+
+
+/*翻页*/
+.page{ width:1000px; margin:0 auto; text-align:center; color:#666;}
+.page a{ border:1px solid #ccc; padding:0 10px; margin-left:5px;}
+.page input{ border:none;  border:1px solid #ccc; width:20px; margin:0 5px; padding:2px 5px;}
+
+@media only screen and (min-width: 320px) and (max-width:768px) { 
+.page{ width:98%; margin:0 auto; text-align:center; color:#666;  font-size:8px;}
+.page a{ border:1px solid #ccc; padding:0 3px; margin-left:2px; font-size:10px;}
+.page input{ border:none;  border:1px solid #ccc; width:20px; margin:0 0px; padding:2px 0px;}
+
+}
+
+
+/*底部*/
+footer .auto{ text-align:center; color:#666; font-size:14px; padding:10px 0px 40px;}
+footer .auto p{ padding:3px 0;}
+footer .auto p span{ margin-left:20px;}
+footer .auto b{ color:#333;}
+@media only screen and (min-width: 320px) and (max-width:768px) { 
+footer .auto{ text-align:center; color:#666; font-size:10px; padding:10px 0px 40px;}
+footer .auto p{ padding:1px 0;}
+}

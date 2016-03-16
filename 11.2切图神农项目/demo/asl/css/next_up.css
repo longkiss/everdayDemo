@@ -1,0 +1,35 @@
+.next_up{
+	position: relative;
+	padding:0  10px;
+	content: "";
+}
+.next_up .banner {
+	position: relative;
+
+
+}
+.next_up .banner .banner-img{
+	position: relative;
+	display: block;
+
+}
+.next_up .banner .banner-img img{
+	height: 100%;
+	width: 100%;
+}
+.content p.title{
+	display: inline-block;
+	width: auto;
+	height: 36px;
+	line-height: 36px;
+	font-size: 2rem;
+
+ }
+ .content .cont-text{
+ 	font-size: 1.2rem;
+ 	line-height: 20px;
+ }
+  .content .cont-text p{
+  	text-indent: 2em;
+  	margin-bottom: 10px;
+}

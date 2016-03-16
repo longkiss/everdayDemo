@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="Jq侧边栏导航,Html导航栏，Jq左侧导航栏" />
+<meta name="description" content="Jq导航系列之侧边栏-彭亚欧个人博客代码中心" />
+<title>Jq侧边栏导航</title>
+<style type="text/css">
+#beian a{
+	color:#fff;
+}
+body {
+	margin: 0 auto;
+	height: 100%;
+}
+#topNav {
+	width: 100%;
+	height: 60px;
+	background-color: #333;
+}
+#topNav>a{
+	color:#fff;
+	font: 15px "微软雅黑", Arial, Helvetica, sans-serif;
+	float:left;
+	margin-top:20px;
+	margin-left:20px;
+}
+#LeftOne {
+	width: 80px;
+	height: 500px;
+	position:absolute;
+	background-color: #3e434a;
+	text-align: center;
+	z-index:2;
+}
+#LeftOne>li {
+	width: 80px;
+	height: 100px;
+	background-position: center;
+	background-repeat: no-repeat;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#LeftOne>li:hover {
+	background-color: #fff;
+}
+.one{
+	background-image: url(one.png);
+}
+.one:hover{
+	
+}
+.two{
+	background-image: url(two.png);
+}.three{
+	background-image: url(three.png);
+}
+.four{
+	background-image: url(four.png);
+}
+.five{
+	background-image: url(five.png);
+}
+.child{
+		z-index:1;
+	position:absolute;
+	width:300px;
+}
+.LeftTwo{
+	background-color:#1bb9fb;
+	left:-300px;
+}
+.LeftThree{
+	background-color:#88b800;
+	left:-300px;
+}
+.LeftFour{
+	background-color:#239dd0;
+	left:-300px;
+}
+.LeftFive{
+	background-color:#239dd0;
+	left:-300px;
+}
+.LeftSix{
+	background-color:#42be46;
+	left:-300px;
+}
+.child>li{
+	text-align:center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.child>li>a{
+	font: 18px "微软雅黑", Arial, Helvetica, sans-serif;
+	color:#fff;
+	cursor:pointer;
+	text-decoration:none;
+	float:left;
+	width:100%;
+	text-align:center;
+	height:35px;
+	padding-top:10px;
+}
+.child>li>a:hover{
+	background-color:#3e434a;
+}
+</style>
+</head>
+
+<body>
+<div id="topNav"> <a>导航演示-彭亚欧个人博客</a></div>
+<div id="LeftOne">
+  <li class="one"></li>
+  <li class="two"></li>
+  <li class="three"></li>
+  <li class="four"></li>
+  <li class="five"></li>
+</div>
+<div class="child LeftTwo">
+   <li><a href="http://www.pengyaou.com/" target="_blank">博客主页</a></li>
+   <li><a href="http://www.pengyaou.com/LegendsZ.html" target="_blank">博客代码中心</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客留言</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客心情说说</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">关于本站</a></li>
+    
+</div>
+<div class="child LeftThree">
+ <li><a href="http://www.pengyaou.com/" target="_blank">博客主页</a></li>
+   <li><a href="http://www.pengyaou.com/LegendsZ.html" target="_blank">博客代码中心</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客留言</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客心情说说</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">关于本站</a></li>
+    
+</div>
+<div class="child LeftFour">
+ <li><a href="http://www.pengyaou.com/" target="_blank">博客主页</a></li>
+   <li><a href="http://www.pengyaou.com/LegendsZ.html" target="_blank">博客代码中心</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客留言</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客心情说说</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">关于本站</a></li>
+    
+</div>
+<div class="child LeftFive">
+ <li><a href="http://www.pengyaou.com/" target="_blank">博客主页</a></li>
+   <li><a href="http://www.pengyaou.com/LegendsZ.html" target="_blank">博客代码中心</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客留言</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客心情说说</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">关于本站</a></li>
+    
+</div>
+<div class="child LeftSix">
+ <li><a href="http://www.pengyaou.com/" target="_blank">博客主页</a></li>
+   <li><a href="http://www.pengyaou.com/LegendsZ.html" target="_blank">博客代码中心</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客留言</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">博客心情说说</a></li>
+   <li><a href="http://www.pengyaou.com/MessageBoard.html" target="_blank">关于本站</a></li>
+    
+</div>
+
+</body>
+<script src="http://www.pengyaou.com/jquery-1.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    NavLeft.Init();
+});
+window.onresize=function(){ NavLeft.Init();};
+var NavLeft={
+	isOut:false,
+	mTimer:null,
+	Init:function(){
+		$("#LeftOne").css("height",$(window).height()-60+"px");
+		$(".child").css("height",$(window).height()-60+"px");
+		$(".child").hover(function(){
+			clearInterval(NavLeft.mTimer);    
+			$(this).css("left","80px");
+		},function(){NavLeft.Close($(this));});
+		$(".one").hover(function(){
+			$(".LeftTwo").animate({left:"80px"},500);
+		},function(){
+			NavLeft.Close($(".LeftTwo"));
+		});
+		$(".two").hover(function(){
+			$(".LeftThree").animate({left:"80px"},500);
+		},function(){NavLeft.Close($(".LeftThree"));});
+		$(".three").hover(function(){
+			$(".LeftFour").animate({left:"80px"},500);
+		},function(){NavLeft.Close($(".LeftFour"));});
+		$(".four").hover(function(){
+			$(".LeftFive").animate({left:"80px"},500);
+		},function(){NavLeft.Close($(".LeftFive"));});
+		$(".five").hover(function(){
+			$(".LeftSix").animate({left:"80px"},500);
+		},function(){NavLeft.Close($(".LeftSix"));});
+	},
+	Close:function(target){
+		NavLeft.mTimer=setInterval(function(){
+			$(target).animate({left:"-300px"},500);
+			clearInterval(NavLeft.mTimer);    
+		},30);
+	}
+}
+</script>
+</html>

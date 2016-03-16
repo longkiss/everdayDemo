@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html class="no-js  " lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="jQuery,API,中文,jquery api,1.11,正则表达式"/>
+    <meta name="description" content="jQuery API 1.11.3 中文手册最新版，在线地址：http://jquery.cuishifeng.cn"/>
+    <meta name="robots" content="all">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="Shifone -http://jquery.cuishifeng.cn"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>正则表达式 | jQuery API 1.11 中文文档 | jQuery API 在线手册</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/common.css" tppabs="http://jquery.cuishifeng.cn/css/common.css">
+</head>
+<body >
+<!--[if lt IE 9]>
+  <div class="browser-happy">
+      <div class="content">
+          <p>作为前端开发人员，还有这么low的浏览器，再不更新会遭鄙视的～～</p>
+          <a href="javascript:if(confirm('http://browsehappy.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://browsehappy.com/'" tppabs="http://browsehappy.com/">立即更新</a>
+      </div>
+  </div>
+<![endif]-->
+    <div class="main-container" >
+        
+        <div id="main-wraper" class="main-wraper">
+            <header class="top-nav">
+                <a href="index.html" tppabs="http://jquery.cuishifeng.cn/index.html" class="pc" title="">首页</a>&nbsp;&gt;&nbsp; <span class="sub-title">其它</span> &nbsp;&gt;&nbsp;正则表达式
+                <a class="source" href="source.html" tppabs="http://jquery.cuishifeng.cn/source.html">源码下载</a>
+            </header>
+            <div id="content" >
+              <h1 class="bt">正则表达式速查表</h1>
+    <table class="wikitable">
+      <tbody>
+        <tr>
+          <th width="8%" style="font-size:18px">字符</th>
+          <th width="92%"style="font-size:18px">描述</th>
+        </tr>
+        <tr>
+          <th>\</th>
+          <td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，&ldquo;<code>n</code>”匹配字符“<code>n</code>”。“<code>\n</code>”匹配一个换行符。串行“<code>\\</code>”匹配“<code>\</code>”而“<code>\(</code>”则匹配“<code>(</code>”。</td>
+        </tr>
+        <tr>
+          <th>^</th>
+          <td>匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配&ldquo;<code>\n</code>”或“<code>\r</code>”之后的位置。</td>
+        </tr>
+        <tr>
+          <th>$</th>
+          <td>匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配&ldquo;<code>\n</code>”或“<code>\r</code>”之前的位置。</td>
+        </tr>
+        <tr>
+          <th>*</th>
+          <td>匹配前面的子表达式零次或多次。例如，zo*能匹配&ldquo;<code>z</code>”以及“<code>zoo</code>”。*等价于{0,}。</td>
+        </tr>
+        <tr>
+          <th>+</th>
+          <td>匹配前面的子表达式一次或多次。例如，&ldquo;<code>zo+</code>”能匹配“<code>zo</code>”以及“<code>zoo</code>”，但不能匹配“<code>z</code>”。+等价于{1,}。</td>
+        </tr>
+        <tr>
+          <th>?</th>
+          <td>匹配前面的子表达式零次或一次。例如，&ldquo;<code>do(es)?</code>”可以匹配“<code>does</code>”或“<code>does</code>”中的“<code>do</code>”。?等价于{0,1}。</td>
+        </tr>
+        <tr>
+          <th>{<span style="font-family:Times New Roman; font-style:italic;">n</span>}</th>
+          <td><span style="font-family:Times New Roman; font-style:italic;">n</span>是一个非负整数。匹配确定的<span style="font-family:Times New Roman; font-style:italic;">n</span>次。例如，&ldquo;<code>o{2}</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但是能匹配“<code>food</code>”中的两个o。</td>
+        </tr>
+        <tr>
+          <th>{<span style="font-family:Times New Roman; font-style:italic;">n</span>,}</th>
+          <td><span style="font-family:Times New Roman; font-style:italic;">n</span>是一个非负整数。至少匹配<span style="font-family:Times New Roman; font-style:italic;">n</span>次。例如，&ldquo;<code>o{2,}</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但能匹配“<code>foooood</code>”中的所有o。“<code>o{1,}</code>”等价于“<code>o+</code>”。“<code>o{0,}</code>”则等价于“<code>o*</code>”。</td>
+        </tr>
+        <tr>
+          <th>{<span style="font-family:Times New Roman; font-style:italic;">n</span>,<span style="font-family:Times New Roman; font-style:italic;">m</span>}</th>
+          <td><span style="font-family:Times New Roman; font-style:italic;">m</span>和<span style="font-family:Times New Roman; font-style:italic;">n</span>均为非负整数，其中<span style="font-family:Times New Roman; font-style:italic;">n</span>&lt;=<span style="font-family:Times New Roman; font-style:italic;">m</span>。最少匹配<span style="font-family:Times New Roman; font-style:italic;">n</span>次且最多匹配<span style="font-family:Times New Roman; font-style:italic;">m</span>次。例如，&ldquo;<code>o{1,3}</code>”将匹配“<code>fooooood</code>”中的前三个o。“<code>o{0,1}</code>”等价于“<code>o?</code>”。请注意在逗号和两个数之间不能有空格。</td>
+        </tr>
+        <tr>
+          <th>?</th>
+          <td>当该字符紧跟在任何一个其他限制符（*,+,?，{<span style="font-family:Times New Roman; font-style:italic;">n</span>}，{<span style="font-family:Times New Roman; font-style:italic;">n</span>,}，{<span style="font-family:Times New Roman; font-style:italic;">n</span>,<span style="font-family:Times New Roman; font-style:italic;">m</span>}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串&ldquo;<code>oooo</code>”，“<code>o+?</code>”将匹配单个“<code>o</code>”，而“<code>o+</code>”将匹配所有“<code>o</code>”。</td>
+        </tr>
+        <tr>
+          <th>.</th>
+          <td>匹配除&ldquo;<code>\</code><span style="font-family:Times New Roman; font-style:italic;"><code>n</code></span>”之外的任何单个字符。要匹配包括“<code>\</code><span style="font-family:Times New Roman; font-style:italic;"><code>n</code></span>”在内的任何字符，请使用像“<code>(.|\n)</code>”的模式。</td>
+        </tr>
+        <tr>
+          <th>(pattern)</th>
+          <td>匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0&hellip;$9属性。要匹配圆括号字符，请使用&ldquo;<code>\(</code>”或“<code>\)</code>”。</td>
+        </tr>
+        <tr>
+          <th>(?:pattern)</th>
+          <td>匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符&ldquo;<code>(|)</code>”来组合一个模式的各个部分是很有用。例如“<code>industr(?:y|ies)</code>”就是一个比“<code>industry|industries</code>”更简略的表达式。</td>
+        </tr>
+        <tr>
+          <th>(?=pattern)</th>
+          <td>正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，&ldquo;<code>Windows(?=95|98|NT|2000)</code>”能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+        </tr>
+        <tr>
+          <th>(?!pattern)</th>
+          <td>正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如&ldquo;<code>Windows(?!95|98|NT|2000)</code>”能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
+        </tr>
+        <tr>
+          <th>(?&lt;=pattern)</th>
+          <td>反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，&ldquo;<code>(?&lt;=95|98|NT|2000)Windows</code>”能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”。</td>
+        </tr>
+        <tr>
+          <th>(?&lt;!pattern)</th>
+          <td>反向否定预查，与正向否定预查类拟，只是方向相反。例如&ldquo;<code>(?&lt;!95|98|NT|2000)Windows</code>”能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”。</td>
+        </tr>
+        <tr>
+          <th>x|y</th>
+          <td>匹配x或y。例如，&ldquo;<code>z|food</code>”能匹配“<code>z</code>”或“<code>food</code>”。“<code>(z|f)ood</code>”则匹配“<code>zood</code>”或“<code>food</code>”。</td>
+        </tr>
+        <tr>
+          <th>[xyz]</th>
+          <td>字符集合。匹配所包含的任意一个字符。例如，&ldquo;<code>[abc]</code>”可以匹配“<code>plain</code>”中的“<code>a</code>”。</td>
+        </tr>
+        <tr>
+          <th>[^xyz]</th>
+          <td>负值字符集合。匹配未包含的任意字符。例如，&ldquo;<code>[^abc]</code>”可以匹配“<code>plain</code>”中的“<code>p</code>”。</td>
+        </tr>
+        <tr>
+          <th>[a-z]</th>
+          <td>字符范围。匹配指定范围内的任意字符。例如，&ldquo;<code>[a-z]</code>”可以匹配“<code>a</code>”到“<code>z</code>”范围内的任意小写字母字符。</td>
+        </tr>
+        <tr>
+          <th>[^a-z]</th>
+          <td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，&ldquo;<code>[^a-z]</code>”可以匹配任何不在“<code>a</code>”到“<code>z</code>”范围内的任意字符。</td>
+        </tr>
+        <tr>
+          <th>\b</th>
+          <td>匹配一个单词边界，也就是指单词和空格间的位置。例如，&ldquo;<code>er\b</code>”可以匹配“<code>never</code>”中的“<code>er</code>”，但不能匹配“<code>verb</code>”中的“<code>er</code>”。</td>
+        </tr>
+        <tr>
+          <th>\B</th>
+          <td>匹配非单词边界。&ldquo;<code>er\B</code>”能匹配“<code>verb</code>”中的“<code>er</code>”，但不能匹配“<code>never</code>”中的“<code>er</code>”。</td>
+        </tr>
+        <tr>
+          <th>\cx</th>
+          <td>匹配由x指明的控制字符。例如，\cM匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的&ldquo;<code>c</code>”字符。</td>
+        </tr>
+        <tr>
+          <th>\d</th>
+          <td>匹配一个数字字符。等价于[0-9]。</td>
+        </tr>
+        <tr>
+          <th>\D</th>
+          <td>匹配一个非数字字符。等价于[^0-9]。</td>
+        </tr>
+        <tr>
+          <th>\f</th>
+          <td>匹配一个换页符。等价于\x0c和\cL。</td>
+        </tr>
+        <tr>
+          <th>\n</th>
+          <td>匹配一个换行符。等价于\x0a和\cJ。</td>
+        </tr>
+        <tr>
+          <th>\r</th>
+          <td>匹配一个回车符。等价于\x0d和\cM。</td>
+        </tr>
+        <tr>
+          <th>\s</th>
+          <td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。</td>
+        </tr>
+        <tr>
+          <th>\S</th>
+          <td>匹配任何非空白字符。等价于[^ \f\n\r\t\v]。</td>
+        </tr>
+        <tr>
+          <th>\t</th>
+          <td>匹配一个制表符。等价于\x09和\cI。</td>
+        </tr>
+        <tr>
+          <th>\v</th>
+          <td>匹配一个垂直制表符。等价于\x0b和\cK。</td>
+        </tr>
+        <tr>
+          <th>\w</th>
+          <td>匹配包括下划线的任何单词字符。等价于&ldquo;<code>[A-Za-z0-9_]</code>”。</td>
+        </tr>
+        <tr>
+          <th>\W</th>
+          <td>匹配任何非单词字符。等价于&ldquo;<code>[^A-Za-z0-9_]</code>”。</td>
+        </tr>
+        <tr>
+          <th>\x<span style="font-family:Times New Roman; font-style:italic;">n</span></th>
+          <td>匹配<span style="font-family:Times New Roman; font-style:italic;">n</span>，其中<span style="font-family:Times New Roman; font-style:italic;">n</span>为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，&ldquo;<code>\x41</code>”匹配“<code>A</code>”。“<code>\x041</code>”则等价于“<code>\x04&amp;1</code>”。正则表达式中可以使用ASCII编码。.</td>
+        </tr>
+        <tr>
+          <th>\<span style="font-family:Times New Roman; font-style:italic;">num</span></th>
+          <td>匹配<span style="font-family:Times New Roman; font-style:italic;">num</span>，其中<span style="font-family:Times New Roman; font-style:italic;">num</span>是一个正整数。对所获取的匹配的引用。例如，&ldquo;<code>(.)\1</code>”匹配两个连续的相同字符。</td>
+        </tr>
+        <tr>
+          <th>\<span style="font-family:Times New Roman; font-style:italic;">n</span></th>
+          <td>标识一个八进制转义值或一个向后引用。如果\<span style="font-family:Times New Roman; font-style:italic;">n</span>之前至少<span style="font-family:Times New Roman; font-style:italic;">n</span>个获取的子表达式，则<span style="font-family:Times New Roman; font-style:italic;">n</span>为向后引用。否则，如果<span style="font-family:Times New Roman; font-style:italic;">n</span>为八进制数字（0-7），则<span style="font-family:Times New Roman; font-style:italic;">n</span>为一个八进制转义值。</td>
+        </tr>
+        <tr>
+          <th>\<span style="font-family:Times New Roman; font-style:italic;">nm</span></th>
+          <td>标识一个八进制转义值或一个向后引用。如果\<span style="font-family:Times New Roman; font-style:italic;">nm</span>之前至少有<span style="font-family:Times New Roman; font-style:italic;">nm</span>个获得子表达式，则<span style="font-family:Times New Roman; font-style:italic;">nm</span>为向后引用。如果\<span style="font-family:Times New Roman; font-style:italic;">nm</span>之前至少有<span style="font-family:Times New Roman; font-style:italic;">n</span>个获取，则<span style="font-family:Times New Roman; font-style:italic;">n</span>为一个后跟文字<span style="font-family:Times New Roman; font-style:italic;">m</span>的向后引用。如果前面的条件都不满足，若<span style="font-family:Times New Roman; font-style:italic;">n</span>和<span style="font-family:Times New Roman; font-style:italic;">m</span>均为八进制数字（0-7），则\<span style="font-family:Times New Roman; font-style:italic;">nm</span>将匹配八进制转义值<span style="font-family:Times New Roman; font-style:italic;">nm</span>。</td>
+        </tr>
+        <tr>
+          <th>\<span style="font-family:Times New Roman; font-style:italic;">nml</span></th>
+          <td>如果<span style="font-family:Times New Roman; font-style:italic;">n</span>为八进制数字（0-3），且<span style="font-family:Times New Roman; font-style:italic;">m和l</span>均为八进制数字（0-7），则匹配八进制转义值<span style="font-family:Times New Roman; font-style:italic;">nm</span>l。</td>
+        </tr>
+        <tr>
+          <th>\u<span style="font-family:Times New Roman; font-style:italic;">n</span></th>
+          <td>匹配<span style="font-family:Times New Roman; font-style:italic;">n</span>，其中<span style="font-family:Times New Roman; font-style:italic;">n</span>是一个用四个十六进制数字表示的Unicode字符。例如，\u00A9匹配版权符号（&copy;）。</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h1 class="bt">常用正则表达式</h1>
+    <table class="wikitable" width="100%">
+      <tr>
+        <th width="15%">用户名</th>
+        <td width="85%">/^[a-z0-9_-]{3,16}$/</td>
+      </tr>
+      <tr>
+        <th scope="row">密码</th>
+        <td>/^[a-z0-9_-]{6,18}$/</td>
+      </tr>
+      <tr>
+        <th scope="row">十六进制值</th>
+        <td>/^#?([a-f0-9]{6}|[a-f0-9]{3})$/</td>
+      </tr>
+      <tr>
+        <th scope="row">电子邮箱</th>
+        <td>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/<br />
+          /^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/</td>
+      </tr>
+      <tr>
+        <th scope="row">URL</th>
+        <td>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</td>
+      </tr>
+      <tr>
+        <th scope="row">IP 地址</th>
+        <td>/((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/<br />
+          /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</td>
+      </tr>
+      <tr>
+        <th scope="row">HTML 标签</th>
+        <td>/^&lt;([a-z]+)([^&lt;]+)*(?:&gt;(.*)&lt;\/\1&gt;|\s+\/&gt;)$/</td>
+      </tr>
+      <tr>
+        <th scope="row">删除代码\\注释</th>
+        <td>(?&lt;!http:|\S)//.*$</td>
+      </tr>
+      <!--  <tr>
+    <th scope="row">&nbsp;</th>
+    <td>&nbsp;</td>
+  </tr>-->
+      <tr>
+        <th scope="row">Unicode编码中的汉字范围</th>
+        <td>/^[\u2E80-\u9FFF]+$/</td>
+      </tr>
+    </table>
+            </div>
+            
+
+            <div class="navigation clearfix">
+                <span class="alignleft">上一篇：<a href="jQuery.callbacks.html" tppabs="http://jquery.cuishifeng.cn/jQuery.callbacks.html">$.callbacks(flags)</a></span>
+                
+                <span class="alignright">下一篇：<a href="html5.html" tppabs="http://jquery.cuishifeng.cn/html5.html">HTML5速查表</a></span>
+            </div>
+            <div class="donate-con">
+              <div class="donate-btn">捐助</div>
+              <div class="donate-body">
+                <div class="donate-tips">本站为非盈利网站，所有的捐赠收入将用于支付带宽、服务器费用，您的支持将是本站撑下去的最大动力！</div>
+                <div class="donate-img"> <a href="source.html" tppabs="http://jquery.cuishifeng.cn/source.html"><img src="images/qr_code.png" tppabs="http://jquery.cuishifeng.cn/images/qr_code.png" height="350" width="350" alt=""></a>  </div>
+              </div>
+            </div>
+
+<!--
+            <div class="stips" id="stips">
+			  <div class="stips-close" id="stips-close">
+                <a href="javascript:void(0);" id="btn-close">永久关闭</a>
+              </div>
+              <div class="stips-title" id="stips-con">
+                <div>
+                  <span class="tips-main" id="tips-main">
+                    Hi,我是小hi,有事可以直接找我哦~~ 偷偷告诉你：右击可以关闭我哦~
+                  </span>
+                </div>
+                <div><span class="circle circle-middle"></span></div>
+                <div><span class="circle"></span></div>
+              </div>
+              <div class="stips-body">
+                <img id="stips-img" src="images/stip.png" height="190" width="150" alt="">
+              </div>
+            </div>  -->
+        </div><!-- main-wraper end -->
+      <footer id="footer-con" class="footer" style="display:none;" >
+           <p id="footer">Copyright &copy; <a href="javascript:if(confirm('http://www.cuishifeng.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.cuishifeng.cn/'" tppabs="http://www.cuishifeng.cn/" target="_blank">Shifone</a> &nbsp;&nbsp; 2012 - 2015 &nbsp;&nbsp; All rights reserved. </p>
+      </footer>
+
+    </div><!-- main -container end -->
+
+
+    <aside class="left-panel left-panel-hide"  id="left-panel">
+
+        <div class="auto-query-con" >
+          <input type="text" name="query" id="autoquery" placeholder="请输入关键字"/>
+        </div>
+
+        <nav class="navigation">
+            <ul id="main-menu" class="main-menu">
+                <li >
+                    <a class="menu-title" id="dashboard-menu" href="index.html" tppabs="http://jquery.cuishifeng.cn/index.html">
+                        <i class="fa fa-home"></i><span class="nav-label">Dashboard</span>
+                    </a>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">核心</span>
+                    </a>
+                    <ul class="sub-menu">
+                      <li><a href="jQuery_selector_context.html" tppabs="http://jquery.cuishifeng.cn/jQuery_selector_context.html">jQuery([sel,[context]])</a></li>
+                      <li><a href="jQuery_html_ownerDocument.html" tppabs="http://jquery.cuishifeng.cn/jQuery_html_ownerDocument.html">jQuery(html,[ownerDoc])</a><sup>1.8*</sup></li>
+                      <li><a href="jQuery_callback.html" tppabs="http://jquery.cuishifeng.cn/jQuery_callback.html">jQuery(callback)</a></li>
+                      <li><a href="jQuery.holdReady.html" tppabs="http://jquery.cuishifeng.cn/jQuery.holdReady.html">jQuery.holdReady(hold)</a><sup>1.6+</sup></li>
+                      <li><a href="each.html" tppabs="http://jquery.cuishifeng.cn/each.html">each(callback)</a></li>
+                      <li><a href="size.html" tppabs="http://jquery.cuishifeng.cn/size.html">size()</a></li>
+                      <li><a href="length.html" tppabs="http://jquery.cuishifeng.cn/length.html">length</a></li>
+                      <li><a href="selector.html" tppabs="http://jquery.cuishifeng.cn/selector.html">selector</a></li>
+                      <li><a href="context.html" tppabs="http://jquery.cuishifeng.cn/context.html">context</a></li>
+                      <li><a href="get.html" tppabs="http://jquery.cuishifeng.cn/get.html">get([index])</a></li>
+                      <li><a href="index_1.html" tppabs="http://jquery.cuishifeng.cn/index_1.html">index([selector|element])</a></li>
+                      <li><a href="data.html" tppabs="http://jquery.cuishifeng.cn/data.html">data([key],[value])</a></li>
+                      <li><a href="removeData.html" tppabs="http://jquery.cuishifeng.cn/removeData.html">removeData([name|list])</a><sup>1.7*</sup></li>
+                      <li><a href="jQuery.data.html" tppabs="http://jquery.cuishifeng.cn/jQuery.data.html"><del>$.data(ele,[key],[val])</del></a><sup>1.8-</sup></li>
+                      <li><a href="queue.html" tppabs="http://jquery.cuishifeng.cn/queue.html" title="queue(element,[queueName])">queue(e,[q])</a></li>
+                      <li><a href="dequeue.html" tppabs="http://jquery.cuishifeng.cn/dequeue.html" title="dequeue([queueName])">dequeue([queueName])</a></li>
+                      <li><a href="clearQueue.html" tppabs="http://jquery.cuishifeng.cn/clearQueue.html" title="clearQueue([queueName])">clearQueue([queueName])</a></li>
+                      <li><a href="jQuery.fn.extend.html" tppabs="http://jquery.cuishifeng.cn/jQuery.fn.extend.html">jQuery.fn.extend(object)</a></li>
+                      <li><a href="jQuery.extend_object.html" tppabs="http://jquery.cuishifeng.cn/jQuery.extend_object.html">jQuery.extend(object)</a></li>
+                      <li><a href="jQuery.noConflict.html" tppabs="http://jquery.cuishifeng.cn/jQuery.noConflict.html" title="jQuery.noConflict([extreme])">jQuery.noConflict([ex])</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">选择器</span>
+                    </a>
+                    <ul class="sub-menu">
+                      <li><a href="id.html" tppabs="http://jquery.cuishifeng.cn/id.html">#id</a></li>
+                      <li><a href="element.html" tppabs="http://jquery.cuishifeng.cn/element.html">element</a></li>
+                      <li><a href="class.html" tppabs="http://jquery.cuishifeng.cn/class.html">.class</a></li>
+                      <li><a href="all.html" tppabs="http://jquery.cuishifeng.cn/all.html">*</a></li>
+                      <li><a href="multiple.html" tppabs="http://jquery.cuishifeng.cn/multiple.html">selector1,selector2,selectorN</a></li>
+                      <li><a href="descendant.html" tppabs="http://jquery.cuishifeng.cn/descendant.html">ancestor descendant</a></li>
+                      <li><a href="child.html" tppabs="http://jquery.cuishifeng.cn/child.html">parent &gt;  child</a></li>
+                      <li><a href="next_1.html" tppabs="http://jquery.cuishifeng.cn/next_1.html">prev + next</a></li>
+                      <li><a href="siblings_1.html" tppabs="http://jquery.cuishifeng.cn/siblings_1.html">prev ~ siblings</a></li>
+                      <li><a href="first_1.html" tppabs="http://jquery.cuishifeng.cn/first_1.html">:first</a></li>
+                      <li><a href="not_1.html" tppabs="http://jquery.cuishifeng.cn/not_1.html">:not(selector)</a></li>
+                      <li><a href="even.html" tppabs="http://jquery.cuishifeng.cn/even.html">:even</a></li>
+                      <li><a href="odd.html" tppabs="http://jquery.cuishifeng.cn/odd.html">:odd</a></li>
+                      <li><a href="eq_1.html" tppabs="http://jquery.cuishifeng.cn/eq_1.html">:eq(index)</a></li>
+                      <li><a href="gt.html" tppabs="http://jquery.cuishifeng.cn/gt.html">:gt(index)</a></li>
+                      <li><a href="lang.html" tppabs="http://jquery.cuishifeng.cn/lang.html">:lang</a><sup>1.9+</sup></li>
+                      <li><a href="last_1.html" tppabs="http://jquery.cuishifeng.cn/last_1.html">:last</a></li>
+                      <li><a href="lt.html" tppabs="http://jquery.cuishifeng.cn/lt.html">:lt(index)</a></li>
+                      <li><a href="header.html" tppabs="http://jquery.cuishifeng.cn/header.html">:header</a></li>
+                      <li><a href="animated.html" tppabs="http://jquery.cuishifeng.cn/animated.html">:animated</a></li>
+                      <li><a href="focus_1.html" tppabs="http://jquery.cuishifeng.cn/focus_1.html">:focus</a><sup>1.6+</sup></li>
+                      <li><a href="root.html" tppabs="http://jquery.cuishifeng.cn/root.html">:root</a><sup>1.9+</sup></li>
+                      <li><a href="target.html" tppabs="http://jquery.cuishifeng.cn/target.html">:target</a><sup>1.9+</sup></li>  
+                      <li><a href="contains.html" tppabs="http://jquery.cuishifeng.cn/contains.html">:contains(text)</a></li>
+                      <li><a href="empty_1.html" tppabs="http://jquery.cuishifeng.cn/empty_1.html">:empty</a></li>
+                      <li><a href="has_1.html" tppabs="http://jquery.cuishifeng.cn/has_1.html">:has(selector)</a></li>
+                      <li><a href="parent_1.html" tppabs="http://jquery.cuishifeng.cn/parent_1.html">:parent</a></li>
+                      <li><a href="hidden_1.html" tppabs="http://jquery.cuishifeng.cn/hidden_1.html">:hidden</a></li>
+                      <li><a href="visible.html" tppabs="http://jquery.cuishifeng.cn/visible.html">:visible</a></li>
+                      <li><a href="attributeHas.html" tppabs="http://jquery.cuishifeng.cn/attributeHas.html">[attribute]</a></li>
+                      <li><a href="attributeEquals.html" tppabs="http://jquery.cuishifeng.cn/attributeEquals.html">[attribute=value]</a></li>
+                      <li><a href="attributeNotEqual.html" tppabs="http://jquery.cuishifeng.cn/attributeNotEqual.html">[attribute!=value]</a></li>
+                      <li><a href="attributeStartsWith.html" tppabs="http://jquery.cuishifeng.cn/attributeStartsWith.html">[attribute^=value]</a></li>
+                      <li><a href="attributeEndsWith.html" tppabs="http://jquery.cuishifeng.cn/attributeEndsWith.html">[attribute$=value]</a></li>
+                      <li><a href="attributeContains.html" tppabs="http://jquery.cuishifeng.cn/attributeContains.html">[attribute*=value]</a></li>
+                      <li><a href="attributeMultiple.html" tppabs="http://jquery.cuishifeng.cn/attributeMultiple.html">[attrSel1][attrSel2][attrSelN]</a></li>
+                      <li><a href="firstChild.html" tppabs="http://jquery.cuishifeng.cn/firstChild.html">:first-child</a></li>
+                      <li><a href="firstOfType.html" tppabs="http://jquery.cuishifeng.cn/firstOfType.html">:first-of-type</a><sup>1.9+</sup></li>
+                      <li><a href="lastChild.html" tppabs="http://jquery.cuishifeng.cn/lastChild.html">:last-child</a></li>
+                      <li><a href="lastOfType.html" tppabs="http://jquery.cuishifeng.cn/lastOfType.html">:last-of-type</a><sup>1.9+</sup></li>
+                      <li><a href="nthChild.html" tppabs="http://jquery.cuishifeng.cn/nthChild.html">:nth-child</a></li>
+                      <li><a href="nthLastChild.html" tppabs="http://jquery.cuishifeng.cn/nthLastChild.html">:nth-last-child</a><sup>1.9+</sup></li>
+                      <li><a href="nthLastOfType.html" tppabs="http://jquery.cuishifeng.cn/nthLastOfType.html">:nth-last-of-type</a><sup>1.9+</sup></li>
+                      <li><a href="nthOfType.html" tppabs="http://jquery.cuishifeng.cn/nthOfType.html">:nth-of-type</a><sup>1.9+</sup></li>
+                      <li><a href="onlyChild.html" tppabs="http://jquery.cuishifeng.cn/onlyChild.html">:only-child</a></li>
+                      <li><a href="onlyOfType.html" tppabs="http://jquery.cuishifeng.cn/onlyOfType.html">:only-of-type</a><sup>1.9+</sup></li>
+                      <li><a href="input.html" tppabs="http://jquery.cuishifeng.cn/input.html">:input</a></li>
+                      <li><a href="text_1.html" tppabs="http://jquery.cuishifeng.cn/text_1.html">:text</a></li>
+                      <li><a href="password.html" tppabs="http://jquery.cuishifeng.cn/password.html">:password</a></li>
+                      <li><a href="radio.html" tppabs="http://jquery.cuishifeng.cn/radio.html">:radio</a></li>
+                      <li><a href="checkbox.html" tppabs="http://jquery.cuishifeng.cn/checkbox.html">:checkbox</a></li>
+                      <li><a href="submit_1.html" tppabs="http://jquery.cuishifeng.cn/submit_1.html">:submit</a></li>
+                      <li><a href="image.html" tppabs="http://jquery.cuishifeng.cn/image.html">:image</a></li>
+                      <li><a href="reset.html" tppabs="http://jquery.cuishifeng.cn/reset.html">:reset</a></li>
+                      <li><a href="button.html" tppabs="http://jquery.cuishifeng.cn/button.html">:button</a></li>
+                      <li><a href="file_1.html" tppabs="http://jquery.cuishifeng.cn/file_1.html">:file</a></li>
+                      <li><a href="enabled_1.html" tppabs="http://jquery.cuishifeng.cn/enabled_1.html">:enabled</a></li>
+                      <li><a href="disabled_1.html" tppabs="http://jquery.cuishifeng.cn/disabled_1.html">:disabled</a></li>
+                      <li><a href="checked_1.html" tppabs="http://jquery.cuishifeng.cn/checked_1.html">:checked</a></li>
+                      <li><a href="selected_1.html" tppabs="http://jquery.cuishifeng.cn/selected_1.html">:selected</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">Ajax</span>
+                    </a>
+                    <ul class="sub-menu">
+                      <li><a href="jQuery.Ajax.html" tppabs="http://jquery.cuishifeng.cn/jQuery.Ajax.html">$.ajax(url,[settings])</a></li>
+                      <li><a href="load.html" tppabs="http://jquery.cuishifeng.cn/load.html">load(url,[data],[callback])</a></li>
+                      <li><a href="jQuery.get.html" tppabs="http://jquery.cuishifeng.cn/jQuery.get.html">$.get(url,[data],[fn],[type])</a></li>
+                      <li><a href="jQuery.getJSON.html" tppabs="http://jquery.cuishifeng.cn/jQuery.getJSON.html">$.getJSON(url,[data],[fn])</a></li>
+                      <li><a href="jQuery.getScript.html" tppabs="http://jquery.cuishifeng.cn/jQuery.getScript.html">$.getScript(url,[callback])</a></li>
+                      <li><a href="jQuery.post.html" tppabs="http://jquery.cuishifeng.cn/jQuery.post.html">$.post(url,[data],[fn],[type])</a></li>
+                      <li><a href="ajaxComplete.html" tppabs="http://jquery.cuishifeng.cn/ajaxComplete.html">ajaxComplete(callback)</a></li>
+                      <li><a href="ajaxError.html" tppabs="http://jquery.cuishifeng.cn/ajaxError.html">ajaxError(callback)</a></li>
+                      <li><a href="ajaxSend.html" tppabs="http://jquery.cuishifeng.cn/ajaxSend.html">ajaxSend(callback)</a></li>
+                      <li><a href="ajaxStart.html" tppabs="http://jquery.cuishifeng.cn/ajaxStart.html">ajaxStart(callback)</a></li>
+                      <li><a href="ajaxStop.html" tppabs="http://jquery.cuishifeng.cn/ajaxStop.html">ajaxStop(callback)</a></li>
+                      <li><a href="ajaxSuccess.html" tppabs="http://jquery.cuishifeng.cn/ajaxSuccess.html">ajaxSuccess(callback)</a></li>
+                      <li><a href="jQuery.ajaxPrefilter.html" tppabs="http://jquery.cuishifeng.cn/jQuery.ajaxPrefilter.html">$.ajaxPrefilter([type],fn)</a></li>
+                      <li><a href="jQuery.ajaxSetup.html" tppabs="http://jquery.cuishifeng.cn/jQuery.ajaxSetup.html">$.ajaxSetup([options])</a></li>
+                      <li><a href="serialize.html" tppabs="http://jquery.cuishifeng.cn/serialize.html">serialize()</a></li>
+                      <li><a href="serializearray.html" tppabs="http://jquery.cuishifeng.cn/serializearray.html">serializearray()</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">属性</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="attr.html" tppabs="http://jquery.cuishifeng.cn/attr.html" title="attr(name|properties|key,value|fn)">attr(name|pro|key,val|fn)</a></li>
+                        <li><a href="removeAttr.html" tppabs="http://jquery.cuishifeng.cn/removeAttr.html">removeAttr(name)</a></li>
+                        <li><a href="prop.html" tppabs="http://jquery.cuishifeng.cn/prop.html" title="prop(name|properties|key,value|fn)">prop(n|p|k,v|f)</a><sup>1.6+</sup></li>
+                        <li><a href="removeProp.html" tppabs="http://jquery.cuishifeng.cn/removeProp.html">removeProp(name)</a><sup>1.6+</sup></li>
+                        <li><a href="addClass.html" tppabs="http://jquery.cuishifeng.cn/addClass.html">addClass(class|fn)</a></li>
+                        <li><a href="removeClass.html" tppabs="http://jquery.cuishifeng.cn/removeClass.html">removeClass([class|fn])</a></li>
+                        <li><a href="toggleClass.html" tppabs="http://jquery.cuishifeng.cn/toggleClass.html">toggleClass(class|fn[,sw])</a></li>
+                        <li><a href="html.html" tppabs="http://jquery.cuishifeng.cn/html.html">html([val|fn])</a></li>
+                        <li><a href="text.html" tppabs="http://jquery.cuishifeng.cn/text.html">text([val|fn])</a></li>
+                        <li><a href="val.html" tppabs="http://jquery.cuishifeng.cn/val.html">val([val|fn|arr])</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">CSS</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="css.html" tppabs="http://jquery.cuishifeng.cn/css.html" title="css(name|properties|[,value|fn])">css(name|pro|[,val|fn])</a><sup>1.9*</sup></li>
+                        <li><a href="jQuery.cssHooks.html" tppabs="http://jquery.cuishifeng.cn/jQuery.cssHooks.html">jQuery.cssHooks</a></li>      
+                        <li><a href="offset.html" tppabs="http://jquery.cuishifeng.cn/offset.html">offset([coordinates])</a></li>
+                        <li><a href="position.html" tppabs="http://jquery.cuishifeng.cn/position.html">position()</a></li>
+                        <li><a href="scrollTop.html" tppabs="http://jquery.cuishifeng.cn/scrollTop.html">scrollTop([val])</a></li>
+                        <li><a href="scrollLeft.html" tppabs="http://jquery.cuishifeng.cn/scrollLeft.html">scrollLeft([val])</a></li>
+                        <li><a href="height.html" tppabs="http://jquery.cuishifeng.cn/height.html">heigh([val|fn])</a></li>
+                        <li><a href="width.html" tppabs="http://jquery.cuishifeng.cn/width.html">width([val|fn])</a></li>
+                        <li><a href="innerHeight.html" tppabs="http://jquery.cuishifeng.cn/innerHeight.html">innerHeight()</a></li>
+                        <li><a href="innerWidth.html" tppabs="http://jquery.cuishifeng.cn/innerWidth.html">innerWidth()</a></li>
+                        <li><a href="outerHeight.html" tppabs="http://jquery.cuishifeng.cn/outerHeight.html">outerHeight([soptions])</a></li>
+                        <li><a href="outerWidth.html" tppabs="http://jquery.cuishifeng.cn/outerWidth.html">outerWidth([options])</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">文档处理</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="append.html" tppabs="http://jquery.cuishifeng.cn/append.html">append(content|fn)</a></li>
+                        <li><a href="appendTo.html" tppabs="http://jquery.cuishifeng.cn/appendTo.html">appendTo(content)</a></li>
+                        <li><a href="prepend.html" tppabs="http://jquery.cuishifeng.cn/prepend.html">prepend(content|fn)</a></li>
+                        <li><a href="prependTo.html" tppabs="http://jquery.cuishifeng.cn/prependTo.html">prependTo(content)</a></li>
+                        <li><a href="after.html" tppabs="http://jquery.cuishifeng.cn/after.html">after(content|fn)</a></li>
+                        <li><a href="before.html" tppabs="http://jquery.cuishifeng.cn/before.html">before(content|fn)</a></li>
+                        <li><a href="insertAfter.html" tppabs="http://jquery.cuishifeng.cn/insertAfter.html">insertAfter(content)</a></li>
+                        <li><a href="insertBefore.html" tppabs="http://jquery.cuishifeng.cn/insertBefore.html">insertBefore(content)</a></li>
+                        <li><a href="wrap.html" tppabs="http://jquery.cuishifeng.cn/wrap.html" title="wrap(html|element|fn)">wrap(html|ele|fn)</a></li>
+                        <li><a href="unwrap.html" tppabs="http://jquery.cuishifeng.cn/unwrap.html">unwrap()</a></li>
+                        <li><a href="wrapAll.html" tppabs="http://jquery.cuishifeng.cn/wrapAll.html" title="wrapall(html|element)">wrapall(html|ele)</a></li>
+                        <li><a href="wrapInner.html" tppabs="http://jquery.cuishifeng.cn/wrapInner.html" title="wrapInner(html|element|fn)">wrapInner(html|ele|fn)</a></li>
+                        <li><a href="replaceWith.html" tppabs="http://jquery.cuishifeng.cn/replaceWith.html">replaceWith(content|fn)</a></li>
+                        <li><a href="replaceAll.html" tppabs="http://jquery.cuishifeng.cn/replaceAll.html">replaceAll(selector)</a></li>
+                        <li><a href="empty.html" tppabs="http://jquery.cuishifeng.cn/empty.html">empty()</a></li>
+                        <li><a href="remove.html" tppabs="http://jquery.cuishifeng.cn/remove.html">remove([expr])</a></li>
+                        <li><a href="detach.html" tppabs="http://jquery.cuishifeng.cn/detach.html">detach([expr])</a></li>
+                        <li><a href="clone.html" tppabs="http://jquery.cuishifeng.cn/clone.html">clone([Even[,deepEven]])</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">筛选</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="eq.html" tppabs="http://jquery.cuishifeng.cn/eq.html">eq(index|-index)</a></li>
+                        <li><a href="first.html" tppabs="http://jquery.cuishifeng.cn/first.html">first()</a></li>
+                        <li><a href="last.html" tppabs="http://jquery.cuishifeng.cn/last.html">last()</a></li>
+                        <li><a href="hasClass.html" tppabs="http://jquery.cuishifeng.cn/hasClass.html">hasClass(class)</a></li>
+                        <li><a href="filter.html" tppabs="http://jquery.cuishifeng.cn/filter.html" title="filter(expr|object|element|fn)">filter(expr|obj|ele|fn)</a></li>
+                        <li><a href="is.html" tppabs="http://jquery.cuishifeng.cn/is.html" title="is(expr|object|element|fn)">is(expr|obj|ele|fn)</a><sup>1.6*</sup></li>
+                        <li><a href="map.html" tppabs="http://jquery.cuishifeng.cn/map.html">map(callback)</a></li>
+                        <li><a href="has.html" tppabs="http://jquery.cuishifeng.cn/has.html" title="has(expr|element)">has(expr|ele)</a></li>
+                        <li><a href="not.html" tppabs="http://jquery.cuishifeng.cn/not.html" title="not(expr|element|fn)">not(expr|ele|fn)</a></li>
+                        <li><a href="slice.html" tppabs="http://jquery.cuishifeng.cn/slice.html" title="slice(start,[end])">slice(start,[end])</a></li>
+                        <li><a href="children.html" tppabs="http://jquery.cuishifeng.cn/children.html">children([expr])</a></li>
+                        <li><a href="closest.html" tppabs="http://jquery.cuishifeng.cn/closest.html" title="closest(expr,[context]|object|element)">closest(e|o|e)</a><sup>1.7*</sup></li>
+                        <li><a href="find.html" tppabs="http://jquery.cuishifeng.cn/find.html" title="find(expr|object|element)">find(e|o|e)</a><sup>1.6*</sup></li>
+                        <li><a href="next.html" tppabs="http://jquery.cuishifeng.cn/next.html">next([expr])</a></li>
+                        <li><a href="nextAll.html" tppabs="http://jquery.cuishifeng.cn/nextAll.html">nextAll([expr])</a></li>
+                        <li><a href="nextUntil.html" tppabs="http://jquery.cuishifeng.cn/nextUntil.html" title="nextUntil([expr|element][,filter])">nextUntil([e|e][,f])</a><sup>1.6*</sup></li>
+                        <li><a href="offsetParent.html" tppabs="http://jquery.cuishifeng.cn/offsetParent.html">offsetParent()</a></li>
+                        <li><a href="parent.html" tppabs="http://jquery.cuishifeng.cn/parent.html">parent([expr])</a></li>
+                        <li><a href="parents.html" tppabs="http://jquery.cuishifeng.cn/parents.html">parents([expr])</a></li>
+                        <li><a href="parentsUntil.html" tppabs="http://jquery.cuishifeng.cn/parentsUntil.html" title="parentsUntil([expr|element][,filter])">parentsUntil([e|e][,f])</a><sup>1.6*</sup></li>
+                        <li><a href="prev.html" tppabs="http://jquery.cuishifeng.cn/prev.html">prev([expr])</a></li>
+                        <li><a href="prevAll.html" tppabs="http://jquery.cuishifeng.cn/prevAll.html">prevall([expr])</a></li>
+                        <li><a href="prevUntil.html" tppabs="http://jquery.cuishifeng.cn/prevUntil.html" title="prevUntil([expr|element][,filter])">prevUntil([e|e][,f])</a><sup>1.6*</sup></li>
+                        <li><a href="siblings.html" tppabs="http://jquery.cuishifeng.cn/siblings.html">siblings([expr])</a></li>
+                        <li><a href="add.html" tppabs="http://jquery.cuishifeng.cn/add.html" title="add(expr|element|html|object[,context])">add(e|e|h|o[,c])</a></li>
+                        <li><a href="andSelf.html" tppabs="http://jquery.cuishifeng.cn/andSelf.html">andSelf()</a></li>
+                        <li><a href="addBack.html" tppabs="http://jquery.cuishifeng.cn/addBack.html">addBack()</a><sup>1.9+</sup></li>
+                        <li><a href="contents.html" tppabs="http://jquery.cuishifeng.cn/contents.html">contents()</a></li>
+                        <li><a href="end.html" tppabs="http://jquery.cuishifeng.cn/end.html">end()</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">事件</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="ready.html" tppabs="http://jquery.cuishifeng.cn/ready.html">ready(fn)</a></li>
+                        <li><a href="on.html" tppabs="http://jquery.cuishifeng.cn/on.html" title="on(events,[selector],[data],fn)">on(eve,[sel],[data],fn)</a><sup>1.7+</sup></li>
+                        <li><a href="off.html" tppabs="http://jquery.cuishifeng.cn/off.html" title="off(events,[selector],[data],fn)">off(eve,[sel],[fn])</a><sup>1.7+</sup></li>
+                        <li><a href="bind.html" tppabs="http://jquery.cuishifeng.cn/bind.html">bind(type,[data],fn)</a></li>
+                        <li><a href="one.html" tppabs="http://jquery.cuishifeng.cn/one.html">one(type,[data],fn)</a></li>
+                        <li><a href="trigger.html" tppabs="http://jquery.cuishifeng.cn/trigger.html">trigger(type,[data])</a></li>
+                        <li><a href="triggerHandler.html" tppabs="http://jquery.cuishifeng.cn/triggerHandler.html">triggerHandler(type, [data])</a></li>
+                        <li><a href="unbind.html" tppabs="http://jquery.cuishifeng.cn/unbind.html" title="unbind(type,[data|fn])">unbind(t,[d|f])</a></li>
+                        <li><a href="live.html" tppabs="http://jquery.cuishifeng.cn/live.html"><del>live(type,[data],fn)</del></a><sup>1.7-</sup></li>
+                        <li><a href="die.html" tppabs="http://jquery.cuishifeng.cn/die.html"><del>die(type,[fn])</del></a><sup>1.7-</sup></li>
+                        <li><a href="delegate.html" tppabs="http://jquery.cuishifeng.cn/delegate.html" title="delegate(selector,[type],[data],fn)">delegate(s,[t],[d],fn)</a></li>
+                        <li><a href="undelegate.html" tppabs="http://jquery.cuishifeng.cn/undelegate.html" title="undelegate([selector,[type],fn])">undelegate([s,[t],fn])</a><sup>1.6*</sup></li>
+                        <li><a href="hover.html" tppabs="http://jquery.cuishifeng.cn/hover.html">hover([over,]out)</a></li>
+                        <li><a href="toggle.html" tppabs="http://jquery.cuishifeng.cn/toggle.html">toggle(fn, fn2, [fn3, fn4, ...])</a></li>
+                        <li><a href="blur.html" tppabs="http://jquery.cuishifeng.cn/blur.html">blur([[data],fn])</a></li>
+                        <li><a href="change.html" tppabs="http://jquery.cuishifeng.cn/change.html">change([[data],fn])</a></li>
+                        <li><a href="click.html" tppabs="http://jquery.cuishifeng.cn/click.html">click([[data],fn])</a></li>
+                        <li><a href="dblclick_1.html" tppabs="http://jquery.cuishifeng.cn/dblclick_1.html">dblclick([[data],fn])</a></li>
+                        <li><a href="error.html" tppabs="http://jquery.cuishifeng.cn/error.html">error([[data],fn])</a></li>
+                        <li><a href="focus.html" tppabs="http://jquery.cuishifeng.cn/focus.html">focus([[data],fn])</a></li>
+                        <li><a href="focusin.html" tppabs="http://jquery.cuishifeng.cn/focusin.html">focusin([data],fn)</a></li>
+                        <li><a href="focusout.html" tppabs="http://jquery.cuishifeng.cn/focusout.html">focusout([data],fn)</a></li>
+                        <li><a href="keydown.html" tppabs="http://jquery.cuishifeng.cn/keydown.html">keydown([[data],fn])</a></li>
+                        <li><a href="keypress.html" tppabs="http://jquery.cuishifeng.cn/keypress.html">keypress([[data],fn])</a></li>
+                        <li><a href="keyup.html" tppabs="http://jquery.cuishifeng.cn/keyup.html">keyup([[data],fn])</a></li>
+                        <li><a href="mousedown.html" tppabs="http://jquery.cuishifeng.cn/mousedown.html">mousedown([[data],fn])</a></li>
+                        <li><a href="mouseenter.html" tppabs="http://jquery.cuishifeng.cn/mouseenter.html">mouseenter([[data],fn])</a></li>
+                        <li><a href="mouseleave.html" tppabs="http://jquery.cuishifeng.cn/mouseleave.html">mouseleave([[data],fn])</a></li>
+                        <li><a href="mousemove.html" tppabs="http://jquery.cuishifeng.cn/mousemove.html">mousemove([[data],fn])</a></li>
+                        <li><a href="mouseout.html" tppabs="http://jquery.cuishifeng.cn/mouseout.html">mouseout([[data],fn])</a></li>
+                        <li><a href="mouseover.html" tppabs="http://jquery.cuishifeng.cn/mouseover.html">mouseover([[data],fn])</a></li>
+                        <li><a href="mouseup.html" tppabs="http://jquery.cuishifeng.cn/mouseup.html">mouseup([[data],fn])</a></li>
+                        <li><a href="resize.html" tppabs="http://jquery.cuishifeng.cn/resize.html">resize([[data],fn])</a></li>
+                        <li><a href="scroll.html" tppabs="http://jquery.cuishifeng.cn/scroll.html">scroll([[data],fn])</a></li>
+                        <li><a href="select.html" tppabs="http://jquery.cuishifeng.cn/select.html">select([[data],fn])</a></li>
+                        <li><a href="submit.html" tppabs="http://jquery.cuishifeng.cn/submit.html">submit([[data],fn])</a></li>
+                        <li><a href="unload.html" tppabs="http://jquery.cuishifeng.cn/unload.html">unload([[data],fn])</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">效果</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="show.html" tppabs="http://jquery.cuishifeng.cn/show.html" title="show([speed,[easing],[fn]])">show([s,[e],[fn]])</a></li>
+                        <li><a href="hide.html" tppabs="http://jquery.cuishifeng.cn/hide.html" title="hide([speed,[easing],[fn]])">hide([s,[e],[fn]])</a></li>
+                        <li><a href="toggle.html" tppabs="http://jquery.cuishifeng.cn/toggle.html" title="toggle([speed],[easing],[fn])">toggle([s],[e],[fn])</a></li>
+                        <li><a href="slideDown.html" tppabs="http://jquery.cuishifeng.cn/slideDown.html" title="slideDown([speed],[easing],[fn])">slideDown([s],[e],[fn])</a></li>
+                        <li><a href="slideUp.html" tppabs="http://jquery.cuishifeng.cn/slideUp.html" title="slideUp([speed,[easing],[fn]])">slideUp([s,[e],[fn]])</a></li>
+                        <li><a href="slideToggle.html" tppabs="http://jquery.cuishifeng.cn/slideToggle.html" title="slideToggle([speed],[easing],[fn])">slideToggle([s],[e],[fn])</a></li>
+                        <li><a href="fadeIn.html" tppabs="http://jquery.cuishifeng.cn/fadeIn.html" title="fadeIn([speed],[easing],[fn])">fadeIn([s],[e],[fn])</a></li>
+                        <li><a href="fadeOut.html" tppabs="http://jquery.cuishifeng.cn/fadeOut.html" title="fadeOut([speed],[easing],[fn])">fadeOut([s],[e],[fn])</a></li>
+                        <li><a href="fadeTo.html" tppabs="http://jquery.cuishifeng.cn/fadeTo.html" title="fadeTo([[speed],opacity,[easing],[fn]])">fadeTo([[s],o,[e],[fn]])</a></li>
+                        <li><a href="fadeToggle.html" tppabs="http://jquery.cuishifeng.cn/fadeToggle.html" title="fadeToggle([speed,[easing],[fn]])">fadeToggle([s,[e],[fn]])</a></li>
+                        <li><a href="animate.html" tppabs="http://jquery.cuishifeng.cn/animate.html" title="animate(params,[speed],[easing],[fn])">animate(p,[s],[e],[fn])</a><sup>1.8*</sup></li>
+                        <li><a href="stop.html" tppabs="http://jquery.cuishifeng.cn/stop.html" title="stop([clearQueue],[jumpToEnd])">stop([c],[j])</a><sup>1.7*</sup></li>
+                        <li><a href="delay.html" tppabs="http://jquery.cuishifeng.cn/delay.html" title="delay(duration,[queueName])">delay(d,[q])</a></li>
+                        <li><a href="finish.html" tppabs="http://jquery.cuishifeng.cn/finish.html" title="finish([queue])">finish([queue])</a><sup>1.9+</sup></li>
+                        <li><a href="jQuery.fx.off.html" tppabs="http://jquery.cuishifeng.cn/jQuery.fx.off.html">jQuery.fx.off</a></li>
+                        <li><a href="jQuery.fx.interval.html" tppabs="http://jquery.cuishifeng.cn/jQuery.fx.interval.html">jQuery.fx.interval</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">工具</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="jQuery.support.html" tppabs="http://jquery.cuishifeng.cn/jQuery.support.html">$.support</a></li>
+                        <li><a href="jQuery.browser.html" tppabs="http://jquery.cuishifeng.cn/jQuery.browser.html"><del>$.browser</del></a><sup>1.9-</sup></li>
+                        <li><a href="jQuery.browser.version.html" tppabs="http://jquery.cuishifeng.cn/jQuery.browser.version.html">$.browser.version</a></li>
+                        <li><a href="jQuery.boxModel.html" tppabs="http://jquery.cuishifeng.cn/jQuery.boxModel.html"><del>$.boxModel</del></a></li>
+                        <li><a href="jQuery.each.html" tppabs="http://jquery.cuishifeng.cn/jQuery.each.html">$.each(object,[callback])</a></li>
+                        <li><a href="jQuery.extend.html" tppabs="http://jquery.cuishifeng.cn/jQuery.extend.html">$.extend([d],tgt,obj1,[objN])</a></li>
+                        <li><a href="jQuery.grep.html" tppabs="http://jquery.cuishifeng.cn/jQuery.grep.html">$.grep(array,fn,[invert])</a></li>
+                        <li><a href="jQuery.sub.html" tppabs="http://jquery.cuishifeng.cn/jQuery.sub.html"><del>$.sub()</del></a><sup>1.9-</sup></li>
+                        <li><a href="jQuery.when.html" tppabs="http://jquery.cuishifeng.cn/jQuery.when.html">$.when(deferreds)</a></li>
+                        <li><a href="jQuery.makeArray.html" tppabs="http://jquery.cuishifeng.cn/jQuery.makeArray.html">$.makeArray(obj)</a></li>
+                        <li><a href="jQuery.map.html" tppabs="http://jquery.cuishifeng.cn/jQuery.map.html">$.map(arr|obj,callback)</a><sup>1.6*</sup></li>
+                        <li><a href="jQuery.inArray.html" tppabs="http://jquery.cuishifeng.cn/jQuery.inArray.html">$.inArray(val,arr,[from])</a></li>
+                        <li><a href="jQuery.toArray.html" tppabs="http://jquery.cuishifeng.cn/jQuery.toArray.html">$.toArray()</a></li>
+                        <li><a href="jQuery.merge.html" tppabs="http://jquery.cuishifeng.cn/jQuery.merge.html">$.merge(first,second)</a></li>
+                        <li><a href="jQuery.unique.html" tppabs="http://jquery.cuishifeng.cn/jQuery.unique.html">$.unique(array)</a></li>
+                        <li><a href="jQuery.parseJSON.html" tppabs="http://jquery.cuishifeng.cn/jQuery.parseJSON.html">$.parseJSON(json)</a></li>
+                        <li><a href="jQuery.parseXML.html" tppabs="http://jquery.cuishifeng.cn/jQuery.parseXML.html">$.parseXML(data)</a></li>
+                        <li><a href="jQuery.noop.html" tppabs="http://jquery.cuishifeng.cn/jQuery.noop.html">$.noop</a></li>
+                        <li><a href="jQuery.proxy.html" tppabs="http://jquery.cuishifeng.cn/jQuery.proxy.html">$.proxy(function,context)</a></li>
+                        <li><a href="jQuery.contains.html" tppabs="http://jquery.cuishifeng.cn/jQuery.contains.html" title="$.contains(container,contained)">$.contains(c,c)</a></li>
+                        <li><a href="jQuery.type.html" tppabs="http://jquery.cuishifeng.cn/jQuery.type.html">$.type(obj)</a></li>
+                        <li><a href="jQuery.isArray.html" tppabs="http://jquery.cuishifeng.cn/jQuery.isArray.html">$.isArray(obj)</a></li>
+                        <li><a href="jQuery.isFunction.html" tppabs="http://jquery.cuishifeng.cn/jQuery.isFunction.html">$.isFunction(obj)</a></li>
+                        <li><a href="jQuery.isEmptyObject.html" tppabs="http://jquery.cuishifeng.cn/jQuery.isEmptyObject.html">$.isEmptyObject(obj)</a></li>
+                        <li><a href="jQuery.isPlainObject.html" tppabs="http://jquery.cuishifeng.cn/jQuery.isPlainObject.html">$.isPlainObject(obj)</a></li>
+                        <li><a href="jQuery.isWindow.html" tppabs="http://jquery.cuishifeng.cn/jQuery.isWindow.html">$.isWindow(obj)</a></li>
+                        <li><a href="jQuery.isNumeric.html" tppabs="http://jquery.cuishifeng.cn/jQuery.isNumeric.html">$.isNumeric(value)</a><sup>1.7+</sup></li>
+                        <li><a href="jQuery.trim.html" tppabs="http://jquery.cuishifeng.cn/jQuery.trim.html">$.trim(str)</a></li>
+                        <li><a href="jQuery.param.html" tppabs="http://jquery.cuishifeng.cn/jQuery.param.html">$.param(obj,[traditional])</a></li>
+                        <li><a href="jQuery.error.html" tppabs="http://jquery.cuishifeng.cn/jQuery.error.html">$.error(message)</a></li>
+                        <li><a href="jquery.html" tppabs="http://jquery.cuishifeng.cn/jquery.html">$.fn.jquery</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">事件对象</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="event.currentTarget.html" tppabs="http://jquery.cuishifeng.cn/event.currentTarget.html">eve.currentTarget</a></li>
+                        <li><a href="event.data.html" tppabs="http://jquery.cuishifeng.cn/event.data.html">eve.data</a></li>
+                        <li><a href="event.delegateTarget.html" tppabs="http://jquery.cuishifeng.cn/event.delegateTarget.html">eve.delegateTarget</a><sup>1.7+</sup></li>
+                        <li><a href="event.isDefaultPrevented.html" tppabs="http://jquery.cuishifeng.cn/event.isDefaultPrevented.html">eve.isDefaultPrevented()</a></li>
+                        <li><a href="event.isImmediatePropagationStopped.html" tppabs="http://jquery.cuishifeng.cn/event.isImmediatePropagationStopped.html" title="event.isImmediatePropagationStopped">eve.isImmediatePropag...()</a></li>
+                        <li><a href="event.isPropagationStopped.html" tppabs="http://jquery.cuishifeng.cn/event.isPropagationStopped.html">eve.isPropagationStopped()</a></li>
+                        <li><a href="event.namespace.html" tppabs="http://jquery.cuishifeng.cn/event.namespace.html">eve.namespace</a></li>
+                        <li><a href="event.pageX.html" tppabs="http://jquery.cuishifeng.cn/event.pageX.html">eve.pageX</a></li>
+                        <li><a href="event.pageY.html" tppabs="http://jquery.cuishifeng.cn/event.pageY.html">eve.pageY</a></li>
+                        <li><a href="event.preventDefault.html" tppabs="http://jquery.cuishifeng.cn/event.preventDefault.html">eve.preventDefault()</a></li>
+                        <li><a href="event.relatedTarget.html" tppabs="http://jquery.cuishifeng.cn/event.relatedTarget.html">eve.relatedTarget</a></li>
+                        <li><a href="event.result.html" tppabs="http://jquery.cuishifeng.cn/event.result.html">eve.result</a></li>
+                        <li><a href="event.stopImmediatePropagation.html" tppabs="http://jquery.cuishifeng.cn/event.stopImmediatePropagation.html" title="event.stopImmediatePropagation">eve.stopImmediatePro...()</a></li>
+                        <li><a href="event.stopPropagation.html" tppabs="http://jquery.cuishifeng.cn/event.stopPropagation.html">eve.stopPropagation()</a></li>
+                        <li><a href="event.target.html" tppabs="http://jquery.cuishifeng.cn/event.target.html">eve.target</a></li>
+                        <li><a href="event.timeStamp.html" tppabs="http://jquery.cuishifeng.cn/event.timeStamp.html">eve.timeStamp</a></li>
+                        <li><a href="event.type.html" tppabs="http://jquery.cuishifeng.cn/event.type.html">eve.type</a></li>
+                        <li><a href="event.which.html" tppabs="http://jquery.cuishifeng.cn/event.which.html">eve.which</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">延迟对象</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="deferred.done.html" tppabs="http://jquery.cuishifeng.cn/deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
+                        <li><a href="deferred.fail.html" tppabs="http://jquery.cuishifeng.cn/deferred.fail.html">def.fail(failCallbacks)</a></li>
+                        <li><a href="deferred.isRejected.html" tppabs="http://jquery.cuishifeng.cn/deferred.isRejected.html"><del>def.isRejected()</del></a><sup>1.7-</sup></li>
+                        <li><a href="deferred.isResolved.html" tppabs="http://jquery.cuishifeng.cn/deferred.isResolved.html"><del>def.isResolved()</del></a><sup>1.7-</sup></li>
+                        <li><a href="deferred.reject.html" tppabs="http://jquery.cuishifeng.cn/deferred.reject.html">def.reject(args)</a></li>
+                        <li><a href="deferred.rejectWith.html" tppabs="http://jquery.cuishifeng.cn/deferred.rejectWith.html" title="deferred.rejectWith(context,[args])">def.rejectWith(c,[a])</a></li>
+                        <li><a href="deferred.resolve.html" tppabs="http://jquery.cuishifeng.cn/deferred.resolve.html">def.resolve(args)</a></li>
+                        <li><a href="deferred.resolveWith.html" tppabs="http://jquery.cuishifeng.cn/deferred.resolveWith.html" title="deferred.resolveWith(context,[args])">def.resolveWith(c,[a])</a></li>
+                        <li><a href="deferred.then.html" tppabs="http://jquery.cuishifeng.cn/deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d[,f][,p])</a><sup>1.8*</sup></li>
+                        <li><a href="deferred.promise.html" tppabs="http://jquery.cuishifeng.cn/deferred.promise.html" title="deferred.promise([type],[target])">def.promise([ty],[ta])</a><sup>1.6+</sup></li>
+                        <li><a href="deferred.pipe.html" tppabs="http://jquery.cuishifeng.cn/deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])"><del>def.pipe([d],[f],[p])</del></a><sup>1.8-</sup></li>
+                        <li><a href="deferred.always.html" tppabs="http://jquery.cuishifeng.cn/deferred.always.html" title="deferred.always(alwaysCallbacks,[alwaysCallbacks])">def.always(al,[al])</a><sup>1.6+</sup></li>
+                        <li><a href="deferred.notify.html" tppabs="http://jquery.cuishifeng.cn/deferred.notify.html">def.notify(args)</a><sup>1.7+</sup></li>
+                        <li><a href="deferred.notifyWith.html" tppabs="http://jquery.cuishifeng.cn/deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
+                        <li><a href="deferred.progress.html" tppabs="http://jquery.cuishifeng.cn/deferred.progress.html" title="deferred.progress(progressCallbacks)">def.progress(proCal)</a><sup>1.7+</sup></li>
+                        <li><a href="deferred.state.html" tppabs="http://jquery.cuishifeng.cn/deferred.state.html">def.state()</a><sup>1.7+</sup></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">回调函数</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="callbacks.add.html" tppabs="http://jquery.cuishifeng.cn/callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.disable.html" tppabs="http://jquery.cuishifeng.cn/callbacks.disable.html">cal.disable()</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.empty.html" tppabs="http://jquery.cuishifeng.cn/callbacks.empty.html">cal.empty()</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.fire.html" tppabs="http://jquery.cuishifeng.cn/callbacks.fire.html">cal.fire(arguments)</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.fired.html" tppabs="http://jquery.cuishifeng.cn/callbacks.fired.html">cal.fired()</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.fireWith.html" tppabs="http://jquery.cuishifeng.cn/callbacks.fireWith.html" title="callbacks.fireWith([context] [, args])">cal.fireWith([c] [,a])</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.has.html" tppabs="http://jquery.cuishifeng.cn/callbacks.has.html">cal.has(callback)</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.lock.html" tppabs="http://jquery.cuishifeng.cn/callbacks.lock.html">cal.lock()</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.locked.html" tppabs="http://jquery.cuishifeng.cn/callbacks.locked.html">cal.locked()</a><sup>1.7+</sup></li>
+                        <li><a href="callbacks.remove.html" tppabs="http://jquery.cuishifeng.cn/callbacks.remove.html">cal.remove(callbacks)</a><sup>1.7+</sup></li>
+                        <li><a href="jQuery.callbacks.html" tppabs="http://jquery.cuishifeng.cn/jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a class="menu-title" href="javascript:void(0);">
+                        <i class="fa fa-leaf"></i> <span class="nav-label">其它</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="regexp.html" tppabs="http://jquery.cuishifeng.cn/regexp.html">正则表达式</a></li>
+                        <li><a href="html5.html" tppabs="http://jquery.cuishifeng.cn/html5.html">HTML5速查表</a></li>
+                        <li><a href="source.html" tppabs="http://jquery.cuishifeng.cn/source.html">源码下载</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </aside> <!-- left aside end -->
+
+
+<script src="js/jquery-2.1.3.js" tppabs="http://jquery.cuishifeng.cn/js/jquery-2.1.3.js"></script>
+<script src="js/jquery.autocomplete.js" tppabs="http://jquery.cuishifeng.cn/js/jquery.autocomplete.js"></script>
+<script src="js/jquery.mCustomScrollbar.js" tppabs="http://jquery.cuishifeng.cn/js/jquery.mCustomScrollbar.js"></script>
+<script src="js/shifone.js" tppabs="http://jquery.cuishifeng.cn/js/shifone.js"></script>
+
+<div class="tongji">
+  <script type="text/javascript">
+  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbbcf1c00c855ede39d5ad2eac08d2ab7' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+</div>
+
+</body>
+</html>

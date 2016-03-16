@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/show_sort.css" type="text/css">
+	<title>展厅分类</title>
+</head>
+<body>
+<!-- 头部部分开始 -->
+<header>
+<a href="javascript:history.go(-1);" class="return-btn"></a>
+<h3>展厅分类</h3>	
+</header>
+<!-- 头部部分结束 -->
+<!-- 展厅分类部分开始-->
+<section class="show_sort">
+	<div class="sort-left">
+		<ul id="ul">
+			<li>
+				<span>医学影像产品</span>
+				<div class="box">
+					<a href="understand.html">医学影像产品</a>
+					<a href="http://www.baidu.com">医学影像产品</a>
+					<a href="http://www.baidu.com">医学影像产品</a>
+					<a href="http://www.baidu.com">医学影像产品</a>
+					<a href="http://www.baidu.com">医学影像产品</a>
+					<a href="http://www.baidu.com">医学影像产品</a>
+					<a href="http://www.baidu.com">医学影像产品</a>
+ 				</div>
+				 
+			</li>
+			<li>
+				<span>心血管产品</span>
+				 <div class="box">
+	 				<a href="http://www.baidu.com">心血管产品</a>
+					<a href="http://www.baidu.com">心血管产品</a>
+					<a href="http://www.baidu.com">心血管产品</a>
+					<a href="http://www.baidu.com">心血管产品</a>
+					<a href="http://www.baidu.com">心血管产品</a>
+					<a href="http://www.baidu.com">心血管产品</a>
+					<a href="http://www.baidu.com">心血管产品</a>
+ 				</div>
+
+			</li>
+			<li>
+				<span>超声产品</span>
+			 	<div class="box">
+					<a href="">超声产品</a>
+					<a href="">超声产品</a>
+					<a href="">超声产品</a>
+					<a href="">超声产品</a>
+					<a href="">超声产品</a>
+					<a href="">超声产品</a>
+				</div>
+ 			</li>
+ 			<li>
+				<span>血管成像仪</span>
+			 	<div class="box">
+					<a href="">血管成像仪</a>
+					<a href="">血管成像仪</a>
+					<a href="">血管成像仪</a>
+					<a href="">血管成像仪</a>
+					<a href="">血管成像仪</a>
+					<a href="">血管成像仪</a>
+				</div>
+ 			</li>
+ 			<li>
+				<span>疤痕修复产品</span>
+			 	<div class="box">
+					<a href="">疤痕修复产品</a>
+					<a href="">疤痕修复产品</a>
+					<a href="">疤痕修复产品</a>
+					<a href="">疤痕修复产品</a>
+					<a href="">疤痕修复产品</a>
+					<a href="">疤痕修复产品</a>
+				</div>
+ 			</li>
+ 			<li>
+				<span>医学美容产品</span>
+			 	<div class="box">
+					<a href="">医学美容产品</a>
+					<a href="">医学美容产品</a>
+					<a href="">医学美容产品</a>
+					<a href="">医学美容产品</a>
+					<a href="">医学美容产品</a>
+					<a href="">医学美容产品</a>
+				</div>
+ 			</li>
+		 
+		</ul>
+ 	</div>
+	<div class="sort-right"></div>
+ </section>
+<!-- 展厅分类部分结束 -->
+	<script src="js/jquery.1.4.2-min.js"></script>
+	<script>
+		$("#ul li").click(function(){
+  			$(".list .box").hide();
+  			$("#ul li").attr("class","list");
+			$("#ul li").removeClass("list");
+ 			$(this).addClass("list");
+ 			$(".list .box").show();
+ 		})
+  
+	</script>
+</body>
+</html>

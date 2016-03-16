@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>尚佳商城</title>
+		<link rel="stylesheet" type="text/css" href="css/all.css" />
+	</head>
+	<body>
+		<div class="main" style="background-color: #ffffff;">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+				<span>注册</span>
+				<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+			</div>
+			<!--内容-->
+			<div class="lodin-div">
+				<a href="login.html" style="background-color: #ffffff;color:#933207;">登录</a>
+				<a href="register.html">注册</a>
+			</div>
+			<p class="login-title">用户名：</p>
+			<p><input class="login-input" type="text" name="user-name" id="userName" placeholder="&nbsp;&nbsp;手机号/邮箱" required autofocus  pattern="{3,16}"/></p>
+			<p class="login-title">密&nbsp;码：</p>
+			<input class="login-input" type="password" name="password" id="passWord" required placeholder="&nbsp;&nbsp;用户密码" />
+			<p class="login-title">确认密码：</p>
+			<input class="login-input" type="password" name="password-confirm" id="passwordconfirm" required placeholder="&nbsp;&nbsp;确认密码" />
+			<p class="login-title">邮&nbsp;箱：</p>
+			<input class="login-input" type="email" name="email" id="email" required placeholder="&nbsp;&nbsp;邮箱" />
+			<p class="login-button"><input type="button"  value="注册" class="log"  /></p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+</script>
+

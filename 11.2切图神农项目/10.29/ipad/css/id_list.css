@@ -1,0 +1,67 @@
+a:visited{
+	color: #000 !important;
+}
+.list{
+	position: relative;
+   }
+.list h3{
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.8rem;
+	color: #ee7700;
+	font-weight: bold;
+	display: block;
+	padding-left: 20px;
+ }
+.list ul{
+	width: 100%;
+	position: relative;
+	display: block;
+}
+.list ul li{
+	height:40px;
+	line-height: 40px;
+	font-size: 1.4rem;
+	border-bottom:1px solid #c4c4c4;
+ 	padding-left: 20px;
+
+
+}
+.list ul li:hover{
+	border-bottom:1px solid #ee7700;
+	background: #ee7700;
+}
+.list ul li:active a{
+ 	color: white;
+}
+.list ul li a{
+	display: block;
+	height: 100%;
+	width: 100%;
+
+}
+.list ul li:hover a{
+ 	color: white;
+}
+.page{
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+	text-align: right;
+	font-size: 1.4rem !important;
+	padding-left:20px;
+}
+.page a{
+	display: block;
+	float: right;
+	font-size: 20px;
+	font-size: 1.4rem !important;
+	margin:0 10px;
+}
+.page a:hover{
+	color:#ee7700 
+}
+.page a:visited{
+	color: #000 !important;
+}
+ 

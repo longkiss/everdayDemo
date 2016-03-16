@@ -1,0 +1,68 @@
+.show_sort{
+	position: relative;
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+}
+.show_sort .sort-left{
+	height: auto;
+	width: 50%;
+}
+.show_sort .sort-left ul{
+	height: auto;
+	width: 100%;
+
+}
+.show_sort .sort-left ul li{
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.4px;
+	background: #474747;
+ 	border-bottom: 1px solid #aaaaaa;
+ 	position: relative;
+}
+.show_sort .sort-left ul li span{
+	display: block;
+	padding-left: 10px;
+	color:#9b9b9b;
+	font-size: 1.4rem;
+/*	background: url(../images/icon02.jpg) no-repeat 95% center;
+	background-size:5px 5px;*/ 
+
+ }
+.show_sort .sort-left ul li a:hover{
+	/*color: white;
+	background: black;*/
+}
+.show_sort .sort-left ul .list{
+	background: black;
+}
+.show_sort .sort-left ul .list span{
+	color:white;
+	background: url(../images/icon01.jpg) no-repeat 95% center;
+	background-size:5px 5px; 
+}
+.show_sort .sort-left ul li .box{
+	position: absolute;
+	background: white;
+	left:100%;
+	top:0;
+	height: auto;
+	line-height: 50px;
+	width: 100%;
+	display: none;
+ }
+ 
+.show_sort .sort-left ul li .box a{
+	height: 40px;
+	border-bottom: 1px solid #aaaaaa;
+	display: block;
+	color:black;
+	padding-left: 10px;
+	font-size: 1.4rem;
+ 	box-flex:1;
+	-webkit-box-flex:1;
+ }
+.show_sort .sort-left ul li .box a:hover{
+ 	color: #ee7700;
+}

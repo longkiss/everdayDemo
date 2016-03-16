@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+header{ position:fixed; top:0}
+.content{ width:100%; height:auto; margin:100px auto 0 auto;}
+.content form{ width:96%; height:auto;margin:0 auto; margin-top:50px; margin-left:5%}
+.content form p{ width:100%; height:35px; margin:0 auto;}
+
+.content form .p1{margin-left:30px}
+.content form .p2{margin-top:10px; margin-left:30px}
+.content form p input{ border:none; width:65%; height:32px; background:#EBEBEB; margin:0 auto; border-radius:3px;}
+
+.content form p font{ font-family:'微软雅黑'; color:#000; font-size:14px; font-weight:bold;}
+.content form .p3{ margin-top:10px; margin-left:16px; width:100%;}
+
+.content form .p3 input[type="text"]{ width:34%;}
+.content form .p3 input[type="button"]{ border:none;width:28%; height:30px; background:#191D1C; border-radius:5px; color:#FFF; font-size:14px; font-family:'微软雅黑'; margin-left:3%;  cursor:pointer; height:32px;}
+.content form .p4{ margin-top:10px}
+
+
+.content form .registered{width:40%; border:none;height:40px;background:#EE7700; color:#FFF; text-align:center; line-height:40px; margin-top:50px; font-size:18px; font-family:'微软雅黑'; border-radius:4px; margin-left:25%; cursor:pointer;}
+
+

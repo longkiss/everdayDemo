@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>尚佳商城</title>
+		<link type="text/css" href="css/all.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="block message-all1">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+				<span>意见与建议</span>
+				<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+			</div>
+			<!--内容-->
+			<ul class="message-ul1">
+				<li class="message-ul1-border"><img src="images/guan.png" class="message-ul1-img1"/></li>
+				<li><img src="images/kai1.png" class="message-ul1-img2"/></li>
+			</ul>
+			<div class="mssage">
+				<ul id="msg" class="block">
+					<a href="#">
+						<li>
+							<span class="ms1" href="#"><img src="images/guan.png"></span><span class="ms3">2015-03-19</span><span class="ms2">From:a678414</span>
+						</li>
+					</a>
+					<a href="#">
+						<li>
+							<span class="ms1" href="#"><img src="images/guan.png"></span><span class="ms3">2015-03-19</span><span class="ms2">From:a678414</span>
+						</li>
+					</a>
+				</ul>
+				<ul id="msg1" class="none">
+					<li>
+						<span class="ms1" href="#">
+							<input id="gou" type="checkbox" class="goux" value="1436">
+							<img src="images/kai1.png"></span><a href="#" class="diana"><span class="ms3">2015-03-19</span> <span class="ms2">From:a678414</span></a>
+					</li>
+					<li>
+						<span class="ms1" href="#">
+							<input id="gou" type="checkbox" class="goux" value="1435">
+							<img src="images/kai1.png"></span><a href="#" class="diana"><span class="ms3">2015-03-19</span> <span class="ms2">From:a678414</span></a>
+					</li>
+				</ul>
+			</div>
+            <ul class="message-ul2">
+				<li class="none message-quanxuan"><div>全选</div></li>
+				<li class="none"><div>删除</div></li>
+				<li><div onclick="tyna()">写信</div></li>
+			</ul>
+		</div>
+		<div class="none message-all2">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+				<span>编辑消息</span>
+				<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+			</div>
+			<div class="kuanga size4">
+				<ul class="bgcolor2 biaotiul">
+					<li class="color6 size7">
+						正在编写短消息
+					</li>
+					<li class="color6 size7 form">
+						收件<a style="letter-spacing: 1em;" class="color6">人</a>:haixier
+						<input type="hidden" name="to_user_name" value="haixier" id="shouren">
+					</li>
+				</ul>
+				<div class="faneirong">
+					<textarea id="huifu1" class="faneirong1" name="msg_content" placeholder="请输入内容！" required=""></textarea>
+				</div>
+				<div style="width: 100%;clear:both;margin-top: 10px;">
+					<a class="fasong bgcolor1 size6" onclick="fasong()"><b>发送</b></a>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".message-ul1 li").click(function(){
+		var tyna=$(".message-ul1 li").index($(this));
+		$(this).addClass("message-ul1-border").siblings("li").removeClass("message-ul1-border");
+		if(tyna==0){
+			$(".message-ul1-img1").attr('src','images/guan.png');
+			$(".message-ul1-img2").attr('src','images/kai1.png');
+			$('.message-ul2 li').eq(2).siblings("li").addClass('none');
+			$('#msg').show().siblings('ul').hide();
+		}else{
+			$(".message-ul1-img1").attr('src','images/guan1.png');
+			$(".message-ul1-img2").attr('src','images/kai.png');
+			$('.message-ul2 li').removeClass('none');
+			$('#msg1').show().siblings('ul').hide();
+		}
+	});
+	
+	$('.message-quanxuan').toggle(function(){
+		$('.ms1 #gou').attr('checked',true);
+	},function(){
+		$('.ms1 #gou').attr('checked',false);
+	});
+});
+function tyna(){
+	$(".message-all1").hide();
+	$(".message-all2").show();
+}
+
+</script>
+

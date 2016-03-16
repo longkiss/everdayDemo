@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/services.css" type="text/css">
+	<title>充电桩服务</title>
+  <style>
+   </style>
+ 
+</head>
+<body>
+<!-- 头部部分开始 -->
+<header>
+  <a href="id_list.html" class="return-btn"></a>
+  <h3>欢迎使用</h3>	
+</header>
+<!-- 头部部分结束 -->
+<!-- 充电服务结束-->
+<section class="services">
+	<div class="font">请选择计量方式：</div>
+	<div id="tabbox" class="tabbox">
+     <ul class="tabs" id="tabs">
+       <li class="now"><a href="#">金额</a></li>
+       <li><a href="#">电量</a></li>
+       <li><a href="#">时间</a></li>
+     </ul>
+   </div>
+    <ul class="tab_conbox" id="tab_conbox">
+         <li class="tab_con tab_con01">
+         	<p>请选择金额：</p>
+         	<div class="choose">
+         		<div class="choose-box change-bacolor">
+					<a href="#" class="focus">5元</a>
+					<a href="#">10元</a>
+					<a href="#">20元</a>
+	         		<a href="#">50元</a>
+	         		<a href="#">充满(88元)</a>
+                    <a href="#">
+                    	<input type="text" placeholder="其他金额">
+                    </a>
+	         		
+	         	</div>
+           	</div>
+         </li>
+         <li class="tab_con tab_con02">
+         	<p>请选择充电度数：</p>
+         	<div class="choose">
+         		<div class="choose-box">
+					<a href="#" class="focus">5度</a>
+					<a href="#">10度</a>
+					<a href="#">20度</a>
+ 	         		<a href="#">50度</a>
+	         		<a href="#">充满(88元)</a>
+	         		<a href="#" class="text">
+	         			 <input type="text" placeholder="其他度数">
+ 	         		</a>
+	         	</div>
+           	</div>
+          </li>
+          <li class="tab_con tab_con03">
+          <p>请选择充电时间：</p>
+         	<div class="choose">
+         		<div class="choose-box">
+					<a href="#" class="focus" >0.5小时</a>
+					<a href="#">1小时</a>
+					<a href="#">2小时</a>
+ 	         		<a href="#">3小时</a>
+	         		<a href="#">5小时</a>
+	         		<a href="#" >充满(88元)</a>
+ 	         	</div>
+           	</div>
+         </li>
+      </ul>
+      <div class="submit">
+      	<a href="alert.html" class="submit-btn">确认申请支付</a>
+      </div>
+ </section>
+ <!--充电服务结束 -->
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<!-- <script type="text/javascript" src="js/comment.js"></script> -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("li.tab_con01").show().siblings("li").hide();
+  $(".tabs li").click(function(){
+    $(this).addClass("now").siblings("li").removeClass("now");
+    var mun=$(".tabs li").index($(this));
+    $("#tab_conbox  li").eq(mun).show().siblings("#tab_conbox li").hide();
+    
+     // if(mun==0){
+    //   $("li.tab_con01").show().siblings("li").hide()
+    //  }if(mun==1){
+    //   $("li.tab_con02").show().siblings("li").hide()
+    //  }else{
+    //   $("li.tab_con03").show().siblings("li").hide()
+    //  };
+   });
+  $("#tab_conbox li a").click(function(){
+    $(this).addClass('focus').siblings().removeClass("focus");
+  })
+
+
+
+})
+
+ 
+// $(".choose-box>a").on("touchstart",function(){
+// 		$(".choose-box>a").removeClass("focus");
+//   		$(this).addClass("focus"); 
+// 	});
+/*$(".choose-box a").on("touchstart",function(){
+  $(".choose-box a").attr("class","focus")
+  $(".choose-box a").addClass('focus').parent("choose-box").children("a").removeClass("focus");
+})*/
+/* $(".change-bacolor>a").on("touchstart",function(){
+		$(this).addClass("focus");
+	});*/
+ 
+/*  $(".choose-box a").click(function(event){
+	  event.preventDefault();
+   $(".choose-box a.text").css("background","none");
+      $(".choose-box a").attr("class","focus");
+      $(".choose-box a").removeClass('focus');
+      $(this).addClass('focus');
+  });*/
+  // $(".choose-box>a").on("touchstart",function(){
+	 //  $(this).addClass("focus").siblings().parent(".choose-box").children("a").removeClass("focus")
+ 	//   })
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  //   
+  
+   </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximun-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="css/all.css" type="text/css"/>
+</head>
+<body>
+<!--header-->
+<header>
+    <h3>玺 德 祥</h3>
+</header>
+<!--header-->
+<!--code-->
+<section class="code">
+    <a href="">
+        <img src="images/code.jpg" alt=""/>
+    </a>
+</section>
+<!--code-->
+<!--login-form-->
+<section class="login-form">
+    <form action="">
+        <div class="form-input input-user">
+            <label for=""><img src="images/icon01.jpg" alt=""/></label>
+            <input type="text" placeholder="邮箱/手机号"/>
+        </div>
+        <div class="form-input input-password">
+            <label for=""><img src="images/icon02.jpg" alt=""/></label>
+            <input type="password" placeholder="请输入密码"/>
+        </div>
+        <div class="form-check">
+            <div class="check">
+                <input type="checkbox" name="check"/><span>100%真品保证</span>
+            </div>
+            <div class="check">
+                <input type="checkbox" name="check"/><span>7天无忧退货</span>
+            </div>
+        </div>
+        <div class="form-btn">
+            <input type="button" value="登录" name="button"/>
+        </div>
+    </form>
+    <div class="login-link">
+        <a href="#">注册账号</a><span>|</span><a href="#">忘记密码</a>
+    </div>
+</section>
+<!--login-form-->
+<!--footer-->
+<footer>
+<div class="footer-flex">
+    <a href="index.html" class="box-flex footer-now">
+        <img src="images/footer-home.png" alt=""/>
+    </a>
+    <a href="#" class="box-flex">
+        <img src="images/footer-seach.png" alt=""/>
+    </a>
+    <a href="#" class="footer-tell">
+        <img src="images/footer-tell.png" alt=""/>
+    </a>
+    <a href="shopping-car.html" class="box-flex">
+        <img src="images/footer-shopping.png" alt=""/>
+    </a>
+    <a href="#" class="box-flex">
+        <img src="images/footer-setting.png" alt=""/>
+    </a>
+</div>
+</footer>
+
+
+
+<!--footer-->
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $('.footer-flex>a').click(function(){
+        $(this).addClass('footer-now').siblings('.footer-flex>a').removeClass('footer-now');
+    })
+</script>
+</html>

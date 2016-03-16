@@ -1,0 +1,152 @@
+.get{
+	position: relative;
+	margin:10px;
+	border-radius: 3px;
+	border:1px solid #717171;
+}
+.get-content{
+	margin:3px;
+	border-radius: 3px 3px 0 0;
+	position: relative;
+	border:1px solid #717171;
+	margin-bottom: 10px;
+
+}
+.get-header{
+	height: 40px;
+	background: #434343;
+	overflow: hidden;
+	font-size: 1.2rem;
+	line-height: 40px;
+	color: white;
+	padding-left: 15px;
+}
+.form{
+	height: auto;
+	width: auto;
+	margin:10px;
+ }
+ .form .form-select{
+ 	height: 40px;
+ 	line-height: 40px;
+ 	margin:5px;
+
+ }
+ .form .form-select select{
+  	background:#ebebeb;
+  	border-radius: 3px;
+  	height: 40px;
+  	line-height: 40px;
+ }
+.form .form-select span{
+  	margin-right: 10px
+  }
+.form .form-input{
+	height: 40px;
+	line-height: 40px;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+	margin-bottom: 10px;
+}
+.form .form-input label{
+	width: 50px;
+	text-align: center;
+	color: black;
+}
+.form .form-input input{
+	display: block;
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	height: 40px;
+	border-radius: 3px;
+	background: #ebebeb;
+	padding-left: 10px;
+	margin-right: 20px;
+}
+.form .form-input select{
+	display: block;
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	height: 40px;
+	border-radius: 3px;
+	background: #ebebeb;
+	padding-left: 10px;
+	margin-right: 20px;
+}
+.form .form-input input.codes{
+	margin-right: 10px;
+}
+.form .form-input .code{
+	width:80px;
+	height: 40px;
+	border-radius: 3px;
+	line-height: 40px;
+	background: black;
+	color: white;
+	text-align: center;
+	margin-right: 20px;
+	display: block;
+ }
+ .form  .form-textarea{
+ 	height: 50px;
+	line-height: 50px;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+	margin-bottom: 10px;
+ }
+ .form  .form-textarea label{
+ 	height: 50px;
+   }
+.form  .form-textarea textarea{
+	display: block;
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	height: 50px;
+	min-height: 50px;
+	max-height: 50px;
+	outline: none;
+	margin-right: 20px;
+}
+.form-input{
+	height: 40px;
+	line-height: 40px;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+	margin-bottom: 10px;
+}
+.form-input input{
+	display: block;
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	height: 40px;
+	border-radius: 3px;
+	background: #ebebeb;
+	padding-left: 10px;
+	margin-right: 20px;
+}
+ .form-checkbox{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.4rem;
+}
+ .form-checkbox input{
+	height: 12px;
+	width: 12px;
+ }
+ .form-input input.submit{
+ 	text-align:center;
+ 	background: #ee7700;
+ 	margin:0 60px;
+ 	color: white;
+ 	font-size: 1.4rem;
+ 	padding:0;
+
+ }

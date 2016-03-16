@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{ width:100%; height:auto; background:#FFF; margin:50px auto 0 auto;}
+
+.content .banner{margin:0 auto; width:94%; overflow:hidden; height:auto;}
+.content .banner a{ display:block}
+.content .text{ width:90%; height:auto; margin:0 auto;}
+.content .text .p1{margin:0; font-size:16px;font-family:'微软雅黑'; color:#000; font-weight:bold; margin-top:18px;}
+.content .text .p2{ text-indent:2em; font-size:14px;font-family:'微软雅黑'; line-height:25px; padding-bottom:80px}

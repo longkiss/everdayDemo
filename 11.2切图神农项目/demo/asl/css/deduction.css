@@ -1,0 +1,76 @@
+.banner{
+	position: relative;
+	content: "";
+}
+.banner a{
+	display: block;
+}
+.banner a img{
+	height: 100%;
+	width: 100%;
+}
+.banner .position{
+	position: absolute;
+	left: 45px;
+	top:35px;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+
+
+}
+.banner .position a{
+	display: block;
+	height: 65px;
+	width: 65px;
+	border-radius: 5px;
+	background: white;
+	background: url(../images/deduction-header-img.jpg) no-repeat;
+	background-size:65px 65px; 
+}
+.banner .position .position-right{
+	position: relative;
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	margin-left: 10px;
+}
+.banner .position .position-right p{
+ 	font-size: 12px;
+	color:white;
+}
+.banner .position .position-right p span{
+	color:red;
+}
+
+.deduction{
+	content:"";
+ 	padding-top: 10%;
+}
+.deduction a.decuction-box{
+	 display:block;
+	 position: relative;
+	 width: 62.5%;
+	 margin:0 auto;
+ }
+.deduction a.decuction-box .box{
+    height: 90px;
+    width: 90px;
+    background: #2f2f2f;
+    float: left;
+    margin-bottom: 2%;
+    transition:all ease 500ms;
+   font-size: 1.4rem;
+   line-height: 90px;
+   text-align: center;
+   color: white;
+  }
+.deduction a.decuction-box .box{
+	margin-right: 2%;
+
+}
+.deduction a.decuction-box .box:hover{
+	transform:scale(1.1);
+	 background: #ee7700;
+
+}

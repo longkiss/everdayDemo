@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1;width=device-width;maximun-scale=1;user-scalable=no">
+	<link rel="stylesheet" href="css/index.css">
+ 	<title>希尔首页</title>
+
+</head>
+<body>
+<header>海希尔</header>
+<!--banner开始-->
+	<div class="main-banner" >
+		<div class="gallery" id="gallery" style="overflow: hidden;">
+			<div class="swipe-box">
+				<a href="">
+					<img src="images/personal-banner.png" width="100%;" />
+				</a>
+			</div>
+			<div class="swipe-box">
+				<a href="">
+					<img src="images/personal-banner.png" width="100%;" />
+				</a>
+			</div>
+ 			<div class="swipe-box">
+				<a href="">
+					<img src="images/personal-banner.png" width="100%;" />
+				</a>
+			</div>
+
+ 		</div>
+		<div class="dotlist">
+			<div id="swipe-dot"></div>
+		</div>
+	</div>
+<!--banner结束-->
+<section class="person-main clearfix">
+	<div class="person-main-cont">
+		<div class="person-cont-box oder">
+			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>订单查询</span>
+				<ul class="toggle">
+					<li><a href="">订单查询</a></li>
+					<li><a href="">订单查询</a></li>
+					<li><a href="">订单查询</a></li>
+	 			</ul>
+			
+			</a>
+  		</div>
+ 		<div class="person-cont-box collection">
+ 			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>我的收藏</span>
+				<ul class="toggle">
+					<li><a href="">我的收藏</a></li>
+					<li><a href="">我的收藏</a></li>
+					<li><a href="">我的收藏</a></li>
+	 			</ul>
+			</a>
+			
+ 		</div>
+  	</div>
+  	<div class="person-main-cont">
+		<div class="person-cont-box news">
+			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>个人消息</span>
+				<ul class="toggle">
+					<li><a href="">个人消息</a></li>
+					<li><a href="">个人消息</a></li>
+					<li><a href="">个人消息</a></li>
+	 			</ul>
+			</a>
+			
+ 		</div>
+		<div class="person-cont-box setting">
+ 			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>账号设置</span>	
+				<ul class="toggle">
+					<li><a href="">账号设置</a></li>
+					<li><a href="">账号设置</a></li>
+					<li><a href="">账号设置</a></li>
+	 			</ul>
+			</a>
+			
+ 		</div>
+ 		<div class="person-cont-box exit">
+ 			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>退出登录</span>
+				<ul class="toggle">
+					<li><a href="">退出登录</a></li>
+					<li><a href="">退出登录</a></li>
+					<li><a href="">退出登录</a></li>
+ 				</ul>
+ 			</a>
+  		</div>
+  	</div>
+
+	
+</section>
+
+ <!--footer部分开始 -->
+<footer>
+	<div class="footer-box">
+		<a href="idnex.html" class="footer-flex footer-now">
+			<i class="footer-icon icon1"></i>
+			<span>首页</span>
+		</a>
+		<a href="#" class="footer-flex">
+			<i class="footer-icon icon2"></i>
+			<span>一键呼</span>
+		</a>
+		<a href="news.html" class="footer-flex">
+			<i class="footer-icon icon3"></i>
+			<span>资讯</span>
+		</a>
+		<a  href="personal.html" class="footer-flex">
+			<i class="footer-icon icon4"></i>
+			<span>个人中心</span>
+		</a>
+		<a href="more.html" class="footer-flex">
+			<i class="footer-icon icon5"></i>
+			<span>更多</span>
+ 		</a>
+   	 </div>
+</footer>
+ <!-- footer部分结束 -->
+
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+ <script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/banner-swiper.js"></script>
+<script>
+	$(".person-cont-box").click(function(){
+ 		$(this).children(".toggle").toggle(500);
+ 		// $(this).siblings(".person-cont-box").children(".toggle").hide()
+ 	})
+ </script>
+ </body>
+</html>

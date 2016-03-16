@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{ width:100%; height:auto; background:#EBEBEB; margin:50px auto 0 auto;}
+.content .banner{ width:100%; height:auto; margin:0 auto; overflow:hidden;}
+
+.content .activity{ width:94%; height:auto; margin:0 auto; background:#FFF;}
+.content .activity .p1{ margin:0; font-size:18px; color:#000; font-family:'微软雅黑'; padding:5px 0 0 10px}
+.content .activity .p2{ font-size:12px; font-family:'微软雅黑'; color:#000; text-indent:2em; margin:0; padding:10px 5px 0 5px; line-height:20px}
+.content .activity .details{ width:86%; height:auto; margin:0 auto; margin-top:18px} 

@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>尚佳商城</title>
+		<link type="text/css" href="css/all.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="submit-all1">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+				<span>提交订单</span>
+				<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+			</div>
+			<!--内容-->
+			<ul class="order-submit-ul">
+				<li class="order-submit-title">流行服装</li>
+				<li>订单总价：<span class="order-submit-zongjia">￥106.00</span></li>
+				<li>数量：<span class="order-shuliang">5</span></li>
+				<li>配送方式：<select><option>顺丰快递</option><option>普通快递</option></select>&nbsp;运费：<span class="tyna-yunfei">￥:15.00</span></li>
+				<li>应付金额：<span class="tyna-yingfujine">￥:121.00</span></li>
+				<li>支付方式：<select><option>支付宝</option><option>货到付款</option></select></li>
+		        <li>添加收货地址：<span onclick="tyna()">点击添加收货地址</span></li>
+		        <li>我的地址：<p class="tyna-dizhi"><select><option>广东深圳市龙岗区丹竹头立信路逸马大厦八楼</option><option>广西壮族自治区</option></select></p></li>
+		        <li>收货地址：<span>广东深圳市龙岗区丹竹头立信路逸马大厦八楼</span>/<span>15710750973</span>/<span>张三</span><span onclick="tyna()">(点击可修改)</span></li>
+		        <li>配送说明：<p class="tyna-dizhi"><textarea class="tyna-textarea"placeholder="配送特殊说明，配送公司会尽量调节"></textarea></p></li>
+		        <div class="tyna-bottom">提交訂單</div>
+			</ul>
+		</div>
+		<div class="submit-all2 none">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+				<span>编辑收货地址</span>
+				<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+			</div>
+			<ul class="order-submit-ul">
+				<li>收货人名：<input type="text" class="tyna-test" value="张三"/></li>
+				<li>所在省份：<select class="tyna-test"><option>深圳</option><option>上海</option><option>杭州</option></select></li>
+				<li>所在城市：<select class="tyna-test"><option>深圳</option><option>上海</option><option>杭州</option></select></li>
+				<li>所在地区：<select class="tyna-test"><option>深圳</option><option>上海</option><option>杭州</option></select></li>
+				<li>详细地址：<input type="text" class="tyna-test" value="立信路43号"/></li>
+				<li>邮政编码：<input type="text" class="tyna-test" value="532200"/></li>
+				<li>手机号码：<input type="text" class="tyna-test" value="15710750973"/></li>
+				<div class="tyna-bottom">保存并使用</div>
+			</ul>
+		</div>
+
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+function tyna(){
+	$(".submit-all1").hide();
+	$(".submit-all2").show();
+}
+</script>
+

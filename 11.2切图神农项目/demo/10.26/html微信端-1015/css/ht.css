@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ font-size:16px; font-family:Gadugi, "Helvetica Neue", Helvetica, Arial, sans-serif; background:#f6f6f6; color:#666}
+.container{width:95%;}
+.yt,.fyt{ margin-top:20px;}
+.yt a{ color:#fff; float:right; margin-left:15px; font-size:16px;}
+.fyt a{ color:#fff; margin-right:15px;}
+.ht-nav{ margin-top:20px;}
+.ht-nav a{ color:#fff; float:right; margin-left:30px;}
+.tit{ color:#017fad; font-size:24px; font-weight:400; border-left:3px solid #f8cd00; padding-left:10px;}
+.nrlist{ line-height:24px;}
+a.more{ color:#017fad; display:block; margin-top:10px;}
+.tiw{ color:#017fad; font-size:18px; font-weight:normal}
+.yslist{ font-size:14px;}
+
+.footnav,.footinfo,.footinfo a{ color:#fff;}
+.footnav b{ display:block; font-weight:normal; font-size:16px;}
+.footnav a{ color:#fff; display:block; font-size:14px;}
+.footinfo{ font-size:14px;}
+.footinfo i{ margin-left:10px;}

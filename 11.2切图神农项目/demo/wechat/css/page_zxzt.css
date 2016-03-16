@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.content{ width:100%; height:auto;  margin:50px auto 0 auto;}
+.content .banner{ width:100%; height:auto; margin:0 auto;}
+
+
+.content .online{ width:96%; height:120px; margin:0 auto; margin-top:20px;}
+
+.content .online .left{ width:32%; height:auto; float:left; }
+.content .online .left a{ display:block; color:#000; text-decoration:none; text-align:center; font-size:14px; font-family:'微软雅黑';}
+
+
+.content .online .center{ width:32%; height:auto; float:left; margin-left:2.1%}
+.content .online .center a{ display:block; color:#000; text-decoration:none; text-align:center; font-size:14px; font-family:'微软雅黑';}
+
+.content .online .right{ width:32%; height:140px; float:right}
+.content .online .right a{ display:block; color:#000; text-decoration:none; text-align:center; font-size:14px; font-family:'微软雅黑';}
+
+.ui-body-c .ui-link{ font-weight:normal}
+
+
+.content .next{ width:96%; height:120px; margin:0 auto; margin-top:8%;}
+
+.content .next .left{ width:32%; height:auto; float:left; }
+.content .next .left a{ display:block; color:#000; text-decoration:none; text-align:center; font-size:14px; font-family:'微软雅黑';}
+
+
+.content .next .center{ width:32%; height:auto; float:left; margin-left:2.1%}
+.content .next .center a{ display:block; color:#000; text-decoration:none; text-align:center; font-size:14px; font-family:'微软雅黑';}
+
+.content .next .right{ width:32%; height:140px; float:right}
+.content .next .right a{ display:block; color:#000; text-decoration:none; text-align:center; font-size:14px; font-family:'微软雅黑';}
+
+
+
+

@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{ width:100%; height:auto; background:#FFF; margin:50px auto 0 auto;}
+.Product{width:100%; height:40px; margin:0 auto; background:#FFF;}
+.Product .left{ float:left;  width:46%; color:#000; height:38px; text-align:center; line-height:38px; font-family:'微软雅黑'; font-size:18px;  margin-left:4%; cursor:pointer}
+.Product .right{border-bottom:solid 2px  #EE7700; float:right; color:#EE7700;; width:46%; height:38px; text-align:center; line-height:38px; font-family:'微软雅黑'; font-size:18px; margin-right:4%;cursor:pointer}
+.Product .left:hover{border-bottom:solid 2px  #EE7700;color:#EE7700;}
+
+.all{ width:92%; height:auto; margin:0 auto;}
+
+.all .one{ width:100%; height:100px; background:#EBEBEB; border-radius:6px;}
+.all .one a{ float:left; width:20%; margin:8px 0 0 8px} 
+.all .one .text_r{ float:right; width:60%; margin-right:5%}
+.all .one .text_r p{ margin:20px 0 0 15%; color:#000; font-size:14px; font-family:'微软雅黑'; font-weight:bold}
+.all .one .text_r span{ display:block;margin-top:10px; font-size:14px; font-family:'微软雅黑'; margin-left:15%}
+
+.all .two{ margin-top:10px;}
+.all .three{margin-top:10px;}

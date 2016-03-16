@@ -1,0 +1,34 @@
+body{
+	background: url(../images/about.jpg) no-repeat;
+ 	min-height: 568px;
+ 	background-size:100% 100%;
+	width:100%;
+}
+.about{
+	padding-top: 55px;
+	
+	position: relative;
+  }
+.about .box{
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+	width: 100%;
+}
+.about .box a.about-btn{
+  	box-flex:1;
+  	-moz-box-flex:1;
+  	-webkit-box-flex:1;
+  	margin:6px 35px 0;
+  	display: block;
+  	height: 40px;
+  	background: #fff;
+  	border-radius: 3px;
+  	line-height: 40px;
+  	text-align: center;
+  	text-decoration: none;
+  	font-size: 1.6rem;
+  }
+.about a.about-btn:hover{
+	background: #e6e6e6;
+}

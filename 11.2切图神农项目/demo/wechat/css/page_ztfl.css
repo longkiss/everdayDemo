@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.content{ width:100%; height:auto; margin:50px auto 0 auto;}
+
+.content .nav{ width:45%; height:auto;float: left;}
+ul,li{ margin:0; padding:0; list-style:none;}
+.content .nav ul{ width:100%; height:auto; position:relative;}
+.content .nav ul li{ width:100%; height:60px; background:#474747; line-height:66px; text-align:left; border-bottom:solid 1px #CCCCCC; }
+.content .nav ul li a{ text-decoration:none; line-height:66px;color:#ABABAB; margin-left:10%}
+.content .nav ul li img{ margin-left:20px;width: 8px;height: 10px;position: absolute;top: 25px;right: 8px;}
+.content .nav ul li .img2{ margin-left:37px}
+.content .nav ul li .img3{ margin-left:52px}
+.content .nav ul li .img4{ margin-left:37px}
+
+.content .nav ul li.now{ background:#1E1E1E; color:#FFF; }
+.content .nav ul li.now a{ color:#FFF} 
+.content .nav ul li:hover{ background:#1E1E1E;}
+.content .nav ul li a:hover{ color:#FFF;}
+.content .nav ul li:hover a{color:#FFF;}
+
+.content .nav ul .meat{ position:relative;}
+.content .nav ul .meat .menu{ position:absolute; top:0px; left:100%; background:#FFF; height:auto; width:130%; display:none}
+
+.content .nav ul .meat .menu li{ background:#FFF; height:50px; width:130%; line-height:50px; font-family:'微软雅黑'; font-size:14px; text-align:left; cursor:pointer;}
+.content .nav ul .meat .menu li a{ color:#333; line-height:50px; font-size:14px; margin-left:10%;}
+.content .nav ul .meat .menu li a:hover{color:#EE7904;}
+.content .nav ul .meat .menu li.now1 a{ color:#EE7904;}
+
+.content .navr{ width:55%; height:auto;float: right;}
+.content .navr .menu{ background:#FFF; height:auto; width:100%; }
+.content .navr .menu li{ background:#FFF; height:50px; width:130%; line-height:50px; font-family:'微软雅黑'; font-size:14px; text-align:left; cursor:pointer;border-bottom:solid 1px #CCCCCC;}
+.content .navr .menu li a{ color:#333; line-height:50px; font-size:14px; margin-left:10%;text-decoration:none;}
+.content .navr .menu li a:hover{color:#EE7904;}
+.content .navr .menu li.now1 a{ color:#EE7904;}
+
+
+
+
+
+
+

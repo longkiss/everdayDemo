@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>试题分类</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+<link rel="stylesheet" href="css/wx.css">
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+<script src="js/jquery.min.js"></script>     
+
+<script type="text/javascript">
+function btn(){ 
+ if(document.getElementById("boxkc").style.display!="block"){
+	 document.getElementById("boxkc").style.display="block";
+	$("#kcjiant").removeClass("fa-angle-down");
+    $("#kcjiant").addClass("fa-angle-up");
+	 }else{
+	 document.getElementById("boxkc").style.display = "none";
+	$("#kcjiant").removeClass("fa-angle-up");
+    $("#kcjiant").addClass("fa-angle-down");
+		 }
+
+}
+</script>
+</head>
+<body style="background:#fff">
+<div class="container-fluid" style="background:#f4a62a; padding-bottom:20px;">
+	<div class="wx_top row">
+    	<a href="#" class="retun"><i class="fa fa-angle-left"></i></a>
+    	<div class="col-xs-12 wx_title text-center" style="padding-top:20px; font-size:16px; line-height:25px;">
+        <h4>试题</h4>
+        </div>
+        <div class="col-xs-1 wx_top_r" style="border:0px;"><a href="zc.html" class="white"><i class="fa fa-user"></i></a></div>
+    </div>
+</div>
+<div class="container">
+	<div class="row" style="margin-top:20px; border-bottom:1px solid #ccc; padding-bottom:20px;">
+    	<div class="col-xs-12">
+        	<div class="input-group" style="position:relative">
+              <i class="fa fa-search" style="position:absolute; top:10px; left:10px; color:#ccc; z-index:99"></i>
+              <input type="text" class="form-control" placeholder="想学什么可以直接找..." style="text-indent:20px;">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" style="background:#f4a62a; border:1px solid #f4a62a; color:#fff">搜索</button>
+              </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <a href="javascript:;" onclick="btn();"><div class="col-xs-12 text-center f16" style="padding-top:15px; padding-bottom:15px; border-bottom:1px solid #ccc">
+            试题分类 <i id="kcjiant" class="fa fa-angle-down"></i>
+        </div></a>
+    </div>
+    <div class="row all_kc" id="boxkc">
+    
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><div class="panel-heading" role="tab" id="headingOne" style="height:40px; background:#eee">
+        <h4 class="panel-title fl">发布日期</h4> <i class="fa fa-angle-down fr"></i>
+    </div></a>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <div class="row">
+        	<div class="col-xs-6 st-lx"><a href="#">全部</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">2015</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">2014</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">2013</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"><div class="panel-heading" role="tab" id="headingTwo" style="height:40px; background:#eee">
+        <h4 class="panel-title fl">试题类型</h4> <i class="fa fa-angle-down fr"></i>
+    </div></a>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <div class="row">
+        	<div class="col-xs-6 st-lx"><a href="#">全部</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">历年真题</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">模拟试题</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree"><div class="panel-heading" role="tab" id="headingThree" style="height:40px; background:#eee">
+        <h4 class="panel-title fl">一级建造师</h4> <i class="fa fa-angle-down fr"></i>
+    </div></a>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <div class="row">
+        	<div class="col-xs-6 st-lx"><a href="#">全部</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">建筑工程</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">机电工程</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">通信与广电</a></div>
+        	<div class="col-xs-6 st-lx"><a href="#">经济</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    </div>
+    <div class="row st-list f16">
+    	<a href="#">
+    	<div class="col-xs-10">
+        	<div>2014年一级建造师执业资格考试《建设工程建筑实务》真题</div>
+            <span>发布时间：2015-6-12</span><span>总35题</span><span>对0题</span>
+        </div>
+        <div class="col-xs-2 st-z"><i class="fa fa-pencil"></i><br><span class="f16">做题</span></div>
+        </a>
+    </div>
+    <div class="row st-list f16">
+    	<a href="#">
+    	<div class="col-xs-10">
+        	<div>2014年一级建造师执业资格考试《建设工程建筑实务》真题</div>
+            <span>发布时间：2015-6-12</span><span>总35题</span><span>对0题</span>
+        </div>
+        <div class="col-xs-2 st-z"><i class="fa fa-pencil"></i><br><span class="f16">做题</span></div>
+        </a>
+    </div>
+    <div class="row st-list f16">
+    	<a href="#">
+    	<div class="col-xs-10">
+        	<div>2014年一级建造师执业资格考试《建设工程建筑实务》真题</div>
+            <span>发布时间：2015-6-12</span><span>总35题</span><span>对0题</span>
+        </div>
+        <div class="col-xs-2 st-z"><i class="fa fa-pencil"></i><br><span class="f16">做题</span></div>
+        </a>
+    </div>
+    <div class="row st-list f16">
+    	<a href="#">
+    	<div class="col-xs-10">
+        	<div>2014年一级建造师执业资格考试《建设工程建筑实务》真题</div>
+            <span>发布时间：2015-6-12</span><span>总35题</span><span>对0题</span>
+        </div>
+        <div class="col-xs-2 st-z"><i class="fa fa-pencil"></i><br><span class="f16">做题</span></div>
+        </a>
+    </div>
+    <div class="row st-list f16">
+    	<a href="#">
+    	<div class="col-xs-10">
+        	<div>2014年一级建造师执业资格考试《建设工程建筑实务》真题</div>
+            <span>发布时间：2015-6-12</span><span>总35题</span><span>对0题</span>
+        </div>
+        <div class="col-xs-2 st-z"><i class="fa fa-pencil"></i><br><span class="f16">做题</span></div>
+        </a>
+    </div>
+    <div class="row st-list f16">
+    	<a href="#">
+    	<div class="col-xs-10">
+        	<div>2014年一级建造师执业资格考试《建设工程建筑实务》真题</div>
+            <span>发布时间：2015-6-12</span><span>总35题</span><span>对0题</span>
+        </div>
+        <div class="col-xs-2 st-z"><i class="fa fa-pencil"></i><br><span class="f16">做题</span></div>
+        </a>
+    </div>
+	
+</div>
+
+
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

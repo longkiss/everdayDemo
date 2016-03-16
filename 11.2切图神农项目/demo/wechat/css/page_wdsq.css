@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{ width:94%; height:auto; margin:0 auto; margin-top:60px;}
+.content .div1{ width:100%; height:auto; position:relative;}
+.content .div1 .text{ width:75%; height:auto;position:absolute; top:10%; left:15%;}
+.content .div1 .text p{ margin:0; line-height:25px; color: #000;font-size:16px; font-family:'微软雅黑';}
+.content .div1 .text p span{ color:#F00;}
+.content .div2{ margin-top:5px;}
+

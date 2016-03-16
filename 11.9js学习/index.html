@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<body>
+<div id="box">span</div>
+<script>
+	var box=document.getElementById('box');
+	console.log(box);
+	var i;
+ 	// if (box.childNodes[i].nodeType==1){
+	// 	box.childNodes[i].style.color='red';
+	// }
+ 	box.onclick=function(){
+		for(i in box.childNodes){
+		// console.log(box.childNodes[i]);
+		if(box.childNodes[i].nodeType==1){
+			box.childNodes[i].style.color="red"
+		}
+	}
+	}
+ 	function $(tar){
+		var tar=tar.split("#");
+			// obj=tar[1]
+			obj=document.getElementById(tar[1]);
+		// console.log(tar)
+		return obj;
+	}
+	$("#box")
+ 	function cls(obj,attr,value){
+ 		if(attr){
+ 			obj.style[attr]=value;
+ 			// console.log(obj)
+  		 
+ 		}else{
+ 			return obj.style[attr]="";
+ 		}
+	};
+ 	cls($('#box'),'color','green');
+ </script>
+	
+</body>
+</html>

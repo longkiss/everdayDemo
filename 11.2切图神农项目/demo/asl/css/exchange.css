@@ -1,0 +1,81 @@
+.exchange{
+	position: relative;
+	content:"";
+	padding:10px 10px 20px;
+}
+.exchange .exchange-box{
+	height: 25px;
+	line-height: 25px;
+ 	font-size: 1.4rem;
+ 	margin-bottom: 10px;
+
+
+}
+.exchange .exchange-box span{
+	display: block;
+	float: left;
+	text-align: left;
+ 
+}
+.exchange .exchange-box span.span2{
+	color: #ee7700;
+}
+.exchange .box{
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+	height: 25px;
+	position: relative;
+
+}
+.exchange .box p{
+	color: black;
+	height: 25px;
+	line-height: 25px;
+	 display: inline-block;
+
+}
+
+.exchange .exchange-box input{
+	height: 25px;
+	border:1px solid #ee7700;
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	border-radius: 3px;
+	display: block;
+	margin-right: 65px;
+
+}
+.exchange .box1{
+	height: auto
+}
+.exchange .exchange-box  ol{
+	position: relative;
+	width: auto;
+	height: auto;
+}
+
+.sbumit{
+	clear:both;
+	height: 35px;
+	position: relative;
+	margin-top: 50px;
+	display: box;
+ 	display: -webkit-box;
+	line-height: 35px;
+}
+.sbumit .submit-btn{
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	display: block;
+	background: #ee7700;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: 1.6rem;
+	margin:0 85px;
+	border-radius: 3px;
+
+}

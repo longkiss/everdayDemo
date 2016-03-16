@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{ width:100%; height:auto; background:#FFF; margin:50px auto 0 auto;}
+.content .banner{width:100%; height:auto; margin:0 auto; overflow:hidden; position:relative;}
+.content .banner .members{ position:absolute; top:30%;width:90%; left:5%;height:80px;margin:0 auto;}
+.content .banner .members a{ float:left; margin-left:4%;} 
+.content .banner .members .right{ float:right; font-size:14px}
+.content .banner .members .right p{ margin:0; color:#FFF; font-family:'微软雅黑';}
+.content .banner .members .right p span{ color:#F00; font-weight:bold}
+
+
+.content .main2{ width:70%; height:auto; margin:0 auto; margin-top:10px;}
+.content .main2 .div1{ width:45%; height:35%; background:#2F2F2F; float:left;margin-top:15px;margin-left:5%}
+.content .main2 .div1 a{ display:block; text-align:center; line-height:100px; text-decoration:none; color:#FFF;}
+
+.content .main2 .div2{ float:right; width:45%; height:35%; background:#2F2F2F; margin-top:15px;}
+.content .main2 .div2 a{ display:block; text-align:center; line-height:100px; text-decoration:none; color:#FFF;}
+
+
+.content .main2 .div3{ width:45%; height:35%;background:#2F2F2F; float:left; margin-top:5%; margin-left:5%}
+.content .main2 .div3 a{ display:block; text-align:center; line-height:100px; text-decoration:none; color:#FFF}
+
+.content .main2 .div4{ width:45%; height:35%;background:#2F2F2F; float:right; margin-top:5%;}
+.content .main2 .div4 a{ display:block; text-align:center; line-height:100px; text-decoration:none; color:#FFF}
+

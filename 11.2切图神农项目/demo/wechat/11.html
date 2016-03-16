@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="target-densitydpi=get-target-densitydpi,width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="style/jquery.mobile-1.3.0.min.css" type="text/css">
+    <script src="include/jquery-2.1.0.min.js"></script>
+    <script src="include/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" src="include/getinfo.js"></script>    
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+   	<link href="css/page_wydk.css" rel="stylesheet" type="text/css">
+    <title>安时利</title>
+</head>
+
+<body>
+	<div data-role="page">
+    	<header>
+        	<div class="header">
+            	<a href="javascript:history.go(-1);" data-role="false" data-rel="back"><img src="images/icon.png" width="16" height="22"></a>
+                <span>万元抵扣</span>
+            </div>
+		</header>
+        <div class="content">
+        	<div class="banner">
+            	<a data-ajax='false' href="#"><img src="images/banner2.png" width="100%" height="100%"></a>
+                <div class="members">
+                	<a data-ajax='false' href="#"><img src="images/pic3.png" width="78" height="78"></a>
+                    <div class="right">
+                    	<p>银卡会员&nbsp;<span>(距离金卡还有2单)<span></p>
+                        <p id="name">会员：北川景子</p>
+                        <p id="phone">电话：13107089570</p>
+                        <p id="jf">积分：3000分</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main2">
+            	<div class="div1"><a data-ajax='false' href="page_wdsq.html">我的授权</a></div>
+            	<div class="div2"><a data-ajax='false' href="#">马上抽奖</a></div>
+				<div class="div3"><a data-ajax='false' href="page_jfdh.html">积分兑换</a></div>
+                <div class="div4"><a data-ajax='false' href="page_jsyjf.html">介绍赢积分</a></div>
+                
+            
+            </div>
+            
+            
+            
+        	
+        </div>
+        
+    	
+        
+	</div>
+
+</body>
+<script type="text/javascript">
+	  var urlVars = getUrlVars();
+	  var chatName = urlVars["wechatOpenId"];
+	  localStorage.wechatName = chatName;//设置微信号
+	$(document).ready(function(){
+			   getyhxx();      		   
+	      }) ;
+
+	//获取用户资料信息
+	function getyhxx(){
+		 var url ="/asl/userInfo!getOneByWechatOpenId.action?wechatOpenId="+chatName;
+			//alert(url);
+			$.ajax({
+			   type: "GET",
+			   url: url,
+			   async:false,
+			   cache: false,
+			   dataType: "json",
+			   contentType:"application/json; charset=utf-8",
+			   success: function (data) {
+					if(data.ret == "1"){
+						var sa = data.info;
+						var name = sa.gname;//用户名
+						var phone = sa.mobile;//电话
+						var jf = sa.integral;//微信积分
+						var dp = sa.dp;//订单数
+						$("#name").html("会员："+name);
+						$("#phone").html("电话："+phone);
+						$("#jf").html("积分："+jf+"分");
+				}
+			}
+			}); 
+			};
+	</script>
+</html>

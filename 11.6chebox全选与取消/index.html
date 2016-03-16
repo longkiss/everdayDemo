@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<style>
+	div{
+		height: 200px;
+		width: 200px;
+		text-align: center;
+		line-height: 200px;
+		background: green;
+	}
+	</style>
+</head>
+<body>
+<input type="checkbox" value="123" name="checkbox" class="check">
+<input type="checkbox" value="123" name="checkbox" class="check">
+<input type="checkbox" value="123" name="checkbox" class="check">
+<input type="checkbox" value="123" name="checkbox" class="check">
+<input type="checkbox" value="123" name="checkbox" class="check">
+<input type="checkbox" value="123" name="checkbox" class="check">
+<input type="checkbox" value="123" name="checkbox" class="check">
+<button value="全选按钮">全选</button>
+<div>点击按钮换颜色</div>
+<img src="product-big-img1.jpg" alt="">
+
+
+
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+
+$(document).ready(function(){
+		$("button").toggle(function(){
+			$(".check").attr("checked",true);
+ 		},function(){
+			$(".check").attr("checked",false);
+   		});
+   	 
+});
+$(document).ready(function(){
+			$("button").toggle(function(){
+				$("div").css("background","red")
+			},function(){
+				$("div").css("background","yellow")
+
+			},function(){
+				$("div").css("background","blue")
+
+			},function(){
+				$("div").css("background","#000cff")
+
+			},function(){
+				$("div").css("background","#36ff00")
+
+			},function(){
+				$("div").css("background","#00c0ff")
+		 	})
+ });
+	$("img").toggle(function(){
+		$(this).attr("src","product-big-img2.jpg")
+	},
+	function(){
+		$(this).attr("src","product-big-img3.jpg")
+	},
+	function(){
+		$(this).attr("src","product-big-img4.jpg")
+	},function(){
+		$(this).attr("src","product-big-img1.jpg")
+	}
+
+	)
+	
+function aaa(){
+	
+}
+</script>
+</body>
+</html>

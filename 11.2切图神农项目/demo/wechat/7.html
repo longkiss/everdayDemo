@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="target-densitydpi=get-target-densitydpi,width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="style/jquery.mobile-1.3.0.min.css" type="text/css">
+    <script src="include/jquery-2.1.0.min.js"></script>
+    <script src="include/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" src="include/getinfo.js"></script>
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/page_ljwm.css" rel="stylesheet" type="text/css">
+    <title>安时利</title>
+</head>
+
+<body>
+	
+    	<header>
+        	<div class="header">
+            	<a href="javascript:history.go(-1);" data-role="false" data-rel="back"><img src="images/icon.png" width="16" height="22"></a>
+                <span>了解我们</span>
+            </div>
+		</header>
+        <div class="content">
+        	<div class="banner">
+            	<a data-ajax='false'><img src="images/banner3.png" width="100%" height="100%"></a>
+            </div>
+        	<!--<p class="p1">安时利（中国）医疗有限公司成立于1996年，是优秀的医疗技术供应商和服务商，公司产品应用覆盖了放射科、超声科、心血管科、体检科、伤口外科、烧伤科、儿科、妇科、检验科、肿瘤科等多个医疗领域。</p>
+        	<p class="p2">一直以来，安时利以“您信赖的合作伙伴”为宗旨，贯彻“正直、合作、创造”的行为准则。时至今日，安时利的业务已遍布全国各地，在香港、广州、北京、上海、成都等地成立分支机构，建立起完善的销售网络和专业的服务团队，为医疗机构与患者提供高效贴切的服务。</p>
+        --></div>
+        
+    	
+        
+	
+
+</body>
+<script type="text/javascript">
+           var chatName = localStorage.wechatName;//设置微信号
+           $(document).ready(function(){
+        	   to_publicInfo();
+			}) ;
+           function to_publicInfo(){
+
+				var url = "/asl/publicInfo!getOneById.action?wechatOpenId="+chatName+"&id=1";
+				//alert(url) ;
+				$.ajax({
+					   type: "GET",
+					   url: url,
+					   async:false,
+					   cache: false,
+					   dataType: "json",
+					   contentType: "application/json; charset=utf-8",
+					   success: function (data) {
+							if(data.ret == 1){
+								var cont=string_to(data.info.know);
+								$(".content").append(cont);
+							}
+					    }
+				}) 
+               }
+  </script>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="target-densitydpi=get-target-densitydpi,width=device-width, user-scalable=no">
+    
+    <script src="include/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="include/getinfo.js"></script>    
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/page_lqsq.css" rel="stylesheet" type="text/css">
+    <title>安时利</title>
+</head>
+
+<body>
+	
+    	<header>
+        	<div class="header">
+            	<a href="javascript:history.go(-1);" data-role="false" data-rel="back"><img src="images/icon.png" width="16" height="22"></a>
+                <span>领取授权</span>
+            </div>
+		</header>
+        <div class="content">
+        	<form  action="#" method="get">
+            	<div class="div1">
+                	<p>授权推广对象</p>
+                <div class="drop">
+                	
+                    <select id="province">
+						<option value="广东省">广东省</option>
+                        <option value="江苏省">江苏省</option>
+                        <option value="广东省">广东省</option>
+                        <option value="广东省">广东省</option>
+                    </select>
+                    
+                    <select class="select2" id="city">
+                        <option value="广州市">广州市</option>
+                        <option value="广州市">广州市</option>
+                        <option value="广州市">广州市</option>
+                        <option value="广州市">广州市</option>
+                    </select>
+                    
+                </div>
+                    
+                	<div class="text"><font>医院名称：</font>&nbsp;<input type="text" value="" name="" id="hospitalName"></div>
+                    <div class="department"><font>科室名称：</font>&nbsp;<input type="text" value="" name="" id="departmentName"></div>
+                    
+                </div>
+               <div class="div1 div2">
+                   <p>授权信息</p>
+                   <div class="text"><font>授权公司：</font>&nbsp;<input type="text" value="" name="" id="companyName"></div>
+                   <div class="text text1"><font>授权产品：</font>
+                   <select id="soundId">
+                   		<option value="1">产品1</option>
+                        <option>产品2</option>
+                        <option>产品3</option>
+                        <option>产品4</option>
+                   
+                   </select>
+                   
+                   
+                   </div>
+                   <div class="text time"><font>授权时间：</font>
+                   <select id="companyTime">
+                   		<option value="三个月">三个月</option>
+                        <option value="四个月">四个月</option>
+                        <option value="五个月">五个月</option>
+                        <option value="六个月">六个月</option>
+                   
+                   </select>
+                   
+                   
+                   </div>
+               </div>
+               <div class="div3">
+                   <p>个人信息</p>
+                   <div class="infor1"><font>联系人员：</font>&nbsp;<input type="text" name="" value="" id="name"></div>
+               	   <div class="infor1"><font>联系号码：</font>&nbsp;<input type="text" name="" value="" id="phone"></div>
+                   <div class="infor2">
+                       <font>验证码：</font>
+                       &nbsp;&nbsp;<input type="text" name="" value="" id="verifica">
+                       <input type="button" value="获取验证码" name="">
+                   
+                   </div>
+                   <div class="infor1 address"><font>邮件地址：</font><input type="text"  class="address1" name="" value="" id="address"></div>
+               
+               
+               </div>
+               <div class="div4">
+               		<P><input type="checkbox" name="" value="" id="protocol"><font>协议说明</font></P>
+               		<button onclick="to_registered();">提交申请</button>
+               </div> 
+               
+            
+            </form>		
+        
+        </div>
+        
+    	
+        
+	
+
+</body>
+<script type="text/javascript">
+           var chatName = getUrlVars()["wechatOpenId"] ;//获取url上的参
+           localStorage.wechatName = chatName;//设置微信号
+           var sqid=2;
+           $(document).ready(function(){
+				
+			}) ;
+           function to_registered(){
+				var province = $("#province").val() ;//省份
+				var city = $("#city").val() ;//城市
+				var hospitalName = $("#hospitalName").val() ;//医院名称
+				var departmentName = $("#departmentName").val() ;//科室名称
+				var companyName = $("#companyName").val() ;//公司名称
+				var soundId = $("#soundId").val() ;//授权产品
+				var companyTime = $("#companyTime").val() ;//授权时间
+        	    var name = $("#name").val() ;//姓名
+				var phone = $("#phone").val() ;//手机
+				var verification = $("#verifica").val() ;//验证码
+				var address = $("#address").val() ;//邮件地址
+				var p_reg=/^0{0,1}(13[0-9]|15[0-9]|153|156|18[0-9])[0-9]{8}$/;	//电话验证
+				if(province == "" || province == null || province == undefined){
+					alert("请选择省份") ;
+					return ;
+				}else if(city == "" || city == null || city == undefined){
+					alert("请选择城市") ;
+					return ;
+				}else if(hospitalName == "" || hospitalName == null || hospitalName == undefined){
+					alert("请输入医院名称") ;
+					return ;
+				}else if(departmentName == "" || departmentName == null || departmentName == undefined){
+					alert("请输入科室名称") ;
+					return ;
+				}else if(companyName == "" || companyName == null || companyName == undefined){
+					alert("请输入公司名称") ;
+					return ;
+				}else if(soundId == "" || soundId == null || soundId == undefined){
+					alert("请选择授权产品") ;
+					return ;
+				}else if(companyTime == "" || companyTime == null || companyTime == city){
+					alert("请选择授权时间") ;
+					return ;
+				}else if(name == "" || name == null || name == undefined){
+					alert("请输入联系名字") ;
+					return ;
+				}else if(phone == "" || phone == null || phone == undefined){
+					alert("请输入手机号") ;
+					return ;
+				}else if(!p_reg.test(phone)){
+					alert("手机格式不正确") ;
+					return ;
+				}else if(address == "" || address == null || address == undefined){
+					alert("请输入邮件地址") ;
+					return ;
+				}else if($('#protocol').is(':checked')) {				    
+				}else{
+					alert("请勾选协议说明") ;
+					return ;
+					}
+				var url = "/asl/activityInfo!getOneById.action?wechatOpenId="+chatName+"&sa.id="+sqid+"&sa.province="+province+"&sa.city="+city+"&sa.hospitalName="+hospitalName+"&sa.departmentName="+departmentName+"&sa.companyName="+companyName+"&sa.soundId="+soundId+"&sa.companyTime="+companyTime+"&sa.name="+name+"&sa.phone="+phone+"&sa.address="+address;
+				alert(url) ;
+				$.ajax({
+					   type: "GET",
+					   url: url,
+					   async:false,
+					   cache: false,
+					   dataType: "json",
+					   contentType: "application/json; charset=utf-8",
+					   success: function (data) {
+							if(data.ret == 1){
+								alert("已提交成功,一个工作日内我们将会主动联系您") ;
+							}else{
+								alert("提交失败") ;
+							}
+					    }
+				}) 
+               }
+  </script>
+</html>

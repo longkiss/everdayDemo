@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+header{ position:fixed; top:0}
+.content{ width:96%; height:auto;margin:0 auto; border:solid 1px #CCCCCC;margin-top:55px}
+.content form{ width:100%; height:auto;}
+.content form .div1{ width:98%;height:auto; border-radius:3px 3px 0 0; border:solid 1px #CCCCCC; margin:0 auto; margin-top:2px}
+.content form .div1 p{ width:96%; height:26px; margin:0; background:#434343; color:#FFF; line-height:26px; padding-left:4%}
+
+.content form .div1 .drop{ width:90%; margin:5px auto 0 auto; position:relative;height:22px;} 
+
+.content form .div1 .drop select{ border:none;background:#EBEBEB; width:22%; line-height:30px; border-radius:3px; font-family:'微软雅黑';height:22px;}
+.content form .div1 .drop select.select2{ margin-left:5%}
+
+
+.content form .div1 .text{ width:80%; height:30px; margin-top:5px; margin-left:6%}
+.content form .div1 .text input{ border:none; width:70%; height:22px; background:#EBEBEB; border-radius:3px;}
+.content form .div1 .text font{ font-size:12px}
+
+
+.content form .div1 .department{ width:80%; height:30px; margin-left:6%;}
+.content form .div1 .department input{ border:none; width:70%; height:22px; background:#EBEBEB; border-radius:3px;}
+.content form .div1 .department font{ font-size:12px}
+
+
+
+
+.content form .div2 .text{ width:80%; height:30px; margin-top:4px;}
+.content form .div2 .time{margin-bottom:3px}
+.content form .div2 .text1{ margin-top:0;}
+.content form .div2 .text select{ border:none;background:#EBEBEB; width:70%; line-height:30px; border-radius:3px; font-family:'微软雅黑';height:28px;}
+
+
+
+.content form .div3{ width:98%;height:auto; border-radius:3px 3px 0 0; border:solid 1px #CCCCCC; margin:0 auto; margin-top:2px}
+.content form .div3 p{ width:96%; height:26px; margin:0; background:#434343; color:#FFF; line-height:26px; padding-left:4%}
+.content form .div3 .infor1{ width:80%; margin:5px auto 0 auto;margin-left:6%}
+.content form .div3 .address{ margin-bottom:4px}
+.content form .div3 .infor1 font{font-size:12px}
+.content form .div3 .infor1 input{ border:none; width:70%; height:22px; background:#EBEBEB; border-radius:3px;}
+
+
+.content form .div3 .infor1 .address1{ border:none; width:70%; height:60px; background:#EBEBEB; border-radius:3px; overflow:auto; margin-left:3px; overflow:auto;}
+
+.content form .div3 .infor2{ width:80%; margin:5px auto 0 auto;margin-left:6%}
+.content form .div3 .infor2 input[type="text"]{border:none; width:40%; height:22px; background:#EBEBEB; border-radius:3px; margin-left:3px;padding:0;}
+.content form .div3 .infor2 input[type="button"]{ border:none; width:28%; height:24px;background:#313131; color:#FFF; font-family:'微软雅黑'; font-size:10px; border-radius:4px; padding:0; margin-left:3px;cursor:pointer}
+
+.content form .div3 .infor2 font{font-size:12px}
+
+.content form .div4{ width:80%;height:auto;margin:0 auto; margin-top:2px;}
+.content form .div4 p{ width:40%;margin:20px auto 0 auto; padding:0 0 0 22%; height:30px;}
+.content form .div4 p input[type="checkbox"]{ border:none; width:15px; height:15px; background:#FFF; border:solid 1px #000000;border-radius:none; margin:0;}
+.content form .div4 p font{ font-size:10px; display:block; margin:-20px 0 0 20px;}
+.content form .div4 button{ border:none; width:55%; height:36px;background:#EE7700; font-size:18px; color:#FFF; font-family:'微软雅黑'; border-radius:3px; cursor:pointer; margin:10px 0 25px 26%}
+
+
+

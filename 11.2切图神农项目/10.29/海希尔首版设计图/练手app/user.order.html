@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>尚佳商城</title>
+		<link type="text/css" href="css/all.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onClick="javascript :window.history.back(-1)"/>
+				<span>我的订单</span>
+				<img src="images/home01.png" class="head-home" onClick="window:location.href='store.index.html'"/>
+			</div>
+			<!--内容-->
+			<ul class="allOrders-bar clearguding">
+				<li>
+					<a  class="curr">全部</a>
+				</li>
+				<li>
+					<a  class="">待付款</a>
+				</li>
+				<li>
+					<a  class="">已付款</a>
+				</li>
+				<li>
+					<a  class="">待收货</a>
+				</li>
+				<li>
+					<a  class="">已完成</a>
+				</li>
+			</ul>
+			<ul class="user-list " id="buyer-order">
+				<li class="a-order-li">
+					<div class="a-order-info clearguding">
+						<span class="a-order-time">2015-03-10 14:06</span>订单号：1506803145
+					</div>
+					<div class="a-order-details clearguding border-top ">
+						<a href="#" class="fl carBuy-list-img"> <img src="images/img1.jpg"></a><a class="fr o-W210" href="#">
+						<p class="carBuyW212-p1">
+							芝麻糕的芝麻
+						</p> <span class="o-price">¥38.00</span> </a>
+					</div>
+					<div class="a-all clearguding">
+						<div class="a-w314">
+							<p>
+								合 计：<span class="a-moneynew">¥189.00</span>
+							</p>
+							<p>
+								数 量：<span class="a-money">1</span>
+							</p>
+						</div>
+						<div class="a-control">
+							<div class="a-delete"></div>
+							<div class="a-pay-money" id="a-pay-money">
+								查看详情
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="a-order-li">
+					<div class="a-order-info clearguding">
+						<span class="a-order-time">2015-03-10 14:06</span>订单号：1506803145
+					</div>
+					<div class="a-order-details clearguding border-top ">
+						<a href="#" class="fl carBuy-list-img"> <img src="images/img1.jpg"></a><a class="fr o-W210" href="#">
+						<p class="carBuyW212-p1">
+							芝麻糕的芝麻
+						</p> <span class="o-price">¥38.00</span> </a>
+					</div>
+					<div class="a-all clearguding">
+						<div class="a-w314">
+							<p>
+								合 计：<span class="a-moneynew">¥189.00</span>
+							</p>
+							<p>
+								数 量：<span class="a-money">1</span>
+							</p>
+						</div>
+						<div class="a-control">
+							<div class="a-delete"></div>
+							<div class="a-pay-money" id="a-pay-money">
+								查看详情
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="a-order-li">
+					<div class="a-order-info clearguding">
+						<span class="a-order-time">2015-03-10 14:06</span>订单号：1506803145
+					</div>
+					<div class="a-order-details clearguding border-top ">
+						<a href="#" class="fl carBuy-list-img"> <img src="images/img1.jpg"></a><a class="fr o-W210" href="#">
+						<p class="carBuyW212-p1">
+							芝麻糕的芝麻
+						</p> <span class="o-price">¥38.00</span> </a>
+					</div>
+					<div class="a-all clearguding">
+						<div class="a-w314">
+							<p>
+								合 计：<span class="a-moneynew">¥189.00</span>
+							</p>
+							<p>
+								数 量：<span class="a-money">1</span>
+							</p>
+						</div>
+						<div class="a-control">
+							<div class="a-delete"></div>
+							<div class="a-pay-money" id="a-pay-money">
+								查看详情
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+            <form id="commentForm" style="display: none;"></form>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	$('.allOrders-bar li a').on("touchstart",function() {
+				$(this).addClass('curr').parent('li').siblings().children('a').removeClass('curr');
+			});
+</script>
+

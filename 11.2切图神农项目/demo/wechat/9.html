@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="target-densitydpi=get-target-densitydpi,width=device-width, user-scalable=no">
+    
+    <script src="include/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="include/getinfo.js"></script>
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/page_zhuc.css" rel="stylesheet" type="text/css">
+    <title>安时利</title>
+</head>
+
+<body>
+	
+    	<header>
+        	<div class="header">
+            	<a href="javascript:history.go(-1);" data-role="false" data-rel="back"><img src="images/icon.png" width="16" height="22"></a>
+                <span>注册</span>
+            </div>
+		</header>
+        <div class="content">
+        	<form action="#" method="get">
+                <P class="p1"><font>姓名：</font><input type="text" name="" value="" id="name"></P>
+                <P class="p2"><font>手机：</font><input class="text1" type="text" name="" value="" id="phone"></P>
+                <p class="p3"><font>验证码：<input type="text" name="" value="" id="verification"><input type="button" name="" value="获取验证码"></font></p>
+                <p class="p4"><font>公司名称：</font><input type="text" name="" value="" id="companyname"></p>
+                
+                <button class="registered" onclick="to_registered();">立即注册</button>
+        	<form>
+        </div>           	
+</body>
+<script type="text/javascript">
+           var chatName = getUrlVars()["wechatOpenId"] ;//获取url上的参
+           localStorage.wechatName = chatName;//设置微信号
+           $(document).ready(function(){
+				
+			}) ;
+           function to_registered(){
+        	    var name = $("#name").val() ;//姓名
+				var phone = $("#phone").val() ;//手机
+				var verification = $("#verification").val() ;//验证码
+				var companyname = $("#companyname").val() ;//公司名称
+				var p_reg=/^0{0,1}(13[0-9]|15[0-9]|153|156|18[0-9])[0-9]{8}$/;	//电话验证
+				if(name == "" || name == null || name == undefined){
+					alert("请输入姓名") ;
+					return ;
+				}else if(phone == "" || phone == null || phone == undefined){
+					alert("请输入手机号") ;
+					return ;
+				}else if(!p_reg.test(phone)){
+					alert("手机格式不正确") ;
+					return ;
+				}else if(companyname == "" || companyname == null || companyname == undefined){
+					alert("请输入公司名称") ;
+					return ;
+				}
+				var url = "/asl/userInfo!update.action?wechatOpenId="+chatName+"&gname="+name+"&mobile="+phone+"&engine="+companyname;
+				//alert(url) ;
+				$.ajax({
+					   type: "GET",
+					   url: url,
+					   async:false,
+					   cache: false,
+					   dataType: "json",
+					   contentType: "application/json; charset=utf-8",
+					   success: function (data) {
+							if(data.ret == 1){
+								alert("注册成功") ;
+							}else{
+								alert("注册失败") ;
+							}
+					    }
+				}) 
+               }
+  </script>
+</html>

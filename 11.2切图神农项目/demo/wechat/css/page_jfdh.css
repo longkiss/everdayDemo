@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{ width:94%; height:auto; margin:0 auto;padding-top:60px}
+
+.content p{ margin:0; font-size:16px; font-family:'微软雅黑'; color:#000; padding-top:25px; width:94%;}
+.content p span{ color:#EE7700}
+
+.content .input{ margin-top:20px; width:94%; height:40px;}
+.content .input font{ font-family:'微软雅黑'; font-size:16px; color:#000}
+.content .input input{ border:none; width:55%; height:30px; border:solid 1px #EE7700; border-radius:3px;}
+
+
+.content .p2{ margin:0; padding-top:15px; color:#000}
+
+.content .text{ width:94%; height:auto; margin-left:6%; margin-top:15px;}
+
+.content .text p{ margin:0; font-size:14px; padding:0; line-height:22px;}
+
+
+.content .button{ width:50%; height:40px; margin:0 auto; background:#EE7700; border-radius:4px; color:#FFF; line-height:40px; text-align:center; margin-top:80px}
+
+.content .button a{ display:block;  color:#FFF; font-size:18px; font-family:'微软雅黑';  text-decoration:none; cursor:pointer}

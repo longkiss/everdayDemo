@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1;width=device-width;maximun-scale=1;user-scalable=no">
+	<link rel="stylesheet" href="css/index.css">
+ 	<title>更多</title>
+
+</head>
+<body>
+<header>更多</header>
+<!--banner开始-->
+	<div class="main-banner" >
+		<div class="gallery" id="gallery" style="overflow: hidden;">
+			<div class="swipe-box">
+				<a href="">
+					<img src="images/more.jpg" width="100%;" />
+				</a>
+			</div>
+			<div class="swipe-box">
+				<a href="">
+					<img src="images/more.jpg" width="100%;" />
+				</a>
+			</div>
+ 			<div class="swipe-box">
+				<a href="">
+					<img src="images/more.jpg" width="100%;" />
+				</a>
+			</div>
+
+ 		</div>
+		<div class="dotlist">
+			<div id="swipe-dot"></div>
+		</div>
+	</div>
+<!--banner结束-->
+<section class="person-main clearfix">
+	<div class="person-main-cont">
+		<div class="person-cont-box style">
+			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>企业风采</span>
+				<ul class="toggle">
+					<li><a href="">企业风采</a></li>
+					<li><a href="">企业风采</a></li>
+					<li><a href="">企业风采</a></li>
+	 			</ul>
+			
+			</a>
+  		</div>
+ 		<div class="person-cont-box contact">
+ 			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>联系我们</span>
+				<ul class="toggle">
+					<li><a href="">联系我们</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">联系我们</a></li>
+	 			</ul>
+			</a>
+  		</div>
+  		<div class="person-cont-box join ">
+			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>招商加盟</span>
+				<ul class="toggle">
+					<li><a href="">招商加盟</a></li>
+					<li><a href="">招商加盟</a></li>
+					<li><a href="">招商加盟</a></li>
+	 			</ul>
+			</a>
+  		</div>
+ 		<div class="person-cont-box location">
+ 			<i class="box-icon"></i>
+			<a href="#" class="box-title">
+				<span>我们的位置</span>	
+				<ul class="toggle">
+					<li><a href="">我们的位置</a></li>
+					<li><a href="">我们的位置</a></li>
+					<li><a href="">我们的位置</a></li>
+	 			</ul>
+			</a>
+  		</div>
+  	</div>
+
+  	
+</section>
+
+ <!--footer部分开始 -->
+<footer>
+	<div class="footer-box">
+		<a href="idnex.html" class="footer-flex footer-now">
+			<i class="footer-icon icon1"></i>
+			<span>首页</span>
+		</a>
+		<a href="#" class="footer-flex">
+			<i class="footer-icon icon2"></i>
+			<span>一键呼</span>
+		</a>
+		<a href="news.html" class="footer-flex">
+			<i class="footer-icon icon3"></i>
+			<span>资讯</span>
+		</a>
+		<a  href="personal.html" class="footer-flex">
+			<i class="footer-icon icon4"></i>
+			<span>个人中心</span>
+		</a>
+		<a href="more.html" class="footer-flex">
+			<i class="footer-icon icon5"></i>
+			<span>更多</span>
+ 		</a>
+   	 </div>
+</footer>
+ <!-- footer部分结束 -->
+
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+ <script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/banner-swiper.js"></script>
+<script>
+	$(".person-cont-box").click(function(){
+ 		$(this).children(".toggle").toggle(500);
+ 		// $(this).siblings(".person-cont-box").children(".toggle").hide()
+ 	})
+ </script>
+ </body>
+</html>

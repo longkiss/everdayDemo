@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="target-densitydpi=get-target-densitydpi,width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="style/jquery.mobile-1.3.0.min.css" type="text/css">
+    <script src="include/jquery-2.1.0.min.js"></script>
+    <script src="include/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" src="include/getinfo.js"></script>
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/page_zxzt.css" rel="stylesheet" type="text/css">
+    <title>安时利</title>
+</head>
+
+<body>
+	
+    	<header>
+        	<div class="header">
+            	<a href="javascript:history.go(-1);" data-role="false" data-rel="back"><img src="images/icon.png" width="16" height="22"></a>
+                <span>在线展厅</span>
+            </div>
+		</header>
+        <div class="content">
+        	<div class="banner">
+            	<a data-ajax='false' href="#"><img src="images/banner8.png" width="100%" height="100%"></a>
+            </div>
+            <!--<div class="online">
+  				<div class="left">         
+                    <a data-ajax='false' href=""><img src="images/pic9.png" width="100%" height="100%"></a>
+                    <a data-ajax='false' href="#">自动取片系统</a>
+                </div> 
+                <div class="center">         
+                    <a data-ajax='false' href=""><img src="images/pic10.png" width="100%" height="100%"></a>
+                    <a data-ajax='false' href="#">手续影像移动工作</a>
+                </div> 
+                <div class="right">         
+                    <a data-ajax='false' href=""><img src="images/pic11.png" width="100%" height="100%"></a>
+                    <a data-ajax='false' href="#">LMD-DM50</a>
+                </div> 
+            </div>
+            
+            <div class="online">
+  				<div class="left">         
+                    <a data-ajax='false' href=""><img src="images/pic9.png" width="100%" height="100%"></a>
+                    <a data-ajax='false' href="#">自动取片系统</a>
+                </div> 
+            </div>
+            <div class="online">
+  				<div class="left">         
+                    <a data-ajax='false' href=""><img src="images/pic9.png" width="100%" height="100%"></a>
+                    <a data-ajax='false' href="#">自动取片系统</a>
+                </div> 
+                <div class="center">         
+                    <a data-ajax='false' href=""><img src="images/pic10.png" width="100%" height="100%"></a>
+                    <a data-ajax='false' href="#">手续影像移动工作</a>
+                </div> 
+            </div>
+            
+        
+        --></div>
+        
+    	
+        
+	
+
+</body>
+<script type="text/javascript">
+           var chatName = localStorage.wechatName;//设置微信号
+           var gid = getUrlVars()["gid"] ;//获取url上的参数
+           var cid = getUrlVars()["cid"] ;//获取url上的参数
+           $(document).ready(function(){
+        	   to_informationInfo();
+			}) ;
+           function to_informationInfo(){
+
+				var url = "/asl/goodsInfo!getAll.action?wechatOpenId="+chatName+"&sa.classifyId="+cid+"&sa.typeId="+gid;
+				//alert(url) ;
+				$.ajax({
+					   type: "GET",
+					   url: url,
+					   async:false,
+					   cache: false,
+					   dataType: "json",
+					   contentType: "application/json; charset=utf-8",
+					   success: function (data) {
+						     var _html = "";
+							if(data.ret == 1){
+								$(data.all).each(function(index,items){
+									if(index%3 == 0){
+										   if(index+1 == data.all.length){
+											   _html += "<div class='online'><div class='left'><a data-ajax='false'><img src='/asl"+items.pic+"' width='100%' height='100%'></a><a data-ajax='false'>"+items.name+"</a></div></div>"
+											 }else{
+											   _html += "<div class='online'><div class='left'><a data-ajax='false'><img src='/asl"+items.pic+"' width='100%' height='100%'></a><a data-ajax='false'>"+items.name+"</a></div>"
+												 }
+										}
+										if(index%3 == 1){
+											   if(index+1 == data.all.length){
+												   _html += "<div class='center'><a data-ajax='false'><img src='/asl"+items.pic+"' width='100%' height='100%'></a><a data-ajax='false'>"+items.name+"</a></div></div>"
+												 }else{
+													   _html += "<div class='center'><a data-ajax='false'><img src='/asl"+items.pic+"' width='100%' height='100%'></a><a data-ajax='false'>"+items.name+"</a></div>"
+													 }
+											}
+										if(index%3 == 2){
+											   _html += "<div class='right'><a data-ajax='false'><img src='/asl"+items.pic+"' width='100%' height='100%'></a><a data-ajax='false'>"+items.name+"</a></div></div>"						
+											}
+								});
+								$(".content").append(_html);
+							}
+					    }
+				}) 
+               }
+  </script>
+</html>

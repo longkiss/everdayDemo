@@ -1,0 +1,53 @@
+.list{
+	position: relative;
+   }
+.list h3{
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.8rem;
+	color: #ee7700;
+	font-weight: bold;
+	display: block;
+	padding-left: 20px;
+ }
+.list ul{
+	width: 100%;
+	position: relative;
+	display: block;
+}
+.list ul li{
+	height:40px;
+	line-height: 40px;
+	font-size: 1.4rem;
+	border-bottom:1px solid #c4c4c4;
+	background: #ebebeb;
+	padding-left: 20px;
+
+
+}
+.list ul li:hover{
+	border-bottom:1px solid #ee7700;
+	background: #ee7700;
+}
+.list ul li a{
+	display: block;
+	height: 100%;
+	width: 100%;
+
+}
+.list ul li:hover a{
+
+	color: white;
+}
+.page{
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+	text-align: right;
+	padding-left:20px;
+}
+.page a{
+	display: block;
+	float: right;
+	margin:0 10px;
+}
