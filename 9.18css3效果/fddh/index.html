@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+ul,li{ list-style:none;}
+body{ background:url(img/bj.jpg) no-repeat ;}
+.main{ width:1000px; height:300px; margin:360px auto; perspective:1000px;-webkit-perspective:1000px;position:relative;}
+.run{ transform-style:preserve-3d;-webkit-transform-style:preserve-3d; width:260px; height:240px; margin:0 auto; 
+	-moz-transform-origin:50%;
+	-moz-animation:slide 30s linear infinite;
+	-webkit-transform-origin:50%;
+	-webkit-animation:slide 30s linear infinite;
+	
+
+ }
+
+
+
+.run:hover{-moz-animation-play-state:paused;}/*控制画面旋转与停止*/
+
+
+.run ul li{width:240px; height:220px; border:10px solid rgba(255,255,255,0.8); position:absolute; transition:all 0.5s;}
+.run ul li img{width:240px; height:220px;}
+.run ul li:nth-child(1){
+    transform:rotateY(0deg) translateZ(230px);
+    -moz-transform:rotateY(0deg) translateZ(230px);
+    -webkit-transform:rotateY(0deg) translateZ(230px)
+}
+.run ul li:nth-child(2){
+    transform:rotateY(60deg) translateZ(230px);
+    -moz-transform:rotateY(60deg) translateZ(230px);
+    -webkit-transform:rotateY(60deg) translateZ(230px)
+}
+.run ul li:nth-child(3){
+    transform:rotateY(120deg) translateZ(230px);
+    -moz-transform:rotateY(120deg) translateZ(230px);
+    -webkit-transform:rotateY(120deg) translateZ(230px)
+}
+.run ul li:nth-child(4){
+    transform:rotateY(180deg) translateZ(230px);
+    -moz-transform:rotateY(180deg) translateZ(230px);
+    -webkit-transform:rotateY(180deg) translateZ(230px)
+}
+.run ul li:nth-child(5){
+    transform:rotateY(240deg) translateZ(230px);
+    -moz-transform:rotateY(240deg) translateZ(230px);
+    -webkit-transform:rotateY(240deg) translateZ(230px)
+}
+.run ul li:nth-child(6){
+    transform:rotateY(300deg) translateZ(230px);
+    -moz-transform:rotateY(300deg) translateZ(230px);
+    -webkit-transform:rotateY(360deg) translateZ(230px)
+}
+
+@-moz-keyframes slide{
+	from{ 
+        transform:rotateX(-15deg) rotateY(0deg);
+        
+
+
+    }
+	to{ transform:rotateX(-15deg) rotateY(360deg);
+        
+
+    }
+	}
+@-webkit-keyframes slide{
+    from{ transform:rotateX(-15deg) rotateY(0deg);
+            -webkit-transform:rotateX(-15deg) rotateY(0deg);
+    }
+    to{ 
+        transform:rotateX(-15deg) rotateY(360deg);
+        -webkit-transform:rotateX(-15deg) rotateY(360deg);
+
+    }
+    }
+
+
+    
+.love{ width:173px; height:157px; background:url(img/xin.png);  position:absolute; top:500px; left:100px; z-index:99999; -moz-animation:jump 6s  infinite;
+-webkit-animation:jump 6s  infinite;
+
+}
+@-moz-keyframes jump{
+	0%{top:500px; left:100px; opacity:0.2;}
+	20%{top:300px; left:100px; opacity:0.2;}
+	40%{top:200px; left:200px; opacity:0.4;}
+	60%{top:100px; left:400px; opacity:0.6;}
+	80%{top:200px; left:600px; opacity:0.8;}
+	100%{top:260px; left:600px; opacity:1;}
+		}
+ @-webkit-keyframes jump{
+    0%{top:500px; left:100px; opacity:0.2;}
+    20%{top:300px; left:100px; opacity:0.2;}
+    40%{top:200px; left:200px; opacity:0.4;}
+    60%{top:100px; left:400px; opacity:0.6;}
+    80%{top:200px; left:600px; opacity:0.8;}
+    100%{top:260px; left:600px; opacity:1;}
+        }       
+</style>
+</head>
+
+<body>
+	<div class="main">
+    	<div class="run">
+            <ul>
+                <li><img src="img/1.jpg"></li>
+                <li><img src="img/2.jpg"></li>
+                <li><img src="img/3.jpg"></li>
+                <li><img src="img/4.jpg"></li>
+                <li><img src="img/5.jpg"></li>
+                <li><img src="img/6.jpg"></li>
+                  
+            </ul>
+        </div>
+        
+    </div>
+    <div class="love"></div>
+    <audio autoplay="true" controls="controls" loop="loop"
+    src="img/king.mp3"></audio>
+</body>
+</html>

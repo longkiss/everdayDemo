@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	body{background:url('img/bj.jpg');}
+	*{margin:0;padding:0;}
+	.producs{width:1200px;height:260px; margin:0 auto;perspective:1000px;/*视距*/}
+	.scan{transform-style:preserve-3d;/*设为3D模式*/width:180px; height:240px;transform-origin:50%;/*设置旋转中心点*/float:left; margin:60px;transform:rotateY(90deg);-moz-animation:slide 9s linear infinite;}
+	.scan ul li{list-style:none;width:180px;height:180px;border:5px solid rgba(255,255,255,0.5); position:absolute;}
+	.scan ul li img{width:180px;height:180px;}
+	.scan ul li:nth-child(1){transform:rotateY(0deg) translateZ(95px)}
+	.scan ul li:nth-child(2){transform:rotateY(90deg) translateZ(95px)}
+	.scan ul li:nth-child(3){transform:rotateY(180deg) translateZ(95px)}
+	.scan ul li:nth-child(4){transform:rotateY(-90deg) translateZ(95px)}
+	.scan:nth-child(1){-moz-animation-delay:1s;}
+	.scan:nth-child(2){-moz-animation-delay:3s;}
+	.scan:nth-child(3){-moz-animation-delay:5s;}
+	.scan:nth-child(4){-moz-animation-delay:7s;}
+	@-moz-keyframes slide{
+	from{transform:rotateY(0deg);}
+	to{transform:rotateY(360deg);}
+	
+	}
+  </style>
+ </head>
+ <body>
+	<div class="producs">
+			<div class="scan">
+				<ul>
+				<li><img src="img/2.jpg"></li>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+				</ul>
+			</div>
+			<div class="scan">
+				<ul>
+				<li><img src="img/6.jpg"></li>
+				<li><img src="img/7.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+				</ul>
+			</div>
+			<div class="scan">
+				<ul>
+				<li><img src="img/6.jpg"></li>
+				<li><img src="img/7.jpg"></li>
+				<li><img src="img/8.jpg"></li>
+				<li><img src="img/9.jpg"></li>
+				</ul>
+			</div>
+			<div class="scan">
+				<ul>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+				<li><img src="img/10.jpg"></li>
+				</ul>
+			</div>
+
+	</div>
+ </body>
+</html>
