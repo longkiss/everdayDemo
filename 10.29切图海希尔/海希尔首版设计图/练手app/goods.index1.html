@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>尚佳商城</title>
+		<link rel="stylesheet" type="text/css" href="css/all.css" />
+	</head>
+	<body>
+		<div class="main">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+				<span>产品列表</span>
+				<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+			</div>
+			<!--内容-->
+			<div class="price-control">
+				<ul class="clearguding">
+					<a>
+					<li class="pop boz-add">
+						人气
+					</li> </a>
+					<a>
+					<li class="sal boz-add">
+						销量
+					</li> </a>
+					<a>
+					<li class="pri boz-add">
+						价格
+					</li> </a>
+					<li class="sea" id="sea-btn">
+						搜索
+					</li>
+
+				</ul>
+			</div>
+			<!--搜索-->
+			<div class="seach clearguding none" id="search-box" style="">
+				<input class="sosuo" id="seachword" type="text" placeholder="请输入搜索内容..." />
+				<span class="sosuo-btn"></span>
+			</div>
+			<ul class="goods-index1-ul">
+				<li onclick="window:location.href='goods.detail.html'">
+					<img src="images/img1.jpg" class="goods-index1-img" />
+					<p class="goods-index1-title">让你天天二十几,让你天天二十几让你天天二十几让你天天</p>
+					<p class="goods-index1-Price">
+						<span class="goods-index1-Price">￥：26.00</span>
+						<img src="images/shopping-newa1.png" class="goods-index1-cat" />
+					</p>
+				</li>
+				<li onclick="window:location.href='goods.detail.html'">
+					<img src="images/img1.jpg" class="goods-index1-img" />
+					<p class="goods-index1-title">让你天天二十几,让你天天二十几让你天天二十几让你天天</p>
+					<p class="goods-index1-Price">
+						<span class="goods-index1-Price">￥：26.00</span>
+						<img src="images/shopping-newa1.png" class="goods-index1-cat" />
+					</p>
+				</li>
+				<li onclick="window:location.href='goods.detail.html'">
+					<img src="images/img1.jpg" class="goods-index1-img" />
+					<p class="goods-index1-title">让你天天二十几,让你天天二十几让你天天二十几让你天天</p>
+					<p class="goods-index1-Price">
+						<span class="goods-index1-Price">￥：26.00</span>
+						<img src="images/shopping-newa1.png" class="goods-index1-cat" />
+					</p>
+				</li>
+				<li onclick="window:location.href='goods.detail.html'">
+					<img src="images/img1.jpg" class="goods-index1-img" />
+					<p class="goods-index1-title">让你天天二十几,让你天天二十几让你天天二十几让你天天</p>
+					<p class="goods-index1-Price">
+						<span class="goods-index1-Price">￥：26.00</span>
+						<img src="images/shopping-newa1.png" class="goods-index1-cat" />
+					</p>
+				</li>
+				<li onclick="window:location.href='goods.detail.html'">
+					<img src="images/img1.jpg" class="goods-index1-img" />
+					<p class="goods-index1-title">让你天天二十几,让你天天二十几让你天天二十几让你天天</p>
+					<p class="goods-index1-Price">
+						<span class="goods-index1-Price">￥：26.00</span>
+						<img src="images/shopping-newa1.png" class="goods-index1-cat" />
+					</p>
+				</li>
+				<li onclick="window:location.href='goods.detail.html'">
+					<img src="images/img1.jpg" class="goods-index1-img" />
+					<p class="goods-index1-title">让你天天二十几,让你天天二十几让你天天二十几让你天天</p>
+					<p class="goods-index1-Price">
+						<span class="goods-index1-Price">￥：26.00</span>
+						<img src="images/shopping-newa1.png" class="goods-index1-cat" />
+					</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#sea-btn").click(function() {
+			if ($("#search-box").hasClass("none")) {
+				$("#search-box").removeClass("none");
+			} else {
+				$("#search-box").addClass("none");
+			}
+		});
+	});
+</script>
+

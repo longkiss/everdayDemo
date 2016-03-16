@@ -1,0 +1,46 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>尚佳商城</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+		<link type="text/css" href="css/all.css" rel="stylesheet" />
+	</head>
+	<body id="body" >
+		<div class="main">
+			<!--头部-->
+			<div class="head color1">
+				<img src="images/back_white.png" class="head-back" onclick="javascript :window.history.back(-1)"/>
+				<span>编辑收货地址</span>
+				<img src="images/home01.png" class="head-home" onclick="window:location.href='store.index.html'"/>
+		    </div>
+			<div class="addresser1content">
+				<ul class="addresser1contentul">
+					<li class="li"></li>
+					<a href="#">
+					<li>
+						<input type="text" id="consignee"  placeholder="收件人姓名"/>
+					</li> </a>
+					<li >
+						<select name='paymentinfo' data-role="none"></select>
+						<select name='paymentinfo' data-role="none"></select>
+						<select name='paymentinfo' data-role="none"></select>
+					</li> 
+					<a href="#">
+					<li>
+						<input type="text" id="address"  placeholder="详细地址"/>
+					</li> </a>
+					<a href="#">
+					<li>
+						<input type="number" id="phonemob" value="{$user.usertel}"  placeholder="联系电话"/>
+					</li> </a>
+					<a >
+					<li class="addresser1-bottom">
+						保存收货地址
+					</li> </a>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
