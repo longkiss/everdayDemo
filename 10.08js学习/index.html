@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.10.2.min.js"></script>
+	<style type="text/css">
+		 
+
+	</style>
+</head>
+<body>
+<!-- 	<form name="testform" action="jsref_onsubmit.asp"
+onsubmit="alert('Hello ' + testform.fname.value +'!')" onreset="alert('重置')">
+What is your name?<br />
+<input type="text" name="fname" />
+<input type="submit" value="Submit" />
+<input type="reset" value="重置">
+</form>
+ -->
+
+
+
+<div id="text">点击此处</div>
+<div id="clicks">在此处显示新内容</div>
+
+
+<script  type="text/javascript">
+	// $("#text").fadeIn(50000)
+//     function fuck(){
+//    	 	var fuck=document.getElementById("text");
+//     	fuck.innerHTML="hello world!"
+//     }
+//     function clicks(){
+//     	var el=document.getElementById("clicks");
+//     	if(el.addEventListener){
+//     		el.addEventListener("click",fuck,false)
+//     	}else if(el.attachEvent){
+//     	el.attachEvent("onclick",fuck)
+//     	}
+//      }
+
+// window.onload=function(){
+// 	clicks();
+// }
+
+
+$("#text").click(function(){
+
+	$("#clicks").html("hello world")
+})
+ 
+
+
+ </script>
+
+
+
+
+
+
+<!-- <div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div class="red">xxxxx</div>
+<div class="green">xxxxx</div>
+<div>0000000000000000</div> -->
+
+<script type="text/javascript">
+	// var  divs=document.getElementsByTagName("div")
+	// for(i=0; i<=divs.length;i++){
+	// 	if(divs[i].getAttribute("className")||divs[i].getAttribute("class")=="red"){
+	// 		divs[i].style.color="red"
+ // 		} if(divs[i].getAttribute("className")||divs[i].getAttribute("class")=="green"){
+	// 		divs[i].style.color="green"
+ // 		} else if{
+ // 		  divs[i].style.color="green"
+
+ // 		}
+	// }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
