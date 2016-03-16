@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-12-22 15:51:58
+ * @version $Id$
+ */
+html,body{
+    height: 100%;
+    width:100%;
+}
+ body{
+    margin:0;
+    width: 100%;
+    overflow-x: hidden;
+    background: url(../img/1.jpg) no-repeat;
+    background-size:100% 100%;
+
+   }
+
+ li{
+   list-style-type: none;
+ }
+ul,ul li{
+   margin:0;
+   padding: 0
+ }
+ .oul{
+   width: 100%;
+   height: 150px;
+   /*overflow-x: scroll;*/
+   /*overflow-y: hidden;*/
+   background: rgba(0,0,0,0.5);
+   /*white-space:nowrap;*/
+ }
+.box{
+   width: 100%;
+   height: auto;
+   overflow: hidden;
+   position: relative;
+   /*height: 170px;*/
+}
+.box li{
+   height: 100%;
+   width: 12%;
+  display: inline-block;
+}
+.box li img{
+   height: 100%;
+   width: 100%
+}
+.toggle{
+   height: 50px;
+   width: 50px;
+   position: absolute;
+   right:0;
+   top: 0;
+   background:url(../img/upseek.png) no-repeat left top;
+   transition: all ease 0.5s;
+   -ms-transition: all ease 0.5s;
+   -moz-transition: all ease 0.5s;
+   -webkit-transition: all ease 0.5s;
+   z-index: 9999;
+ }
+.toggle:hover{
+   transform: scale(1.2);
+   -webkit-transform: scale(1.2);
+   -ms-transform: scale(1.2);
+   -moz-transform: scale(1.2);
+}
