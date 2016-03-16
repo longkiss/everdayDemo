@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9.10demo02</title>
+	<style>
+	body{ height: 2000px; width: auto;}
+	
+	</style>
+</head>
+<body>
+<h1 id="oldnode"></h1>
+<a href="javascript:replaceMessage()" style="text-decoration:none">"java"替换"javascript"</a>
+<div><b id="oldnode">JavaScript</b>是一个很常用的技术，为网页添加动态效果。</div>
+<script type="text/javascript">
+	function replaceMessage(){
+		var newnode=document.createElement("div");
+		//newnode.innerHTML="javascript";
+		var newnodeText=document.createTextNode("javascript");
+		newnode.appendChild(newnodeText);
+		//appendChild()
+		var oldnode=document.getElementById("oldnode");
+		oldnode.parentNode.replaceChild(newnode,oldnode)
+	}
+
+
+</script>
+	
+ <script type="text/javascript">
+    //   function replaceMessage(){
+    //       var newnode=document.createElement("i");
+    //       var newnodeText=document.createTextNode("newnodeText");
+    //       newnode.appendChild(newnodeText);
+    //       var oldnode=document.getElementById("oldnode");
+    //       oldnode.parentNode.replaceChild(newnode,oldnode);
+    //   }
+    function replaceMessage(){
+           var oldnode=document.getElementById("oldnode");
+           var oldHTML= oldnode.innerHTML;           
+           var newnode=document.createElement("i");         
+           oldnode.parentNode.replaceChild(newnode,oldnode);
+           newnode.innerHTML=oldHTML;
+           
+}    
+    
+
+</script>
+<script type="text/javascript">
+	var body=document.body;
+	function creatfn(url,text){
+		var a=document.createElement("a");
+		a.href=url;
+		a.innerHTML=text;
+		a.style.color="red";
+		a.style.textDecoration="none";
+		body.appendChild(a);
+  	}
+creatfn("http://www.baidu.com","百度链接"+"<br>")
+
+
+</script>
+
+<script type="text/javascript">
+var clientWidth= document.documentElement.clientWidth+"px"
+      || document.body.clientWidth+"px";
+var clientHeight= document.documentElement.clientHeight+"px"
+      || document.body.clientHeight+"px";
+      document.write(clientWidth+"<br>")
+        document.write(clientHeight+"<br>")
+document.getElmentByClassName()
+var scrollHeight=document.documentElement.scrollHeight+"px"||document.body.scrollHeight+"px"+"<br>";
+var scrollWidth=document.documentElement.scrollWidth+"px"||docuemnt.body.scrollWidth+"px";
+document.write(scrollHeight+"<br>");
+document.write(scrollWidth);
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

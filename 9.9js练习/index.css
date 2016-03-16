@@ -1,0 +1,14 @@
+body{padding: 0;margin: 0;}
+
+.container-fluid{padding:0;}
+.row-fluid{ height: 104px;color:#90C;}
+.row-fluid.nav{ width:65%; margin: 0 auto;}
+.row-fluid .span2.logo{margin-left:10%; float:left;}
+.row-fluid .span1{ float:left; height:43px; width: 94px; text-align: center;line-height: 43px; margin-top:61px; }
+.row-fluid .span1 a{text-decoration: none;color:#000; height: 100%; width: 100%;float:left;font-size: 16px;}
+.row-fluid .span1 a.now{color:#f00;background:url(img/nav_bg.gif) no-repeat;}
+.row-fluid .span1:hover{background:url(img/nav_bg.gif) no-repeat;}
+
+
+.banner{height:auto;width: 100%; margin: 0 auto; text-align: center;}
+.banner img{}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><block name="title">广州兴国新能源科技有限公司</block></title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="keywords" content="">
+		<meta id="description" name="description" content="<block name="description">广州兴国新能源科技有限公司，面向电动汽车行业的高科技公司。</block>" />
+		<meta id="shareImg" name="share-img" content="<block name="share-img">http://{$_SERVER['HTTP_HOST']}__PUBLIC__/img/logo_108.png</block>">
+		<link rel="shortcut icon" href="__PUBLIC__/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="__PUBLIC__/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css">
+		<!--[if IE 7]>
+		<link rel="stylesheet" href="__PUBLIC__/css/font-awesome-ie7.min.css">
+		<![endif]-->
+		<!-- Bootstrap -->
+	    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css">
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+		<!--<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css"/>-->
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/{:THEME_NAME}/home.css?r={:rand(1,1000)}"/>
+		<block name="css">独立css文件</block>
+	</head>
+	<body>
+		<div class="wraper">
+			<block name="header">头部内容</block>
+			<block name="banner"></block>
+			<div class="content-box">
+				<block name="content">主体内容</block>
+			</div>
+			<div class="footer">
+				©2015 版权所有  广东兴国新能源科技有限公司  备案号:粤ICP备14024673号-1 
+			</div>
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+	    <script src="__PUBLIC__/js/jquery.bootstrap.min.js"></script>
+		<script src="__PUBLIC__/js/home.js?r={:rand(1,1000)}" type="text/javascript" charset="utf-8"></script>
+		
+	    <block name="scripts"></block>
+	</body>
+</html>

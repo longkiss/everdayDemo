@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout</title>
+</head>
+<body>
+	<input type="text" id="count">
+	<button onclick="start()">开始计时</button>
+	<button onclick="stop()">停止计时</button>
+	<script type="text/javascript">
+	// var num=0;
+	// var i;
+	// function start(){
+	// 	document.getElementById('count').value=num;
+	// 	num++;
+	// setTimeout(start,1000)	
+ // 	}
+ //  	function stop(){
+ // 		clearTimeout(i);}
+
+var num=0;
+var i;
+function start(){
+document.getElementById('count').value=num;
+num++;
+i=setTimeout(start,1000)
+  };
+  function stop(){
+  	clearTimeout(i)
+  }
+
+	</script>
+</body>
+</html>

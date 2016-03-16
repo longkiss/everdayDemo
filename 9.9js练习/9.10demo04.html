@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>add</title>
+	<style type="txet/css">
+		 p{ height: 500px; width: 500px; background: #123456}
+	</style>
+
+</head>
+<body>
+<ul>
+	<li><a href="#">遍历1</a></li>
+	<li><a href="#">遍历2</a></li>
+	<li><a href="#">遍历3</a></li>
+	<li><a href="#">遍历4</a></li>
+	<li><a href="#">遍历5</a></li>
+	<li><a href="#">遍历6</a></li>
+</ul>
+<script src="jquery-1.11.3.js"></script>
+<script  type="text/javascript">
+//	$('ul').add('<p>').html('hello world');
+	 $(function(){
+		 $.each($("li"),function(index,value){
+//			 console.log(index,value);
+			 $("li").eq(index).click(function(){
+				 console.log(value)
+			 })
+		 })
+	 })
+
+
+
+</script>
+	
+</body>
+</html>
