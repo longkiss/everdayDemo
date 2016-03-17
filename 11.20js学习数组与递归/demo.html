@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/demo.css" rel="stylesheet">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div id="box"></div>  
+<div>
+	//数组排序;<br>
+	var value=[1,5,10,6,8,15];<br>
+		 function compare(value1,value2){<br>
+		 	//第一种方法<br>
+		 	 if(value1>value2){<br>
+		 	 	return 1;<br>
+		 	 }else if(value1<value2){ <br/>
+		 		return -1;<br>
+		 	}else{<br>
+		  	return 0<br><br>
+		 	}<br>
+		 	//第二种方法<br>
+		 	return value1-value2;<br>
+		 }	<br>
+	console.log(value.sort(compare));<br>
+	//操作方法	<br>
+</div>
+<hr>
+<div>
+	//concat()方法。基于当前数组创建一个新的数组。psuh()/unshif()返回的是数组的长度;<br>
+	var b=value.concat();<br>
+	console.log(b)<br>
+	//结果：[1, 5, 6, 8, 10, 15]<br>
+	var c=value.concat(b)<br>
+	console.log(c);<br>
+	//结果：[1, 5, 6, 8, 10, 15, 1, 5, 6, 8, 10, 15]<br>
+</div>
+<hr>
+<div>
+	//slice()方法，基于当前数组中的一项或多项创建一个新的数组，slice(起始位置,结束位置)可接受两个参数;<br>
+	var value=[1,5,10,6,8,15];<br>
+	var values=value.slice(1,5);<br>
+	console.log(values);<br>
+</div>
+<hr>
+<div>
+	//splice()方法，splice(要删除的第一项的位置，要删除的项数，要插入的项|可以有很多|)<br><br><br>
+	var color=['red','green','blue'];<br><br>
+	var remove=color.splice(0,1);//在0的起始项删除一个项。<br>
+		console.log(color);//返回删除后的数组<br> 
+		console.log(remove);//返回删除的项。<br>
+		remove=color.splice(1,0,"black");//从1的起始位置增加一项<br>
+		console.log(color);<br>
+		console.log(remove);<br>
+		remove=color.splice(1,1,'red','orange');//插入两项，删除一项<br>
+		console.log(color);<br>
+		console.log(remove);<br>
+</div>
+<hr>
+<div>
+	//indexOf()方法。indexOf(要查找的项,从第几项开始查找);如果没有找到，返回-1;lastIndexOf()相反；<br>
+	var color=['red','green','blue'];<br>
+	var col=color.indexOf('green');<br>
+	console.log(col);<br>
+</div>
+<hr>
+<div>
+	//迭代方法  every()/some()/filter()/map()/forEach();<br>
+	//接收的三个参数【数组选项的值】【该项在数组中的位置】【数组本身】<br>
+	var a=[1, 5, 6, 8, 10, 15];	 <br>
+	var b=a.every(function(item,index,array){return a>1});<br>
+	console.log(b);<br>
+	var b=a.every(function(item,index,array){return a>0});<br>
+    console.log(b);
+ 	var b=a.every(function(item,index,array){return item>0});<br>
+    console.log(b);<br>
+ 	var b=a.every(function(item,index,array){return item>1});<br>
+	console.log(b);<br>
+ 	var b=a.some(function(item,index,array){return item>1});
+	console.log(b);<br>
+ 	var b=a.filter(function(item,index,array){return item>1});
+	console.log(b);<br>
+	//[5, 6, 8, 10, 15];<br>
+	var b=a.map(function(item,index,array){return item>1});
+	console.log(b);<br>
+	//[false, true, true, true, true, true];<br>
+	var b=a.map(function(item,index,array){return item-1});
+	console.log(b);<br>
+	//[0, 4, 5, 7, 9, 14];	 <br>
+	var b=a.forEach(function(item,index,array){console.log(item)});<br>
+	console.log(b);<br>
+</div>
+<hr>
+
+
+
+<script src="js/demo.js"></script>
+<script type="text/javascript">
+var text='000-00-0000';
+var pattern=/\d{3}-\d{2}-\d{4}/;
+	if(pattern.test(text)){
+		console.log("the pattern was watched!");
+	}
+</script>
+</body>
+</html>
