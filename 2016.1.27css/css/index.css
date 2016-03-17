@@ -1,0 +1,427 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-27 11:19:16
+ * @version $Id$
+ */
+/**
+ * 变形旋转 rotate()
+ */
+/*.wrapper {
+  margin: 100px auto;
+  width: 300px;
+  height: 200px;
+  border: 2px dotted blue;
+}
+
+.wrapper div{
+  width: 300px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  background: green;
+  color: #fff;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  transform:rotate(-20deg);
+}
+.wrapper span {
+  display:block;
+ -webkit-transform: rotate(20deg);
+ -moz-transform: rotate(20deg);
+  transform:rotate(20deg);
+ }*/
+/**
+ * 变形--扭曲 skew()
+ */
+/*.wrapper {
+  width: 300px;
+  height: 100px;
+  border: 2px dotted red;
+  margin: 30px auto;
+}
+
+.wrapper div {
+  width: 300px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+  background: orange;
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  transform:skew(45deg);
+}
+
+.wrapper span {
+  display:block;
+  -webkit-transform: skew(-45deg);
+  -moz-transform: skew(-45deg);
+  transform:skew(-45deg);
+}*/
+/**
+ * 变形--缩放 scale()
+ */
+/*.wrapper {
+  width: 200px;
+  height: 200px;
+  border:2px dashed red;
+  margin: 100px auto;
+}
+
+.wrapper div {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  background: orange;
+  text-align: center;
+  color: #fff;
+  transition:all ease 1s;
+}
+
+.wrapper div:hover {
+  opacity: .5;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+}*/
+/**
+ * 变形--位移 translate()
+ */
+/*.wrapper {
+  padding: 20px;
+  background:orange;
+  color:#fff;
+  position:absolute;
+  top:50%;
+  left:50%;
+  border-radius: 5px;
+  -webkit-transform:translate(-50%,-50%);
+  -moz-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}*/
+/**
+ * 变形--原点 transform-origin
+ */
+/*.wrapper {
+  width: 400px;
+  height: 100px;
+  border: 2px dotted red;
+  margin: 20px auto; 
+  text-align: center;
+  line-height: 100px;
+}
+.wrapper div {
+  background: orange;
+  color: #fff;
+  -webkit-transform: skew(15deg);
+  -moz-transform: skew(15deg);
+  transform: skew(15deg);
+  -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  transform-origin: top right;
+}
+*/
+/**
+ * 
+ */
+/*div {
+  width: 200px;
+  height: 200px;
+  background: red;
+  margin: 20px auto;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration:.5s;
+  transition-duration:.5s;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-transition-delay: .18s;
+    transition-delay:.18s;
+
+}
+div:hover {
+  width: 400px;
+}
+
+*/
+
+/**
+ * 动画--过渡延迟时间 transition-delay
+ */
+/*.wrapper {
+  width: 400px;
+  height: 200px;
+  margin: 20px auto;
+  border: 2px dotted red;
+  position:relative;
+}
+
+.wrapper div {
+  height: 150px;
+  width: 300px;
+  color: #fff;
+  background-color: orange;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  text-align: center;
+  line-height: 150px;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-transition: all  1s ease-in 0.5s ;
+  transition: all  1s ease-in 0.5s;
+}
+
+.wrapper div:hover {
+  background-color: red;
+  border-radius: 50px;
+}*/
+/**
+ * Keyframes介绍 
+ */
+/*@-webkit-keyframes changecolor{
+  0%{
+    background: red;
+    width: 300px;
+    height: 200px;
+  }
+  20%{
+    transform:rotate(360deg);
+    background:blue;
+  }
+  40%{
+    background:orange;
+    transform:scale(0.5);
+  }
+  60%{
+    transform:scale(1.2);
+    background:green;
+  }
+  80%{
+    background:yellow;
+    left: 200px;
+    top:200px;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  100%{
+    background: red;
+  }
+}
+div {
+  width: 300px;
+  height: 200px;
+  background: red;
+  color:#fff;
+  margin: 20px auto;
+  animation: changecolor 5s ease-out .2s infinite;
+}
+*/
+/**
+ * 调用动画
+ */
+
+/*div {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  position: relative;
+}
+div span{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: orange;
+  position: absolute;
+}
+.span1{
+  left: 0;
+  top: 0;
+  animation-name:aroundnone;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count:infinite;
+}
+.span2{
+  top:0;
+  right: 0;
+  animation-name:aroundtwo;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-delay: 2s;
+  animation-iteration-count:infinite;
+}
+.span3{
+  right: 0;
+  bottom:0;
+  animation-name:aroundthree;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-delay: 4s;
+  animation-iteration-count:infinite;
+}
+.span4{
+  left: 0;
+  bottom:0;
+  animation-name:aroundfour;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-delay: 6s;
+  animation-iteration-count:infinite;
+}
+@keyframes aroundnone{
+  0% {
+    transform: translate(0,0);
+  }
+  25%{
+    transform: translate(190px,0);
+  }
+  50%{
+     transform: translate(190px, 190px); 
+  }
+  75%{
+    transform:translate(0,190px);
+  }
+  100%{
+    transform: translate(0,0);
+  }
+}
+@keyframes aroundtwo{
+  0% {
+    transform: translate(0,0);
+  }
+  25%{
+    transform: translate(0,190px);
+  }
+  50%{
+     transform: translate(-190px, 190px); 
+  }
+  75%{
+    transform:translate(-190px,0);
+  }
+  100%{
+    transform: translateX(0,0);
+  }
+}
+@keyframes aroundthree{
+  0% {
+    transform: translate(0,0);
+  }
+  25%{
+    transform: translate(-190px,0);
+  }
+  50%{
+     transform: translate(-190px, -190px); 
+  }
+  75%{
+    transform:translate(0,-190px);
+  }
+  100%{
+    transform: translateX(0,0);
+  }
+}
+@keyframes aroundfour{
+  0% {
+    transform: translate(0,0);
+  }
+  25%{
+    transform: translate(0,-190px);
+  }
+  50%{
+     transform: translate(190px, -190px); 
+  }
+  75%{
+    transform:translate(    190px,0);
+  }
+  100%{
+    transform: translateX(0,0);
+  }
+}
+
+*/
+/**
+ * 设置动画播放方式
+ */
+/*@keyframes move {
+  0%{
+    transform: translate(0);
+  }
+  15%{
+    transform: translate(100px,180px);
+  }
+  30%{
+    transform: translate(150px,0);
+  }
+  45%{
+    transform: translate(250px,180px);
+  }
+  60%{
+    transform:translate(300px,0);
+  }
+  75%{
+    transform: translate(450px,180px);
+  }
+  100%{
+    transfrom: translate(480px,0);
+  }
+}
+
+div {
+  width: 500px;
+  height: 200px;
+  border: 1px solid red;
+  margin: 20px auto;
+}
+div span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #F08017;
+  border-radius: 100%;
+  box-shadow: 0 2px 10px #F08017,
+              0 2px 20px #F08017;
+  animation-name:move;
+  animation-duration: 10s;
+  animation-timing-function:ease;
+  animation-delay:.1s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+}
+*/
+/**
+ * 设置动画时间外属性
+ */
+@keyframes redToBlue{
+  from{
+    background: red;
+  }
+  20%{
+      background:green;
+  }
+  40%{
+      background:lime;
+  }
+  60%{
+      background:yellow;
+  }
+  to{
+    background:blue;
+  }
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  background: red;
+  margin: 20px auto;
+  animation-name:redToBlue;
+  animation-duration: 20s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  animation-fill-mode: both; 
+  animation-iteration-count:infinite;
+}

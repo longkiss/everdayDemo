@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+<button id="btn">button</button>
+<script type="text/javascript">
+var utill={
+  addevent:function(ele,type,fn){
+      if(ele.addEventListener){
+        ele.addEventListener(type,fn,false);
+      }else if(ele.attachEvent){
+        ele.attachEvent("on"+type,fn)
+      }else{
+        ele['on'+type]=fn;
+      }
+  },
+  removeEvent:function(ele,type,fn){
+      if(ele.removeEventListener){
+        ele.removeEventListener(type,fn,false);
+      }else if(ele.detachEvent){
+        ele.detachEvent("on"+type,fn)
+      }else{
+        ele['on'+type]=null;
+      }
+  }
+}
+var btn=document.getElementById('btn');
+utill.addevent(btn,'click',fns);
+function fns(){
+    console.log(1)
+}
+</script>
+</body>
+</html>

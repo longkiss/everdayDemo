@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- <link href="css/index.css" rel="stylesheet"> -->
+<style>
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-29 15:11:04
+ * @version $Id$
+ */
+            
+.parent{
+    height: 750px;
+    width: 500px;
+    position: relative;
+    /*overflow:hidden; IE可以显示正常一点，单其他浏览器会失去部分功能...*/
+    border:2px solid gray;
+    left:400px;
+    top:100px;
+    perspective: 800px;
+    -webkit-perspective: 800px;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    backface-visibility: hidden;
+    /*两个子级只显示一个，像是扑克牌有单反面，但只是显示一面*/
+    -webkit-backface-visibility: hidden;
+}
+.child1{
+    height: 720px;
+    width:480px;
+    position: absolute;
+    top:0;
+    left: 0;
+    transition:all ease-in 0.8s;
+    -webkit-transition:all ease-in 0.8s;
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    /**
+     * transform-origin旋转轴
+     */
+    transform:rotateY(0);
+    -webkit-transform: rotateY(0);
+    backface-visibility:hidden;  
+}
+.parent:hover .child1{
+    transform:rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
+.child2{
+    height:720px;
+    width:480px;
+    position: absolute;
+    top:0;
+    left: 0;
+    transition:all ease-in 0.8s;
+    -webkit-transition:all ease-in 0.8s;
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    backface-visibility:hidden; 
+}
+.parent:hover .child2{
+    transform:rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+}
+.parent img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.parent h2{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+}
+
+</style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child1">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/01/img2-1.jpg">
+            <h2>第一张图片</h2>
+        </div>
+        <div class="child2">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/01/img1-1.jpg">
+            <h2>第二张图片</h2>
+        </div>
+    </div>
+</body>
+</html>

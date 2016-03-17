@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+    div{
+        height:100px;
+        width:100px;
+        border:1px solid #B29494;
+    }
+</style>
+</head>
+<body>
+    <div id='box1'>点击替换文字</div>
+    <button id='button'>点击</button>
+    <div id='box2'></div>
+    <script type="text/javascript">
+    var box1=document.getElementById('box1'),
+        box2=document.getElementById('box2'),
+        button=document.getElementById('button');
+        // console.log(box1);
+        // button.onclick=function(){
+        //     box2.innerText=box1.innerText;
+        //     box1.innerText='';
+        // };
+        function getContent(obj,val){
+            if(document.all){//document.all   IE兼容
+                if(val){
+                    obj.innerText=val;
+                }else{
+                    return obj.innerText;
+                }
+            }else{//火狐兼容！
+                if(val){
+                    obj.textContent=val;
+                }else{
+                    return obj.textContent;
+                }
+            }
+        }
+        console.log();
+        button.onclick=function(){
+            var text1=getContent(box1);
+            getContent(box2,text1);
+        }
+    </script>
+</body>
+</html>

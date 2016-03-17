@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>documents</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style type='text/css'>
+/*    div.box{
+        height:100px;
+        width:300px;
+        background-image:linear-gradient(to top left,gray,blue,yellow,green,red);
+    }*/
+  /*  div.box{
+        height:100px;
+        width:300px;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }*/
+    @font-face{
+    font-family: "MOOC Font";/*设置字体名字*/
+    src: url("http://www.imooc.com/Amaranth-BoldItalic.otf");/* 字体文件在服务器上的相对或绝对路径;*/
+    }
+    div.box{
+        width:300px;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-family:'MOOC Font';
+    }
+</style>
+</head>
+<body>
+    <div class='box' id='box'>
+        但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省略号的效果，代码如下：
+    </div>
+</body>
+<script type="text/javascript">
+    // var boxlen=document.getElementById('box').innerHTML.length;
+    var box=document.getElementById('box');
+    // if(box){
+    //     var boxlen=box.innerText;
+    //     var box_str=boxlen.substring(0,100)+'...';
+    //     box.innerHTML=box_str;
+    // }else{
+
+    // }
+</script>
+</html>

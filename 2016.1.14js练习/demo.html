@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>documents</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet"></head>
+    <style type="text/css">
+    *{
+        outline:none;
+    }
+    input{
+        text-align:center;
+    }
+    </style>
+<body>
+    <table border="1px" width="600px" bordercolor="#aaaaaa" cellpadding="5px" cellspacing="0px" id="tab" >
+        <caption>学生成绩单</caption>
+        <tr >
+            <th width="20%">姓名</th>
+            <th width="20%">性别</th>
+            <th width="20%">班级</th>
+            <th width="20%">科目</th>
+            <th width="20%">分数</th>
+        </tr>
+        <tr >
+            <td>张三</td>
+            <td>男</td>
+            <td>96班</td>
+            <td>数学</td>
+            <td>98</td>
+        </tr>
+        <tr >
+            <td>张三</td>
+            <td>男</td>
+            <td>96班</td>
+            <td>数学</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>男</td>
+            <td>96班</td>
+            <td>数学</td>
+            <td>98</td>
+        </tr>
+    </table>
+<script type="text/javascript">
+    window.onload=function(){
+        var tab=document.getElementById('tab');
+        tab.ondblclick=function(event){
+            var event=event||window.event;
+            tobj=event.target||event.scrElement;
+            if(tobj.nodeName=='TH'){
+                return
+            }
+            //console.log(tobj)
+            var tdtext=tobj.innerHTML;
+            tobj.innerHTML='';
+            var input=document.createElement('input');
+                input.type='text';
+                input.value=tdtext;
+                input.style.width=tobj.offsetWidth-15+"px";
+                //去掉文本域的边框
+                input.style.borderWidth="0px";
+                tobj.appendChild(input);
+                input.focus();
+            input.onblur=input.onclick=input.onkeydown=function  (e) {
+              var ev=e||window.event;
+              if(ev.type=="blur" ||ev.type=="dblclick" ||(ev.type=="keydown" && ev.keyCode==13)){
+                 var val=this.value;
+                 tobj.removeChild(input);
+                 if(val==""){
+                 tobj.innerHTML="";
+                 }else{
+                   tobj.innerHTML=val
+                }
+            }
+        }
+        }
+    }
+</script>
+</body>
+</html>

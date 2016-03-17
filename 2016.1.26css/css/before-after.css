@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-26 16:06:58
+ * @version $Id$
+ */
+.box-shadow{
+    margin:200px;
+    height:200px;
+    width: 300px;
+    text-align:center;
+    line-height: 200px;
+    background:white;
+    
+}
+.box-shadow h3{
+    position: relative;
+    text-align: center;
+}
+.effect{
+   box-shadow: 0 1px 3px rgba(0,0,0,0.2),0 0 40px rgba(0,0,0,0.1) inset;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2),0 0 40px rgba(0,0,0,0.1) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2),0 0 40px rgba(0,0,0,0.1) inset;
+    -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.2),0 0 40px rgba(0,0,0,0.1) inset;
+    position: relative; 
+    animation: ;
+    
+}
+.effect::before, .effect::after{
+    content:"";
+    height: 100px;
+    width: 250px;
+    margin:0 auto;
+    z-index: -1;
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    -ms-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    border-radius: 150px/10px;
+    
+}
+

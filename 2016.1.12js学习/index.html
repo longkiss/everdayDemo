@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>documents</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet"></head>
+<body>
+<script type="text/javascript">
+    var a=1;
+    console.log(Boolean(a));//转换为布尔值！
+    console.log(String(a));//转换成字符串类型
+    var str="对字符串进行编码";
+    var eStr=escape(str);
+    var unStr=unescape(eStr);
+    console.log(str);
+    console.log(eStr);
+    console.log(unStr);
+    var strn='12';
+    var num=Number(strn);
+    console.log(num +" "+ typeof num);
+    console.log(isNaN(strn));//判断一个数能否转换为数值类型。能，返回false，不能，放回true；
+    console.log(isFinite(num));//判断一个数是否为有穷的数字。将不是有穷的数字或不能转换为数值类型的数返回假。
+    eval('console.log("hello world!")');// 将字符串转换成javascript命令执行(必须符合javascript语法规范，否则会出错)。
+    function dianshi (color,size,brand) {
+    var Tv={};
+    Tv.color=color;
+    Tv.size=size;
+    Tv.brand=brand;
+    Tv.look=function  () {
+        console.log("看电视");
+    }
+    Tv.play=function  () {
+        console.log("玩游戏");
+    }
+    Tv.dvd=function  () { 
+        console.log("DVD");
+    } 
+    return Tv;
+    }
+    var ds=dianshi("red","30inch","sony");
+    //alert(typeof ds)
+    console.log(ds.color)
+    var ds1=dianshi("blue","40inch","changh");
+    console.log(ds1["size"]);
+    //面向对象！
+    var TV={
+        color:'color',
+        size:'size',
+        brand:'brand',
+        look:function(){
+            return '看电视！';
+        },
+        play:function(){
+            return '玩游戏！';
+        },
+        dvd:function(){
+            return 'DVD';
+        }
+    }
+    console.log(TV.color);
+    console.log(TV.look());
+    /**///////////////////////////**/
+    function txt(){
+        var a=0;
+        console.log(a);
+        a++;
+    }
+    txt();
+    txt();
+    txt();
+</script>
+</body>
+</html>

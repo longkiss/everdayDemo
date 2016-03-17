@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>自制滚动条样式</title>
+</head>
+<body>
+    <style type="text/css">
+#wraper{position:relative;width:500px;height:200px;padding-right:10px;background-color:#F6F6F6;overflow:hidden;}
+#slider{position:absolute;top:0;left:0;margin:0 10px;line-height:1.5;font-size:12px;color:#333;}
+#pannel{position:absolute;right:0;top:0;width:6px;height:100%;background-color:#EDEDEB;}
+#drag{position:absolute;left:0;width:6px;height:80px;background-color:#BCBCBA;cursor:pointer;}
+</style>
+    <div id="wraper">
+        <div id="slider">
+            <p>
+                天翼手机俱乐部#今天下午，中国电信将联合摩托罗拉推出电信定制版的“刀锋战士”：锋云XT928。搭载4.5 英寸720p分辨率(1280 x 720 像素)高清触控屏，1300 万像素摄像头，运行Android 2.3 系统，内置 1.2GHz 双核处理器，拥有 1GB RAM。支持CDMA2000 EVDO+GSM双网双待，以及WIFI/WAPI接入移动互联网
+            </p>
+            <p>
+                【酒量最好的前三名星座】冠军（巨蟹座）、亚军（魔羯座）、季军（金牛座）【酒品最好的前三名星座】冠军（天秤座）、亚军（双鱼座）、季军（水瓶座）【酒量不好，有酒胆，会耍宝的前三名星座】冠军（双子座）、亚军（射手座）、季军（狮子座）。
+            </p>
+            <p>
+                【安卓软件推荐】动态企鹅桌面时钟是一款以一只可爱小企鹅为题材的桌面时钟！需要你在主屏幕按menu菜单键添加插件显示使用。它表情可爱，动作多多，你亦可连按小工具，它就会转换表情动作，另外还可以和小企鹅互动，喂它喝饮料，吃东西，还可以和小企鹅玩石头剪子布。
+            </p>
+        </div>
+        <div id="pannel">
+            <div id="drag"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+var o1 = document.getElementById('slider'),
+o2 = document.getElementById('pannel'),
+o3 = document.getElementById('drag');
+function customBar(oSlider, oPanel, oTrigger){
+this.parent = oSlider.parentNode;
+this.slider = oSlider;
+this.panel = oPanel;
+this.trigger = oTrigger;
+this.h1 = this.parent.clientHeight;
+this.h2 = this.slider.offsetHeight;
+this.h3 = this.panel.clientHeight;
+this.h4 = this.trigger.offsetHeight;
+this.k = (this.h2 - this.h1)/(this.h3 - this.h4);
+this.dis = 0;
+this.flag = false;
+this.init();
+}
+customBar.prototype = {
+init: function(){
+if(this.k <= 0){
+this.panel.style.display = 'none';
+return;
+}
+this.slider.style.top = '0px';
+this.trigger.style.top = '0px';
+this.bind();
+},
+bind: function(){
+var that = this;
+this.trigger.onmousedown = function(e){
+that.down.call(that, e);
+}
+this.trigger.onmousemove = document.onmousemove = function(e){
+that.move.call(that, e);
+}
+this.trigger.onmouseup = document.onmouseup = function(e){
+that.up.call(that, e);
+}
+},
+down: function(e){
+var e = window.event || e,
+y1 = e.y || e.pageY,
+y2 = parseInt(this.trigger.style.top);
+this.dis = (y1 - y2);
+this.flag = true;
+this.move(e);
+},
+move: function(e){
+if(!this.flag) return;
+var e = window.event || e,
+y1 = e.y || e.pageY,
+dis;
+dis = Math.min(Math.max(y1 - this.dis, 0), (this.h3 - this.h4));
+this.slider.style.top = -dis * this.k + 'px';
+this.trigger.style.top = dis + 'px';
+},
+up: function(){
+this.flag = false;
+},
+wheel: function(){
+}
+}
+var ss = new customBar(o1, o2, o3);
+</script></body>
+</html>
+<div style="text-align:center;margin:30px 0 0 0;">
+    <hr style="color:#999;height:1px;">
+    如不能显示效果，请按Ctrl+F5刷新本页，更多网页代码：
+    <a href='http://www.veryhuo.com/' target='_blank'>http://www.veryhuo.com/</a>
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+    #box{
+        height:200px;
+        width:200px;
+        background:red;
+        position:absolute;
+        left:100px;
+        top:100px;
+        cursor:move;
+    }
+</style>
+</head>
+<div id="box"></div>
+<body>
+<script type="text/javascript">
+    window.onload=function(){
+         box=document.getElementById('box');
+         box.onmousedown=fnDown;
+         function fnDown(event){
+            var event=event||window.event,
+                fnDownX=event.offsetX,
+                fnDownY=event.offsetY;
+                //[fnMoveX,fnMoveYn]获取的是鼠标在div盒子中的坐标，下面的[fnMoveX,fnMoveYn]也是相同的结果
+                // fnDownX=event.clientX-box.offsetLeft;
+                // fnDownY=event.clientY-box.offsetTop;
+                //  // event.clientX获取鼠标到浏览器左边的距离
+                // box.offsetLeft获取div盒子到浏览器左边的距离
+                console.log(fnDownX,fnDownY)
+            this.onmousemove=function(event){
+                var event=event||window.event;
+                fnMove(event,fnDownX,fnDownY);
+            };
+         }
+         function fnMove(event,fx,fy){
+                fnMoveX=event.clientX-fx,
+                fnMoveY=event.clientY-fy;
+                winW=document.documentElement.clientWidth||document.body.clientWidth,
+                    winH=document.documentElement.clientHeight||document.body.clientHeight,
+                    maxW=winW-box.offsetWidth,
+                    maxH=winH-box.offsetHeight;
+                    console.log(fnMoveX+"="+event.clientX+'-'+fx)
+                    if(fnMoveX<0){
+                        fnMoveX=0;
+                    }else if(fnMoveX>maxW){
+                        fnMoveX=maxW
+                    }
+                    if(fnMoveY<0){
+                        fnMoveY=0;
+                    }else if(fnMoveY>maxH){
+                        fnMoveY=maxH
+                    }
+                    box.style.top=fnMoveY+'px';
+                    box.style.left=fnMoveX+'px';
+         }
+         box.onmouseup=function(){
+            box.onmousemove=null;
+            box.onmousup=null;
+         }
+    }
+</script>
+</body>
+</html>

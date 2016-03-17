@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<input type="text" ng-model='name' placeholder='enter your name'>
+<h1>hello <span>{{name}}</span></h1>
+<div data-ng-app="" data-ng-init="firstName='javk'"></div>
+<p>姓名为 <span data-ng-bind="firstName"></span></p>
+<span>{{5+5}}</span>
+</body>
+<script type="text/javascript">
+    var favcolor='red';
+    switch(favcolor){
+        case 'red':
+            console.log('Your favorite color is red!');
+            break;
+        case 'yellow':
+            console.log('Your favorite color is yellow!');
+            break;
+        case 'green':
+            console.log('Your favorite color is green!');
+            break;
+    }
+</script>
+</html>

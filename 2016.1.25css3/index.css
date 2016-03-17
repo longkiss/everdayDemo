@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-25 15:15:14
+ * @version $Id$
+ */
+div{
+    height: 150px;
+    width: 150px;
+    border:1px solid #ccc;
+    margin-bottom: 20px;
+}
+.box1{
+    overflow: hidden;
+    text-overflow: ellipsis;/*多出部分用省略号*/
+    white-space: inherit;/*文本不换行*/
+}
+.box2{
+    word-wrap:break-word;
+    -webkit-word-wrap:break-word;
+}
+.box3{
+    word-break:break-all;
+    -webkit-word-break:break-all;
+}
+.box4{
+    text-wrap:normal;
+}

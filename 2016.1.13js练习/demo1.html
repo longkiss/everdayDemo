@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>文本域限定字数</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+    textarea{
+        padding:0;
+        margin:0;
+        vertical-align:top;
+        text-align:left;
+    }
+</style>
+</head>
+<body>
+<form name='myform'>
+    <textarea cols='60' rows='8' name='info'></textarea>
+    <div id='content'>一共能写20个字，已经写了0个字，还能写20个字。</div>
+</form>
+<script type="text/javascript">
+    window.onload=function(){
+        var info=document.myform.info;
+        //通过获取form表单的name属性来声明变量
+        info.keyup=info.onkeyup=function(){
+            var text  =info.value,
+                length=text.length,
+                num   =20,
+                remain=num-length,
+                content=document.getElementById('content');
+            if(length>num){
+                info.value=text.substring(0,num);
+                //obj.substring()字符型的切割
+            }
+            content.innerHTML='总共能写'+num+'个字，已经写了'+length+'个字，还能写'+remain+'个字。';
+            console.log(text);
+        }
+    }
+</script>
+</body>
+</html>

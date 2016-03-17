@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-26 09:59:34
+ * @version $Id$
+ */
+
+/**
+ * :root{};
+ * html{}
+ */
+/*
+等同
+:root{
+    background: red
+}
+html{
+    background: red
+}*/
+/*第一部分*/
+/*not
+/*
+div{
+  padding: 10px 20px;
+  min-height: 50px;
+}
+div:not([id="footer"]){
+  background: orange;
+}
+*/
+/*第二部分*/
+/* div {
+  min-height: 30px;
+}
+
+div:empty  {
+  border: 1px solid green;
+}*/
+/*第三部分*/
+/*target*/
+/*#brand:target p {
+  background: orange;
+  color: #fff;
+}
+*/
+/*第四部分*/
+/*:first-child*/
+/*ul > li:first-child {
+ color: red;
+}*/
+/*第五部分*/
+/*
+.box{
+    display: block;
+    height:0;
+    width:0;
+    background:red;
+    position:relative;
+    tansition:all ease-in 0.5s;
+    -webkit-transition: all ease-in 0.5s;
+    -moz-transition:all ease-in 0.5s;
+    -ms-transition:all ease-in 0.5s;
+    -o-transition:all ease-in 0.5s;
+}
+.box:hover{
+    transform:rotate(7deg);
+   -ms-transform:rotate(7deg);
+   -moz-transform:rotate(7deg);   
+   -webkit-transform:rotate(7deg);
+   -o-transform:rotate(7deg); 
+}
+.boxs:hover .box{
+    display: block;
+    height: 100px;
+    width:200px;
+}
+ */
+/*第六部分*/
+/*ul {
+  border: 1px solid #ccc;
+  list-style: none outside none;
+  width: 220px;
+  margin: 20px auto;
+  padding: 0;
+}
+ul > li {
+  list-style: none outside none;
+  margin:0;
+  padding: 10px;
+  border-bottom: 3px solid #ccc;
+}
+ul > li:last-child {
+  border-bottom: none;
+}*/
+/*结构性伪类选择器—nth-child(n)*/
+/*ol > li:nth-child(2n+1){
+  background: green;
+}*/
+/*结构性伪类选择器—nth-last-child(n)*/
+/*ol > li:nth-last-child(5){
+  background: orange;
+}
+*/
+/*first-of-type选择器*/
+/*.wrapper {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 500px;
+  margin: 20px auto;
+}
+
+.wrapper > p,
+.wrapper > div {
+  margin: 10px 0;
+  background: green;
+  color: #fff;
+  padding: 5px;
+}
+
+.wrapper > p:first-of-type {
+  background: orange;
+}
+.wrapper > div:first-of-type {
+  background: orange;
+}*/
+
+
+/**
+ * nth-of-type(n)选择器
+ */
+/*.wrapper > div:nth-of-type(2n+1),
+.wrapper > p:nth-of-type(2n){
+  background: orange;
+}*/
+/*或者*/
+
+/*.wrapper > div:nth-of-type(2n-1),
+.wrapper > p:nth-of-type(2n){
+  background: orange;
+}*/
+/*或者*/
+/*.wrapper > div:nth-of-type(odd),
+.wrapper > p:nth-of-type(even){
+  background: orange;
+}
+*/
+/* only-child选择器 */
+/*li {
+  background: green;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+li:only-child {
+  background: orange;
+}*/
+/*only-of-type选择器*/
+/*.wrapper {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 500px;
+  margin: 10px auto;
+}
+.wrapper p:only-of-type{
+  background: orange;
+}
+*/
+/*:enabled选择器*/
+/*div {
+  margin: 30px;
+}
+input[type="text"]:enabled{
+  border: 1px solid #f36;
+  box-shadow: 0 0 5px #f36;
+}
+
+input[type="text"]:disabled{
+  box-shadow: none;
+}
+*/
+/*:disabled选择器*/
+/*form {
+  margin: 30px;
+}
+div {
+  margin: 10px;
+}
+input {
+  padding: 10px;
+  border: 1px solid orange;
+  background: #fff;
+  border-radius: 5px;
+}
+input[type="submit"] {
+  background: orange;
+  color: #fff;
+}
+input[type="submit"]:disabled {
+  background: #eee;
+  border-color: #eee;
+  color: #ccc;
+}*/
+/*:check*/
+/*form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  margin: 30px auto;
+}
+.wrapper {
+  margin-bottom: 10px;
+}
+.box {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  position: relative;
+  background: orange;
+  vertical-align: middle;
+  border-radius: 100%;
+}
+.box input {
+  opacity: 0;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  z-index:100;
+}
+.box span { 
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  left:50%;
+  margin: -5px 0  0 -5px;
+  z-index:1;
+}
+input[type="radio"] + span {
+  opacity: 0;
+
+}
+input[type="radio"]:checked + span {
+  opacity: 1;
+}*/
+/*::selection选择器*/
+/*p::selection{
+    color:white;
+    background: orange;
+};
+*/
+/*:read-only选择器*/
+/*form {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 50px auto;
+}
+form > div {
+  margin-bottom: 10px;
+}
+input[type="text"]{
+  border: 1px solid orange;
+  padding: 5px;
+  background: #fff;
+  border-radius: 5px;
+}
+input[type="text"]:-moz-read-only{
+  border-color: #ccc;
+}
+input[type="text"]:read-only{
+  border-color: #ccc;
+}
+textarea:-moz-read-only{
+  border: 1px solid #ccc;
+  height: 50px;
+  resize: none;
+  background: #eee;
+}
+textarea:read-only {
+  border: 1px solid #ccc;
+  height: 50px;
+  resize: none;
+  background: #eee;
+}*/
+/*:read-write选择器*/
+/*form {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 50px auto;
+}
+form > div {
+  margin-bottom: 10px;
+}
+input[type="text"]{
+  border: 1px solid orange;
+  padding: 5px;
+  background: #fff;
+  border-radius: 5px;
+}
+input[type="text"]:-moz-read-only{
+  border-color: #ccc;
+}
+input[type="text"]:read-only{
+  border-color: #ccc;
+}
+input[type="text"]:-moz-read-write{
+  border:2px solid red;
+}
+input[type="text"]:read-write{
+  border:2px solid red;
+}*/
+/*::before和::after */
+.box h3{
+    text-align:center;
+    position:relative;
+    top:80px;
+}
+.box {
+    width:70%;
+    height:200px;
+    background:#FFF;
+    margin:40px auto;
+}
+
+.effect{
+    position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect::before, .effect::after{
+    content:"";
+    position:absolute; 
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}

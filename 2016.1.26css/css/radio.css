@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-26 15:01:49
+ * @version $Id$
+ */
+form{
+   margin:100px;
+}
+.warp{
+    height: 30px;
+    width:auto;
+    line-height: 30px;
+}
+.box{
+    height: 16px;
+    width: 16px;
+    background: orange;
+    border-radius: 50%;
+    float: left;
+    position: relative;
+    z-index: 1000;
+    margin:6px;
+}
+label{
+    float: left;
+    line-height: 30px;
+}
+.warp input{
+    opacity: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.warp span{
+    height: 6px;
+    width: 6px;
+    background: white;
+    display: inline-block;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    left: 5px;
+    top:5px;
+}
+.warp input+span{
+    opacity: 0
+}
+.warp input:checked + span{
+    opacity: 1
+}
+

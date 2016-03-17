@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<style>
+	#box{
+		height: 100px;
+		width: 100px;
+		transition:1s all;
+		text-align: center;
+		background: red;
+		transform-origin:50% 50%;
+	}
+	body{
+		height:1500px;
+	}
+	</style>
+</head>
+<body>
+<!-- UL -->
+<!-- <ul id="ul1">
+	<li>span1</li>
+	<li>span2</li>
+	<li>span3</li>
+	<li>span4</li>
+	<li>span5</li>
+	<li>span6</li>
+	<li>span7</li>
+	<li>span8</li>
+	<li>span9</li>
+	<li>span10</li>
+</ul> -->
+<!-- DIV -->
+<div id="box">1111</div>
+<script>
+	oDiv=document.getElementById('box');
+	oDiv.onclick=function(){
+ 		if( this.style['width']=='200px'){
+			this.style['width']='100px';
+			this.style['height']='100px';
+			this.style['border-radius']='0';
+			this.style['margin']="0";
+		}else{
+			this.style['width']='200px';
+			this.style['height']='200px';
+			this.style['border-radius']='200px';
+			this.style['margin']="100px";
+			this.style['-webkit-transform']='rotate(360deg)'
+
+		}
+ 	}
+
+	// ----------------------UL--------------------------//
+
+	// var oUl=document.getElementById('ul1');
+	// 	arr=[]
+	// for(i=0;i<oUl.childNodes.length;i++){
+	// 	if(oUl.childNodes[i].nodeType===1){
+	// 		arr.push(oUl.childNodes[i].innerHTML)
+	// 	}
+
+	//  }
+	// console.log(arr);
+//添加滚动条监听；
+	function addEven(ele,event,fn){
+		if(ele.addEvenListener){}
+	}
+//
+var a='function test()';
+function test(num){
+	return num;
+}
+console.log(test(a));
+/////////////////////////////////////
+
+
+function math (num1,num2,fun) {
+     return fun(num1,num2)
+  }
+
+console.log(math(1,2,cc));
+function cc (num1,num2) {
+    return (num1-num2)*2-1
+}
+
+function dd (num1,num2) {
+	return (num1+num2)*2-1
+}
+console.log(math(2,3,dd));
+
+// function dd () {  
+// }
+console.log(math(3,4,cc));
+// function cc () {
+// }
+/////////////////
+function  aa (num1) {
+  if(num1>1){
+    aa(--num1)
+  }
+ console.log(num1)
+}
+aa(4);
+</script>
+</body>
+</html>

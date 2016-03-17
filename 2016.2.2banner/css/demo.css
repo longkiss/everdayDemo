@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-02-02 09:12:03
+ * @version $Id$
+ */
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+.parent {
+    width: 1000px;
+    height: 625px;
+    /*border: 1px solid red;*/
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.oul {
+    height: 625px;
+    width: 7000px;
+    position: absolute;
+    left: -1000px;
+    top: 0;
+    transition:all ease 0.5s;
+
+}
+
+.oul li {
+    float: left;
+    height: 100%;
+    width: 1000px;
+    position: relative;
+    left: 0;
+    top:0;
+}
+
+.oul li img {
+    height: 100%;
+    width: 100%;
+}
+
+#prev {
+    width: 50px;
+    height: 625px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000 url(../img/left.png) no-repeat left center;
+}
+
+#prev:hover {
+    background-color: #fff;
+}
+
+#next:hover {
+    background-color: #fff;
+}
+
+#next {
+    width: 50px;
+    height: 625px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #000 url(../img/right.png) no-repeat right center;
+}
+
+ul.us {
+    width: 200px;
+    height: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 60px;
+    bottom: 10px;
+}
+
+ul.us li {
+    width: 40px;
+    text-align: center;
+    height: 20px;
+    display: block;
+    float: left;
+    border-radius: 50%;
+    background: #F60;
+    opacity: 0.6;
+    transition: all 1s;
+}
+
+ul.us li.ls {
+    background: #09F;
+}

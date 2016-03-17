@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>class</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+ul{list-style-type:none;}
+.one .li{width:80px;background-color:red;cursor:pointer;}
+</style>
+</head>
+<body>
+<ul class="one">
+    <li class="li">第一选项</li>
+    <li>
+        <ul>
+            <li>第一</li>
+            <li>第二</li>
+            <li>第三</li>
+        </ul>
+    </li>
+</ul>
+<ul class="one">
+    <li class="li">第二选项</li>
+    <li>
+        <ul>
+            <li>第一</li>
+            <li>第二</li>
+            <li>第三</li>
+        </ul>
+    </li>
+</ul>
+<ul class="one">
+    <li class="li">第三选项</li>
+    <li>
+        <ul>
+            <li>第一</li>
+            <li>第二</li>
+            <li>第三</li>
+        </ul>
+    </li>
+</ul>
+<script type="text/javascript">
+    window.onload=function(){
+        //获取class；
+        function getClass(className){
+            if(document.getElementsByClassName){//如果兼容document.getElementsByClassName
+                return  document.getElementsByClassName(className);
+            }else{//如果不兼容，先获取所有的标签名，查询他们中的classname等于classname的，并将他们添加到数组中；
+                var tagName=document.getElementsByTagName('*'),
+                    cls    =[];
+                for(var i=0; i<tagName.length; i++){
+                    if(tagName[i].className==className){
+                        cls.push(tagName[i]);
+                    }
+                }
+                return cls;
+            }
+        }
+        //获取id;
+        function getId(id){
+            return document.getElementById(id);
+        }
+        //元素操作
+        var list=getClass('one');
+            console.log(list);
+        for(var i=0;i<list.length;i++){
+            list[i].onclick=function(){
+                // console.log(this.nodeType)
+                if(nextnode(this).style.display==""){
+                    nextnode(this).style.display="none";
+                }else{
+                    nextnode(this).style.display="";
+                }
+            }
+        }
+        function nextnode(obj){
+            var next=obj.children[1];
+            // if(next.nodeType==3){
+            //     next=next.nextSibling;
+            // }
+            return next;
+        }
+    }
+</script>
+</body>
+</html>

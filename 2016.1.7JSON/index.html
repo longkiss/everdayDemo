@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+
+<body>
+<input type="text" paleceholder='ender your name' id="input">
+<div>hello <span id='span'></span></div>
+<script type="text/javascript">
+    var input=document.getElementById('input'),
+            span=document.getElementById('span');
+    input.addEventListener('keyup',function(){
+        span.innerHTML=input.value;
+    },false)
+    var text={
+        "title":"toJSON",
+        "authors":[
+            "Nicholas C. Zakas"
+        ],
+        "edition":3,
+        "year":2016,
+        toJSON:function(){
+            return this.authors
+        }
+    }
+    var tex=JSON.stringify(text,null,4);
+    // console.log(text)
+    var book={
+        "title":"Professional javascript",
+        "authors":[
+            "Nicholas C. Zakas"
+        ],
+        "edition":3,
+        "year":2016,
+        toJSON:function(){
+            return this//如果用了toJSON 会执行这里面的函数调用book时，也只会返回这里面的东西；
+        }
+    }
+    var JsonText=JSON.stringify(book,null,4);
+    //    console.log(JsonText);
+    var parseText=JSON.parse(JsonText);
+    console.log(parseText);
+    //    console.log(book)
+    /**序列化选项
+     * JSON.stringify(book,null,4)
+     * 第一个参数：是过滤器，可以是一个数组、函数、
+     * 第二个参数：是选项，选择第一个参数中内容；也可以是一个函数，比如片判断函数
+     * 第三个参数：字符串缩进
+     */
+    /**
+     * 解析选项
+     * JSON.parse();
+     * 将json解析为字符串
+     *
+     */
+
+</script>
+</body>
+</html>
