@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>开门红</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+body{
+    padding:0;
+    margin:0;
+    width:100%;
+    overflow:hidden;
+}
+.main{
+    height: 100%;
+    width:100%;
+    background:rgba(0, 0, 0, 0.7);
+    position:fixed;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+.left{
+    height: 100%;
+    width:50%;
+    background:red;
+    position:absolute;
+    left:0;
+    top:0;
+    transform-origin: left;
+    animation: Oleft  infinite 12s linear;
+}
+.right{
+    height: 100%;
+    width:50%;
+    background:red;
+    position:absolute;
+    right:0;
+    top:0;
+    transform-origin: right;
+    animation: Oright 12s infinite linear;
+}
+@keyframes Oleft{
+    form{
+    transform:rotateY(0deg);
+    }
+    to{
+    transform:rotateY(180deg);
+    }
+}
+@keyframes Oright{
+    form{
+    transform:rotateY(0deg);
+    }
+    to{
+    transform:rotateY(-180deg);
+    }
+}
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

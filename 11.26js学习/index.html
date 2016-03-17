@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+ <script>
+// 面向对象
+var person={
+	name:'Nicholas',
+	age:29,
+	job:'softwart Enginner',
+	sayName:function(){
+		console.log(this.name)
+	}
+}
+var persons={};
+Object.defineProperty(persons,"name",{
+	writable:false,
+	value:'xiaozhang'
+})
+function Person(name,age,job){
+	this.name=name;
+	this.age=age;
+	this.sayName=sayName;
+}
+function sayName(){
+	alert(this.name)
+}
+var person1=new Person('xiao',30,'softwart Enginner')
+//Person1.constructor判断是person1的构造函数；
+
+
+
+function personss(){
+	personss.prototype.name='xiaoz',
+	personss.prototype.age=29,
+	personss.prototype.job='softwart Enginner',
+	personss.prototype.sayName=function(){
+		console.log(this.job)
+	}
+}
+var pe01=new personss();
+var pe02=new personss();
+pe01.name='hello world!';
+console.log(pe01.name);
+// alert(pe01.sayName())
+//Object.getPrototypeOf(pe01)===personss.prototype
+//personss.prototype.isPrototypeOf(pe01);
+
+var keys=Object.keys(personss.prototype);
+//["name", "age", "job", "sayName"];
+console.log(keys)
+function hasprototypeProperty(object,name){
+	return object.hasOwnProperty(name)&&(name in object)
+}
+
+
+console.log(hasprototypeProperty(pe01,'name'))
+////////////////////////////////////////////////////////////////////////////////////////////////
+var friend=new Person();
+Person.prototype.say=function(){
+	console.log('person.prototype.say')
+}
+friend.say()
+ </script>  
+
+
+</body>
+</html>

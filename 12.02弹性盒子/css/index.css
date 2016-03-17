@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-29 11:11:54
+ * @version $Id$
+ */
+.parent{
+    content: '';
+    padding:10px;
+    background: #eee;
+    display: flex;
+    flex-direction:row;/*row,row-reserse,column,column-reserse*/
+    -moz-flex-direction:row;
+    flex-wrap:nowrap;
+    -moz-flex-wrap:nowrap;/*nowrap | wrap | wrap-reverse; 是否换行！*/
+}
+.child{
+    height: 100px;
+    width: 100px;
+    background: red;
+    margin-right: 10px;
+}
+.child:last-child{
+    margin-right: 0;
+}
+.parent1{
+    margin-top: 30px;
+    content: '';
+    padding:10px;
+    background: #eee;
+    display: flex;
+    justify-content: space-around;
+    /*
+    flex-start | flex-end | center | space-between | space-around; 
+    flex-start：以中轴线左边，靠main-start排列；（默认属性）
+    flex-end：以中轴线右边，靠main-end排列。
+    center: 水平居中对齐，（有点像通常的父级是text-align:center，子级是若干inline-block元素的样子，动手试试看看）。
+    space-between：两端对齐，子元素之间的间隔都相等，无法容下一个子元素时（默认折行，子元素固定的）将在第二行继续两端对齐。
+    space-around：每个子元素的两侧间隔相等。子元素之间的间隔比项目与边框的间隔大一倍。子元素之间的价格不叠加。
+    */
+     /*align-items:可设置属性：flex-start | flex-end | center | baseline | stretch; 5个值；
+    flex-start：以中轴线上边，靠cross-start排列；
+    flex-end：以中轴线下边，靠cross–end排列。
+    center: 子元素垂直居中对齐。
+    baseline：项目的第一行文字的基线对齐。注意看图。
+    stretch：假如子元素未设置高度或设为auto，将占满整个容器的高度；（默认属性）。
+     */
+}
+.child1{
+     
+    background: blue;
+     margin-right: 5px;
+     text-align: center;
+    color: white;
+}
+.border-sizing{
+    height: 100px;
+    width: 100%;
+    /*box-sizing: border-box; */
+}
+.sizing-cont{
+    width: 50%;
+    height: 100%;
+    border:1px solid red;
+    box-sizing: border-box;/*将边框算在了容器内*/
+    float: left;
+}
+.box-flex{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    display: -moz-box;
+    display: -webkit-box;
+}
+.box-flex a{
+    -moz-box-flex:1;
+    -webkit-box-flex:1;
+    box-flex:1;
+    display: block;
+    background: green;
+    margin-right: 5px;
+}
+.box-flex a.a{
+    -moz-box-flex:2;
+    -webkit-box-flex:3;
+    box-flex:3;
+}

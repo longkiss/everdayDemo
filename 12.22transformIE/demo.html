@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>css3属性transform兼容ie</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+<style>
+body {
+ background:url(http://mat1.gtimg.com/edu/2012/tuipu15/top.jpg) top center repeat-x;
+}
+body {font-size:12px;font: 12px/1.75 "宋体" b8b\4f53, sans-serif;}
+* { margin:0; padding:0; }
+body, button, input, select, textarea { font-family: "宋体","Microsoft YaHei",Tahoma, "SimSun",12px/1.5 tahoma,tahoma,arial ,\5b8b\4f53; color:#666;}
+ul, ol { list-style:none; list-style-type:none }
+select, input, img { vertical-align:middle; }
+a:link, a:visited { text-decoration:none;color:#333;}
+a:hover{color: #307F7A;text-decoration:underline;}
+fieldset, img { border:0 none ; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility:hidden; }
+.clearfix { display: inline-block; } 
+* html .clearfix { height: 1%; }
+em{
+    font-style:normal;
+}
+div {display:block;}
+.fl{
+ float:left;
+}
+.fr{
+ float:right;
+}
+
+.w960-lw {
+ width:960px;
+ margin:0 auto; 
+}
+.layout1_lw {
+ background:url(http://mat1.gtimg.com/edu/2012/tuipu15/top.jpg) 50% 0 no-repeat;
+ height:785px;
+ margin:0 auto;
+}
+.nav_lw {
+ position:relative;
+ z-index:9;
+}
+.menu_lw {
+ position:absolute;
+ top:211px;
+ left:-30px;
+ float:left;
+ -webkit-transform: rotate(-30deg);  
+ -moz-transform: rotate(-30deg);
+ -o-transform: rotate(-30deg);
+ -ms-transform: rotate(-30deg);
+ 
+ 
+}
+.nav_lw  li {
+ background:#479E13;
+ float:left;
+ width:104px;
+ font-size:18px;
+ font-weight:500;
+ color:#fff;
+ font-family:"Microsoft YaHei";
+ text-align:center;
+ 
+}
+#nav_lw  li{
+ position:absolute \9; 
+}
+#nav_lw .n1 {
+ top:186px \9;
+ left:50px \9;
+}
+#nav_lw .n2 {
+ top:135px \9;
+ left:138px \9;
+}
+#nav_lw .n3 {
+ top:83px \9;
+ left:228px \9;
+}
+#nav_lw .n4 {
+ top:31px \9;
+ left:318px \9;
+}
+#nav_lw .n5 {
+ top:-22px \9;
+ left:410px \9;
+}
+#nav_lw .n6 {
+ top:-74px \9;
+ left:500px \9;
+}
+#nav_lw .n7 {
+ top:-126px \9;
+ left:590px \9;
+}
+#nav_lw .n8 {
+ top:-178px \9;
+ left:680px \9;
+}
+#nav_lw .n9{
+ top:-230px \9;
+ left:770px \9;
+}
+.nav_lw  li a {
+ background:#00aeef;
+ color:#fff;
+ display:block;
+ width:104px;
+ height:57px;
+ line-height:58px;
+ 
+}
+.nav_lw  li a:hover{
+ background:#39900B;
+ text-decoration:underline;
+ }
+.nav_lw  li {
+ filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.866025404, M12=0.5, M21=-0.5, M22=0.866025404) \9;
+ 
+}
+</style>
+</head>
+<body>
+ 
+
+  <div class="layout layout1_lw">
+    <div class="nav_lw w960-lw">
+   <ul class="menu_lw clearfix" id="nav_lw">
+  <li class="n1"><a href="#">消息</a></li>
+  <li class="n2"><a href="#">消息</a></li>
+  <li class="n4"><a href="#">消息</a></li>
+  <li class="n3"><a href="#">消息</a></li>
+  <li class="n5"><a href="#">消息</a></li>
+  <li class="n6"><a href="#">消息</a></li>
+  <li class="n7"><a href="#">消息</a></li>
+  <li class="n8"><a href="#">消息</a></li>
+  <li class="n9"><a href="#">消息</a></li>
+   </ul>
+ </div>
+  
+  </div>
+  
+  
+</body>
+</html>

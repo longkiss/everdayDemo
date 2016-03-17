@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+ul li{list-style-type:none;}
+.ul1 li{display:inline-block;height:30px;line-height:30px;text-align:center;width:80px;}
+#oul1 li{background:#ccc;}
+#oul1 li:hover{cursor:pointer;}
+#oul2 li{display:none;}
+#oul2 li:first-child{display:block;}
+    </style>
+</head>
+<body>
+<ul class="ul1" id="oul1">
+    <li>第一部分</li>
+    <li>第二部分</li>
+    <li>第三部分</li>
+    <li>第四部分</li>
+</ul>
+<ul class="ul2" id="oul2">
+    <li class="">对应一部分内容</li>
+    <li>对应二部分内容</li>
+    <li>对应三部分内容</li>
+    <li>对应四部分内容</li>
+</ul>
+<script>
+    var oli1=document.getElementById('oul1').getElementsByTagName('li'),
+        oli2=document.getElementById('oul2').getElementsByTagName('li');
+    for(var i=0;i<oli1.length;i++){
+        oli1[i].index=i;
+        oli1[i].onclick=function(){
+            console.log(this.index);
+            for(var j=0;j<oli2.length;j++){
+                oli2[j].style.display='none';
+                var a=oli2[this.index].style.display;
+                if(a=='none'){
+                    oli2[this.index].style.display='block';
+                }else if(a=='block'){
+                    oli2[this.index].style.display='none';
+                }
+                oli2[this.index].style.display='block';
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

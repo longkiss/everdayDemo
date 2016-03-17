@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     *{margin:0;padding:0;}
+     .head{font-size:12px;padding:6px 0 0 10px;}
+     #login_box{width:300px;height:150px;background:#eee;
+     border:1px solid #ccc;position:absolute;left:50%;top:50%;margin-left:-150px;margin-top:-75px;display:none;}
+     #login_box p{height:20px;border-bottom:1px solid #ccc;font-size:12px;padding:6px 0 0 5px;font-weight:bold;}
+     #close{width:14px;height:14px;background:url(close.png) no-repeat;position:absolute;right:4px;top:6px;}
+    </style>
+    <script>
+      window.onload=function(){
+      var eventutill={
+    //添加事件监听
+        addHandle:function(ele,type,fn){
+            if(ele.addEventListener){
+                ele.addEventListener(type,fn,false)
+            }else if(ele.attachEvent){
+                ele.attachEvent(type,fn)
+            }else{
+                ele.on[type]=fn;
+            }
+        },
+    //移除事件监听
+        removeHaddle:function(ele,type,fn){
+            if(ele.removeEventListener){
+                ele.removeEventListener(type,fn,false)
+            }else if(ele.detachEvent){
+                ele.detachEvent(type,fn)
+            }else{
+                ele.on[type]=null;
+            }
+        },
+    //兼容浏览器的事件对象
+         getEvent:function(event){
+            return event?event:window.event;
+        },
+    //获取事件类型
+        getType:function(event){
+            return event.type;
+        },
+    //获取事件目标
+        gettarget:function(event){
+            var target=event.target||event.srcElement;
+            return target;
+        },
+    //阻止事件冒泡
+        stopPropagation:function(event){
+            if(event.stopPropagation){
+                event.stopPropagation()
+            }else{
+                event.cancleBubble=false;
+            }
+        },
+    //取消事件的默认行�?
+        prevenDefault:function(event){
+            if(event.preventDefault){
+                event.preventDefault(event);
+            }else{
+                event.returnValue=false;
+                event.returnValue=false;
+            }
+        }
+    
+    }
+
+var btn=document.getElementById('login'),
+        zhe=document.getElementById('login_box');
+        eventutill.addHandle(btn,'click',function(){
+            zhe.style.display='block'
+        });
+        eventutill.addHandle(zhe,'click',function(){
+            zhe.style.display='none'
+        })
+      }
+    </script>
+</head>
+<body>
+    <div class="head">亲，您好！<input type="button" value="登 录" id="login"></div>
+    <div id="login_box">
+        <p>用户登录</p><span id="close"></span>
+    </div>
+</body>
+</html>

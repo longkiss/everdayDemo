@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	body{
+		padding:0;
+		margin: 0;		 
+	}
+	.dzt{
+		height: 300px;
+	 	padding-left: 50px;
+		display: box;
+		display: -moz-box;
+		display: -webkit-box;
+		margin-top: 100px;
+	}
+	.box-parent{
+		position: relative;
+		height: 285px;
+		width: 285px;
+		overflow: hidden;
+		margin-right: 50px;
+	}
+	.box-item{
+		height: 213px;
+		width: 213px;
+		border-radius: 50%;		 
+		box-shadow: 0 0 0 37px rgba(255, 255, 255, 0.2), 0 0 3px rgba(115, 114, 23, 0.8) inset;
+		/*
+		0 0 0 37px rgba(255, 255, 255, 0.2)盒子外阴影;
+		0 0 3px rgba(115, 114, 23, 0.8) inset;盒子内阴影；这里少了一个值，模糊度的值！
+		 */
+		transition:box-shadow 0.4s ease-in-out 0s;		 
+		position: absolute;
+		left: 35px;
+	 	top: 35px;	
+	}
+	.box-parent:hover .box-item{
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8), 0 0 3px rgba(115, 114, 23, 0.8) inset;
+	}
+	 img{
+	 	transition:all 0.5s ease-in-out 0s;
+	 	position:absolute;	 	  
+	 	transform-style: preserve-3d;
+	 	height: 217px;
+	 	widows: 217px;
+	 	border-radius: 50%;
+	 }
+	.box-parent:hover img{
+		transform:rotateY(-1440deg);	 	
+	}
+	.position{
+		height: 217px;
+		width: 217px;
+		border-radius: 50%;
+		background: white;
+		position: absolute;
+	 
+	}
+	</style>
+</head>
+<body>
+<div class="dzt">
+<div class="box-parent" style='background: url(images/1.1.png) no-repeat;'>
+	<div class="box-item">
+		<a class="box">
+			<div class="position"></div>
+			<img src="images/1.png" alt="">
+		</a>	
+	</div>
+</div>
+<div class="box-parent" style='background: url(images/2.2.png) no-repeat;'>
+	<div class="box-item">
+		<a class="box">
+			<div class="position"></div>
+			<img src="images/2.png" alt="">
+		</a>	
+	</div>
+</div>
+<div class="box-parent" style='background: url(images/3.3.png) no-repeat;'>
+	<div class="box-item">
+		<a class="box">
+			<div class="position"></div>
+			<img src="images/3.png" alt="">
+		</a>	
+	</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
