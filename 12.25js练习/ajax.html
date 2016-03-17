@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="xhr"></div>
+<script>
+    function createHttpRequest(){
+        return window.ActiveXObject?new ActiveXObject():new XMLHttpRequest();
+    };
+    function sendRequest(id,url){
+        var obj=new createHttpRequest();
+        obj.onreadystatechange=function(){
+            if(obj.readyState==4){
+                document.getElementById(id).innerHTML=obj.responseText;
+            }else{
+               
+            }
+        }
+        obj.open('GET',url);
+        obj.send("")
+    }
+    sendRequest('xhr',"index.html");
+    // function createHttpRequest(){
+    //     return window.ActiveXObject?new ActiveXObject():new XMLHttpRequest();
+    // }
+    // function sendRequest(id,url){
+    //     var xhr=new createHttpRequest();
+    //     xhr.onreadystatechange=function(){
+    //         if(xhr.readyState==4){
+    //             console.log(xhr.readyState)
+    //             document.getElementById(id).innerHTML=xhr.responseText;             
+    //         }else{
+    //             console.log('请求失败！')
+    //         }
+    //     }
+    //     xhr.open('GET',url);
+    //     xhr.send('');
+    // }
+    // sendRequest('xhr',"index.html");
+</script>
+</body>
+</html>

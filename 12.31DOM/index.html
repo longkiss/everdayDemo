@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>documents</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+    .box{
+        height:300px;
+        width:600px;
+        background:red;
+        margin:0 auto;
+        /*border-radius:20px 30px 40px 50px/60px 70px 80px 90px;*//*x轴方向的四个值/y轴方向的四个值*/
+        border-radius:150px;/*x轴方向的四个值/y轴方向的四个值*/
+        box-sizing: border-box;
+        border-left:20px solid green;
+        border-right:20px solid green;
+        border-top:10px solid blue;
+        border-bottom:10px solid blue;
+    }
+</style>
+</head>
+<body>
+<!-- <div id='p'>
+    <span>dom</span>
+    <p>pppp</p>
+</div>
+<div class="box"></div>
+<a href="#" name=''></a>
+-->
+</body>
+<script type="text/javascript">
+var book={
+    title:'javascript',
+    authors:['Nicholas C.zakas'],
+    edition:3,
+    year:2011
+};
+var jsonText=JSON.stringify(book);//把javascript对象序列化为json字符串；
+console.log(jsonText);
+var jsText=JSON.parse(jsonText);//把json字符串解析为原生javascript的值；
+console.log(jsText);
+console.log(book);
+</script>
+</html>

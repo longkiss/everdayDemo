@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<button>Change colors</button>
+<span></span> 
+<div></div> 
+<div></div>
+<div></div> 
+<div>121245454</div>
+<div id="stop">Stop here</div> 
+<div></div>
+<div>545454</div>
+<div>54545454545</div>
+<body>
+
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script> 
+<script type="text/javascript">
+$("button").click(function () { 
+    $("div").each(function (index, domEle) { 
+      // domEle == this 
+      console.log(index)
+      $(domEle).css("backgroundColor", "yellow");  
+      if ($(this).is("#stop")) { 
+      $("span").text("Stopped at div index #" + index); 
+      return false; 
+      } 
+    });
+});
+</script> 
+</body>
+</html>

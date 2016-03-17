@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-12-24 11:18:30
+ * @version $Id$
+ */
+.apple{
+   height: 172px;
+   width: 202px;
+   position: relative;
+   margin:100px;
+}
+/*头部轮廓*/
+.top-warp{
+   position:absolute;
+   top:47px;
+   height: 128px;
+   width:100%;
+   overflow: hidden;
+}
+.top{
+   position:absolute;
+   top: 0;
+   border-radius:108px/128px;
+   width: 108px;
+   height: 100%;
+   background: #e03a3e;
+}
+.top.left{
+   left: 0
+}
+.top.right{
+   right:0;
+}
+/*底部轮廓*/
+.bottom-warp{
+   position: absolute;
+   top:98px;
+   height: 108px;
+   width: 100%;
+   overflow:hidden;
+
+}
+.bottom{
+   position: absolute;
+   background: #e03a3e;
+   border-radius: 22px 22px 64px 64px/106px 106px 106px 106px;
+   height: 106px;
+   top: 0;
+   width:64px;
+}
+.bottom.left{
+   transform:rotate(-25deg);
+   left:12px;
+   -webkit-transform: rotate(-25deg);
+}
+.bottom.right{
+   transform:rotate(25deg);
+   -webkit-transform: rotate(25deg);
+   right:12px;
+}
+.middle{
+   position:absolute;
+   top:55px;
+   left: 50%;
+   transform:translateX(-50%);
+   -webkit-transform:translateX(-50%);
+   background: #e03a3e;
+   height: 146px;
+   width:83px;
+}
+.top-radius,.bottom-radius{
+   position: absolute;
+   background: #e03a3e;
+   left: 50%;
+   transform: translateX(-50%);
+
+}
+.top-radius{
+   top:-15px;
+   border-radius: 20px;
+   height:80px;
+   transform:translateX(-50%) rotate(-45deg) scale(0.9);
+   width: 80px;
+   background-color: #fff;
+}
+.bottom-radius{
+   position: absolute;
+   border-radius: 50%;
+   height: 22px;
+   width: 48px;
+   top:192px;
+   background: #fff;
+}
+.handle {
+    position: absolute;
+    z-index: 100;
+    left: 136px;
+    top: -14px;
+    transform: rotate(40deg);
+    background-color: #62bb47;
+}
+
+.handle:before,
+.handle:after {
+    background-color: #62bb47;
+    border-radius: 50%;
+    content: "#";
+    display: block;
+    height: 90px;
+    position: absolute;
+    text-indent: -9999px;
+    width: 90px;
+}
+
+.handle:before {
+    clip: rect(0 13px 80px 0px);
+}
+
+.handle:after {
+    clip: rect(14px 100px 76px 76px);
+    left: -64px;
+}
+

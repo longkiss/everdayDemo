@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>documents</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<div class="red">xxxxx</div>
+<div class="blue">ajax请求过来的页面</div>
+<div class="blue">ajax请求过来的页面</div>
+<div class="blue">ajax请求过来的页面</div>
+<div class="blue">ajax请求过来的页面</div>
+<div class="blue">ajax请求过来的页面</div>
+<div class="blue">ajax请求过来的页面2</div>
+<script type="text/javascript" scr='jquery.2.0.0.js'></script>
+<script type="text/javascript">
+
+function fn1(){
+    var n='text';
+    function fn2(){
+        console.log(n)
+    }
+    return fn2;
+}
+var result=fn1();
+result();
+//fn2就是闭包函数 闭包就是能够读取其他函数内部变量的函数，能读取变量，能将这些变量始终保存在内存中，实现数据共享！
+function employee(name,job,born){
+    this.name=name;
+    this.job=job;
+    this.born=born;
+}
+var bill=new employee("Bill Gates","Engineer",1985);
+employee.prototype.salary=null;
+bill.salary=20000;
+console.log(bill.salary);
+var type={
+    name:'xz',
+    job:'teacher'
+}
+console.log(type);
+//////////////////////////////////////////////////////////////////////////////
+var divs=document.getElementsByTagName('div');
+for(var i=0; i<divs.length;i++){
+    if(divs[i].getAttribute('className')||divs[i].getAttribute('class')=='red'){
+        divs[i].style.color='red';
+        console.log('className为red！');
+    }
+}
+</script>
+</body>
+</html>

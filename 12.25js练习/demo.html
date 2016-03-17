@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>属性选择器</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css">--></head>
+<body>
+    <form action="#">
+        <div>
+            <label for="enabled" id='labels'>可用输入框:</label>
+            <input type="text" id="enabled" />
+        </div>
+        <div>
+            <label for="disabled">禁用输入框:</label>
+            <input type="text" id="disabled" disabled="disabled" />
+        </div>
+        <button id='btn'>取消disabled</button>
+    </form>
+    <script>
+    var disa=document.getElementById('disabled'),
+        btn =document.getElementById('btn') ;
+        btn.onclick=function(){
+            if(disa.hasAttribute('disabled')){
+            disa.removeAttribute('disabled');
+            }else{
+                disa.setAttribute('disabled','disabled');
+            }  
+        }
+    function disa(){
+        // disa.removeAttribute('disabled')    
+    }
+ </script>
+</body>
+</html>
