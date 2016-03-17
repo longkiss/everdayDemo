@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11.16</title>
+</head>
+<body>
+<div id="box"></div>
+<button id="btn">清除</button>
+	
+</body>
+<script>
+	var date=new Date(),
+		box=document.getElementById('box'),
+		btn=document.getElementById('btn');
+		// box.innerHTML=date;
+		// document.write(date.valueOf()+"<br>")
+	var timer=setInterval(function(){
+			box.innerHTML=new Date().valueOf()+'<br>';
+		},1)
+		
+	btn.onclick=function(){
+		clearInterval(timer)
+	}
+//	类型检测： undefined,Null,Boolean,String,Number(包含Nan);
+//	判断：1>isFinite(number)判断数字是不是无穷尽。
+		//2>typeof
+		//3>instanceof(实例)/constructor
+	var a=new Object();
+	console.log(a instanceof Object)
+//	判断一个对象的类型 可以用typeof 还可以用Object.prototype.toString.call(a),可以判断一个对象是数组还是类数组
+	console.log(Object.prototype.toString.call(a))
+
+</script>
+</html>

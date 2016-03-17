@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-11-19 10:23:35
+ * @version $Id$
+ */
+*{
+	color:white;
+	padding:0;
+	margin:0;
+}
+
+/*第一种方法*/
+.box1{
+	height: 200px;
+	width: 200px;
+	background: red;
+	/*position: absolute;*/
+	/*left: 50%;
+	top:50%;*/
+	/*margin-left:-50px;
+	margin-top: -50px;*/
+}
+/*第二种方法*/
+.box2{
+	height: 200px;
+	width: 200px;
+	background: green;
+	/*position: fixed;*/
+	/*left: 50%;
+	top:50%;*/
+	/*margin-left:-50px;
+	margin-top: -50px;*/
+}
+/*第三种方法*/
+.box3{
+	height: 200px;
+	width: 200px;
+	background: red;
+ 	display: table-cell;
+ 	vertical-align: middle;
+ 
+}
+.box3 .box3-box{
+	 
+	height: 100px;
+	width: 100px;
+	background: blue;
+	margin:0 auto;
+}
+/*第四种方法*/
+.box4{
+	height:200px;
+	width: 200px;
+	background: green;
+	display: table;
+	text-align: center;
+}
+.box4-box{
+	display: table-cell;
+	vertical-align: middle;
+	float:-left;/*让浮动不起作用*/
+ 	/*margin:0 auto;*/
+}
+/*第五种方法*/
+.box5{
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	background: yellow;
+	color:black;
+
+}
+/*第六种方法*/
+.box6{
+	height: 200px;
+	width: 200px;
+	background: green;
+	display: -webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+.box6-box{
+	height: 100px;
+	width: 100px;
+	background: white;
+	color:black;
+}
+.box7{
+	height: 200px;
+	width: 200px;
+	background: red;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	color:#000;
+}

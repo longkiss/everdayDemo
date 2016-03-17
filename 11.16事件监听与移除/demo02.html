@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom 事件监听</title>
+</head>
+<body>
+<input type="button" id="btn1" value="按钮一"/>
+<input type="button" id="btn2" value="按钮二"/>
+  <!--   <pre>
+        &lt;input type="button" id="btn1" value="按钮一"/&gt;
+        &lt;input type="button" id="btn2" value="按钮一"/&gt;
+    </pre> -->
+<!--<input type="button" id="btn3" value="按钮三"/>-->
+<script>
+    var oBtn1=document.getElementById('btn1'),//获取按钮一
+        oBtn2=document.getElementById('btn2'),//获取按钮二
+        oBtn3=document.getElementById('btn3');//获取按钮三
+//    DOM 0级事件
+        oBtn1.onclick=function(){
+            console.log('btn1')
+        }
+//   DOM 2级事件  addEventListener
+    //    添加事件监听
+    function addHandle(ele,type,fn) {
+        if (ele.addEventListener) {
+            ele.addEventListener(type, fn, false);
+        } else if (ele.attachEvent) {
+            ele.attachEvent('on' + type, fn);
+        } else {
+            ele.on[type] = fn
+        }
+    };
+    //    移除事件监听
+    function removeHandle(ele,type,fn){
+        if(ele.removeEventListener){
+            ele.removeEventListener(type,fn,false);
+        }else if(ele.detachEvent){
+            ele.detachEvent('on'+type,fn);
+        }else{
+            ele.on[type]=fn;
+            ele.on[type]=null;
+        }
+    }
+    addHandle(oBtn2,'click',show);
+    //    removeHandle(oBtn2,'click',show);
+    //    show函数
+    function show(){
+            alert('DOM 2级 事件监听')
+    }
+//    if(oBtn2.addEventListener){
+//        oBtn2.addEventListener('click',function(){
+////                console.log('btn2')
+//            alert("1")
+//        },false);
+//    }else if(oBtn2.attachEvent){
+//        oBtn2.attachEvent('onClick',function(){
+////                console.log('btn2')
+//            alert("1")
+//        });
+//    }else{
+//        oBtn2.onclick=function(){
+////                console.log('btn2')
+//            alert("1")
+//        }
+//    }
+//    }
+</script>
+</body>
+</html>

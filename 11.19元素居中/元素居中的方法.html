@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- <link href="css/index.css" rel="stylesheet"> -->
+<style type="text/css">
+	
+*{
+	color:white;
+	padding:0;
+	margin:0;
+}
+/*第一种方法*/
+.box1{
+	height: 200px;
+	width: 200px;
+	background: red;
+	/*position: absolute;*/
+	/*left: 50%;
+	top:50%;*/
+	/*margin-left:-50px;
+	margin-top: -50px;*/
+}
+/*第二种方法*/
+.box2{
+	height: 200px;
+	width: 200px;
+	background: green;
+	/*position: fixed;*/
+	/*left: 50%;
+	top:50%;*/
+	/*margin-left:-50px;
+	margin-top: -50px;*/
+}
+/*第三种方法*/
+.box3{
+	height: 200px;
+	width: 200px;
+	background: red;
+ 	display: table-cell;
+ 	vertical-align: middle;
+ 
+}
+.box3 .box3-box{
+	 
+	height: 100px;
+	width: 100px;
+	background: blue;
+	margin:0 auto;
+}
+/*第四种方法*/
+.box4{
+	height:200px;
+	width: 200px;
+	background: green;
+	display: table;
+	text-align: center;
+}
+.box4-box{
+	display: table-cell;
+	vertical-align: middle;
+	float:-left;/*让浮动不起作用*/
+ 	/*margin:0 auto;*/
+}
+/*第五种方法*/
+.box5{
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	background: yellow;
+	color:black;
+}
+/*第六种方法*/
+.box6{
+	height: 200px;
+	width: 200px;
+	background: green;
+	display: -webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+.box6-box{
+	height: 100px;
+	width: 100px;
+	background: white;
+	color:black;
+}
+.box7{
+	height: 200px;
+	width: 200px;
+	background: red;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	color:#000;
+}
+</style>
+</head>
+<body>
+	 <div class="box1">运用绝对定位position+margin</div>
+	 <div class="box2">运用绝对定位fixed+margin</div>
+	 <div class="box3" >
+	 	<div class="box3-box">运用绝对定位display(table-cell),vertical-align(middle)</div>
+	 </div>
+	 <div class="box4">
+	 	<div class="box4-box">
+	 		给父级添加display(table);子级添加display(table-cell),vertical-align(middle);
+	 	</div>
+	 </div>
+	 <div class="box5">margin: 0 auto; text-algin:center;</div>
+	 <div class="box6">
+	 	<div class="box6-box">
+		 	父级添加display: -webkit-box;
+			-webkit-box-pack:center;
+			-webkit-box-align:center;
+	 	</div>
+	 </div>
+	 <div class="box7">
+	 	position: absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+	 </div>
+</body>
+</html>

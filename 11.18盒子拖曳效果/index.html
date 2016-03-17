@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖曳效果</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		#box{
+			height: 200px;
+			width:200px;
+			background: red;
+			position: absolute;
+			top:100px;
+			left: 100px;
+			cursor: move;
+		}
+	</style>
+	<link rel='stylesheet' type='text/css' href="#" media='screen and max-device-width:480px'>
+</head>
+<body>
+<div id="box"></div>
+<script>
+	var box=document.getElementById('box');
+		window.onload=function(){
+			box.onmousedown=fnDown;
+			function fnDown(event){
+				event=event||window.event;
+				// console.log(event.clientX+','+event.clientY)
+				// box.style.left=event.clientX+"px";
+				// box.style.top=event.clientY+'px';
+				// offsetLeft(获取的是盒子到浏览器窗口左边的的宽度)、offsetTop(获取的是盒子到浏览器窗口上边的的宽度)、offsetWidth(获取的而是盒子本身的宽度)、offsetHeight(获取的而是盒子本身的高度)
+				fnDownX=event.clientX-box.offsetLeft;
+				fnDownY=event.clientY-box.offsetTop;
+				fnDownx=event.offsetX,
+                fnDowny=event.offsetY;
+				document.title=fnDownX+','+fnDownY;
+				console.log(fnDownX,fnDownY);
+				console.log(fnDownx,fnDowny);
+				box.onmousemove=function(event){
+					event=event||window.event;
+					// console.log(event);
+					fnMove(event,fnDownX,fnDownY)
+				};
+			}
+			box.onmouseup=function(){
+					box.onmousemove=null;
+					box.onmousup=null;
+				}
+			function fnMove(event,fnDX,fnDY){
+					// console.log(event.clientX+','+fnDX);
+				var fnMoveX=event.clientX-fnDX,
+					fnMoveY=event.clientY-fnDY,
+					winW=document.documentElement.clientWidth||document.body.clientWidth,
+					winH=document.documentElement.clientHeight||document.body.clientHeight,
+					maxW=winW-box.offsetWidth,
+					maxH=winH-box.offsetHeight;
+					console.log(fnMoveX+"="+event.clientX+'-'+fnDX)
+					if(fnMoveX<0){
+						fnMoveX=0;
+					}else if(fnMoveX>maxW){
+						fnMoveX=maxW
+					}
+					if(fnMoveY<0){
+						fnMoveY=0;
+					}else if(fnMoveY>maxH){
+						fnMoveY=maxH
+					}
+					box.style.left=fnMoveX +'px';
+					box.style.top=fnMoveY +'px';
+
+			}
+		}
+</script>	
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	div{
+		width:500px;
+	}
+	hr{
+		width:500px;
+		/*margin:0;*/
+		margin:20px 0;
+	}
+</style>
+</head>
+<body>
+<div>
+	function displayInfos(a){<br>
+		var output='';<br>
+		if(typeof a.name=="string"){<br>
+			output+='name:'+a.name+'\n';//'\n'表示的换行<br>
+		}<br>
+		if(typeof a.age=='number'){<br>
+			output+='age:'+a.age+'';<br>
+		}
+		console.log(output)<br>
+	}<br>
+	 var a={<br>
+		name:"name",<br> 
+		age:10<br>
+	};<br>
+	displayInfos(a);<br>
+</div>
+<hr>
+<div>
+	// 添加数组或移除数组
+	var color=['red','yellow','black','white'];<br>
+	console.log(color.length);<br>
+	color.legth=5;color[4]='green';<br>
+	["red", "yellow", "black", "white", "green"];<br>
+	console.log(color.length);<br>
+	console.log(color instanceof Array);//判断一个对象是不是数组<br>
+	console.log(Array.isArray(color));//判断一个对象是不是数组<br>
+</div>
+<hr>
+<div>
+	//数组类型的转换
+	console.log(color.toString());	<br>
+ 	console.log(color.toLocaleString());<br>
+ 	console.log(color.valueOf());<br>
+</div>
+<hr>
+<div>
+	//栈方法 push()//pop();<br>
+ 	var a='blue';<br>
+ 	console.log(color.push(a))//push()方法可以接收任意数量的参数，把他们逐个添加到数组的末端，并返回数组的长度。<br>
+ 	console.log(color.pop())//pop()方法则从数组的末端移除最后一项，减少数组的length的值，并返回移除的项。<br>
+</div>
+<hr>
+<div>
+	//队列方法<br>
+	var color=new Array();<br>
+	var count=color.push('a','b');<br>
+	console.log(count);<br>
+	var count=color.push('black');<br>
+	console.log(count);<br>
+	var item=color.shift();//shift()它能够移除数组中的第一个项并返回被移除项，同时将数组的长度减1；<br>
+	var items=color.unshift('sss');//shift()它能够移除数组前端添加任意个项，同时返回数组长度；<br>
+	console.log(item);<br>
+	console.log(color.length);<br>
+</div>
+<hr>
+<div>
+	//重新排序的方法 reverse()和sort()方法<br>
+	//reverse()方法会反转数组的顺序;<br>
+	//sort()方法会以升序的方法 重新排列数组的顺序，它会调用每个数组项的tostring()转型方法，然后比较得到的字符串，以确定如何排序。<br>
+	var values =[1,5,3,2,4];<br>
+	console.log(values);<br>
+ 	values.reverse();<br>
+	console.log(values);<br>
+	values.sort();<br>
+	console.log(values);<br>
+</div>
+
+<script type="text/javascript">
+	
+
+</script>  
+</body>
+</html>

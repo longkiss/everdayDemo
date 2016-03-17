@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #ul1{
+            background: #999;
+            padding:0;
+            margin: 0;
+        }
+        li{
+            list-style-type:none;
+            height: 40px;
+            line-height: 40px;
+            border-bottom:1px solid #ccc;
+            padding: 0;
+            margin:0;
+            padding-left: 10px;
+        }
+        h2{
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <!--<li><h2>aaaa</h2></li>-->
+</ul>
+<script>
+    function ray(obj){
+       this.ele=document.getElementById(obj.substring(1));
+//       console.log(this.ele);
+    }
+    function $(obj){
+        return new ray(obj);
+    }
+//    console.log($('#ul1'))//获取id;
+    ray.prototype.on=function(type,target,fn){
+    //  $('#ul').on('click','可选',fn)
+        if(!target){
+            target  = this.ele.nodeName.toLocaleLowerCase();
+        }
+        if(window.addEventListener){
+            this.ele.addEventListener(type,function(e){
+                depute(e)
+            },false);
+        }else if(window.attachEvent){
+            this.ele.attachEvent("on"+type,function(e){
+                depute(e)
+            });
+        }else{
+            this.ele.on[type]=function(){
+                depute(e)
+            };
+        }
+        function depute(e){
+            e=e||window.event;
+            //console.log(e);
+            var _target= e.target|| e.srcElement;
+            if(_target.nodeName.toLocaleLowerCase()===target){
+                fn.call(_target)//判断指向call();
+            }
+        }
+    }
+//$('#ul1').on('mouseover','',function(){
+//    this.style.background='red'
+//})
+// $('#ul1').on('mouseout','',function(){
+//        this.style.background='';
+//})
+    $('#ul1').on('mouseover','li',function(){
+        this.style.background='red'
+    })
+    $('#ul1').on('mouseout','li',function(){
+        this.style.background='';
+    })
+</script>
+</body>
+</html>

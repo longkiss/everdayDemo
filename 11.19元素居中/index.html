@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>document</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	#box{
+		height:200px;
+		width:200px; 
+		background:red;
+		position:relative;
+		top:100px;
+		left:100px;
+		cursor:move;
+	}
+
+
+</style>
+</head>
+<body>
+<div id="box"></div>
+
+
+
+<script type="text/javascript">
+	var box=document.getElementById('box');
+		box.onmousedown=fnDown;
+		function fnDown(event){
+			event=event||window.event;
+			// document.title=event.clientX;
+			fnDx=event.clientX-box.offsetLeft;
+			fnDy=event.clientY-box.offsetTop;
+			box.onmousemove=function(event){
+				event=event||window.event;
+				// document.title=event.clientX+' | '+event.clientY;
+				fnMove(event,fnDx,fnDy);
+			}
+			box.onmouseup=function(){
+				box.onmousemove=null;
+				box.onmouseup=null;
+			}
+		}
+		function fnMove(event,fndx,fndy){
+			 var fnMx=event.clientX-fnDx;
+			 var fnMy=event.clientY-fnDy;
+			 // document.title=fnMy+' | '+fnMx;
+			 var bodyW=document.documentElement.clientWidth||document.body.clientWidth;
+			 var bodyH=document.documentElement.clientHeight||document.body.clientHeight;
+			 var maxW=bodyW-box.offsetWidth;
+			 var maxH=bodyH-box.offsetHeight;
+			 if(fnMx<0){
+			 	fnMx=0;
+			 }else if(fnMx>maxW){
+			 	fnMx=maxW;
+			 }
+			 if(fnMy<0){
+			 	fnMy=0
+			 }else if(fnMy>maxH){
+			 	fnMy=maxH
+			 }
+			 box.style.left=fnMx+'px';
+			 box.style.top=fnMy+'px';
+		}
+
+
+
+	// var mun=0;
+	// for(var i=0;i<10;i++){
+	// 	if(i%5==0){
+	// 		break;
+	// 	}
+	// 	mun++;
+	// }
+	// alert(mun)
+
+</script>
+ 
+
+
+<script src="js/index.js"></script>
+</body>
+</html>

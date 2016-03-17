@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#zhezhao{
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		background: rgba(0,0,0,0.5);
+		display:none;
+	}
+	
+	</style>
+</head>
+<body>
+<button id="btn">登录按钮</button>
+<!-- 遮罩层 -->
+<div id="zhezhao"></div>
+<script src="js/event.js"></script>
+<script>
+	var btn=document.getElementById('btn'),
+		zhe=document.getElementById('zhezhao');
+		eventutill.addHandle(btn,'click',function(){
+			zhe.style.display='block'
+		});
+		eventutill.addHandle(zhe,'click',function(){
+			zhe.style.display='none'
+		})
+</script>
+</body>
+</html>

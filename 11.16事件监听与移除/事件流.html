@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #ul1{
+            /*background: #333;*/
+            padding:0;
+        }
+        #ul1 li{
+            border-bottom:1px solid #666;
+            height: 40px;
+            line-height: 40px;;
+            list-style-type:none;
+
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+    <li>li4</li>
+    <li>li5</li>
+    <li>li6</li>
+    <li>li7</li>
+    <li>li8</li>
+    <li>li9</li>
+    <li>li10</li>
+</ul>
+</body>
+<script>
+    var oUl=document.getElementById('ul1'),
+        oLi=document.getElementsByTagName('li');
+        oUl.addEventListener('click',function(e){
+//            alert(e.type)
+            console.log(e.type)
+    },false)
+
+
+
+</script>
+</html>

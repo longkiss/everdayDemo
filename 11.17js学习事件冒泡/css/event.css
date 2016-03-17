@@ -1,0 +1,15 @@
+#grandfather{
+    height: 150px;
+    width: 150px;
+    background:#666;
+}
+#father{
+    height: 100px;
+    width: 100px;
+    background: blue;
+}
+#son{
+    height: 50px;
+    width: 50px;
+    background: red;
+}
